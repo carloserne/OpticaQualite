@@ -1,0 +1,54 @@
+
+.menu{
+    position: absolute;
+    background: #495c83;
+    color: white;
+    width: 205px;
+}
+#barras{
+    display: none;
+}
+#logo{
+    margin-left: 25%;
+}
+#imagenLogin{
+    background: #495c83;
+    border-radius: 10px;
+}
+#contentLogin{
+    margin-top: 10%;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+#btnIngresar{
+    background: #495c83;
+    color: white;
+    
+}
+#tabla{
+    height: 400px;
+    overflow-y: scroll;
+}
+#table_id_length{
+    text-align: initial;
+}
+#contenedor2{
+    height: 540px;
+}
+@media(max-width: 900px ){
+    .menu{
+    position: absolute;
+    background: #495c83;
+    color: white;
+    width: 90px;
+    }
+    .menu #links{
+        display: none;
+    }
+    #barras{
+        display: block;
+        margin-top: 10%;
+        margin-bottom: 10%;
+    }
+    
+}
