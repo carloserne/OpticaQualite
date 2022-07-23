@@ -85,3 +85,36 @@ function empleados(){
             });
             foot();
 }
+
+function ventas(){
+   
+        fetch("Modulos/moduloVentas/data_Ventas.json")
+                .then(response => {
+                return response.json();
+                })
+                .then(function (jsondata) {
+                venta = jsondata;
+                }
+                );
+        
+        fetch("./Modulos/moduloVentas/view_Ventas.html")
+        
+                .then(function (respuesta) {
+                return respuesta.text();
+                })
+                .then(function (html) {
+                document.getElementById("contenedor2").innerHTML = html;
+        
+                import ("../Modulos/moduloVentas/controller_Ventas.js").then(
+                        function (controller) {
+                           
+                        moduloVentas = controller;
+                        moduloVentas.cargarVenta();
+                                $('#table_id').DataTable();
+                                document.getElementById("table_id_filter").style.display = "none";
+                        }
+                );
+        
+                });
+                foot();
+    }
