@@ -1,15 +1,17 @@
 [
     {
-        "Persona": {"IdPersona": "1", 
-                    "Nombre": "Carlos",
-                    "ApellidoPaterno": "Moreno",
-                    "ApellidoMaterno": "Ramirez",
-                    "Genero": "Masculino",
-                    "RFC": "1EFDAS2E42",
-                    "TelCasa": "4721132454",
-                    "TelMovil": "4721132454",
-                    "Correo": "carebe654@gmail.com",
-                    "Estatus": 1}, 
+        "Persona": {
+            "IdPersona": "1", 
+            "Nombre": "Carlos",
+            "ApellidoPaterno": "Moreno",
+            "ApellidoMaterno": "Ramirez",
+            "Genero": "Masculino",
+            "RFC": "1EFDAS2E42",
+            "TelCasa": "4721132454",
+            "TelMovil": "4721132454",
+            "Correo": "carebe654@gmail.com",
+            "Estatus": 1
+        }, 
         "IdEmpleado": "1",
         "ClaveUnicaEmp": "MRR321",
         "Administrador": "Sam",
