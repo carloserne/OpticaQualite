@@ -1,0 +1,78 @@
+[
+  {
+    "Persona": {
+      "IdPersona": "1",
+      "Nombre": "Carlos",
+      "ApellidoPaterno": "Moreno",
+      "ApellidoMaterno": "Ramirez",
+      "Genero": "Masculino",
+      "RFC": "1EFDAS2E42",
+      "TelCasa": "4721132454",
+      "TelMovil": "4721132454",
+      "Correo": "carebe654@gmail.com",
+      "Estatus": 1
+    },
+    "ClaveUnicaVenta": "1",
+    "FechaDeLaVenta": "23/07/22",
+    "TotalDeLaVenta": "2000",
+    "TotalAbonado": "1000",
+    "AdeudoActual": "1000"
+  },
+  {
+    "Persona": {
+      "IdPersona": "2",
+      "Nombre": "Marco",
+      "ApellidoPaterno": "Carrillo",
+      "ApellidoMaterno": "Ibarra",
+      "Genero": "Masculino",
+      "RFC": "12SFASD3",
+      "TelCasa": "477123456",
+      "TelMovil": "477123456",
+      "Correo": "marco01@gmail.com",
+      "Estatus": 1
+    },
+    "ClaveUnicaVenta": "2",
+    "FechaDeLaVenta": "23/07/22",
+    "TotalDeLaVenta": "200",
+    "TotalAbonado": "150",
+    "AdeudoActual": "50"
+  },
+  {
+    "Persona": {
+      "IdPersona": "3",
+      "Nombre": "Diego",
+      "ApellidoPaterno": "Alonso",
+      "ApellidoMaterno": "Landin",
+      "Genero": "Masculino",
+      "RFC": "2244DFSD",
+      "TelCasa": "477534532",
+      "TelMovil": "47723433",
+      "Correo": "alandin@gmail.com",
+      "Estatus": 1
+    },
+    "ClaveUnicaVenta": "3",
+    "FechaDeLaVenta": "23/07/22",
+    "TotalDeLaVenta": "500",
+    "TotalAbonado": "300",
+    "AdeudoActual": "200"
+  },
+  {
+    "Persona": {
+      "IdPersona": "4",
+      "Nombre": "Jesus",
+      "ApellidoPaterno": "Luvian",
+      "ApellidoMaterno": "Luis",
+      "Genero": "Masculino",
+      "RFC": "42334FSDF",
+      "TelCasa": "477353543",
+      "TelMovil": "477353543",
+      "Correo": "luvijesus@gmail.com",
+      "Estatus": 1
+    },
+    "ClaveUnicaVenta": "4",
+    "FechaDeLaVenta": "23/07/22",
+    "TotalDeLaVenta": "1000",
+    "TotalAbonado": "900",
+    "AdeudoActual": "100"
+  }
+]
