@@ -60,7 +60,7 @@ function empleados(){
             return response.json();
             })
             .then(function (jsondata) {
-            emp = jsondata;
+            accesorio = jsondata;
             }
             );
     
@@ -85,6 +85,71 @@ function empleados(){
             });
             foot();
 }
+function accesorio(){
+   
+        fetch("Modulos/moduloAccesorios/data_Accesorios.json")
+                .then(response => {
+                return response.json();
+                })
+                .then(function (jsondata) {
+                accesorios = jsondata;
+                }
+                );
+        
+        fetch("./Modulos/moduloAccesorios/view_Accesorios.html")
+        
+                .then(function (respuesta) {
+                return respuesta.text();
+                })
+                .then(function (html) {
+                document.getElementById("contenedor2").innerHTML = html;
+        
+                import ("../Modulos/moduloAccesorios/controller_Accesorio").then(
+                        function (controller) {
+                           
+                        moduloAccesorios = controller;
+                        moduloAccesorios.cargarAccesorio();
+                                $('#table_id').DataTable();
+                                document.getElementById("table_id_filter").style.display = "none";
+                        }
+                );
+        
+                });
+                foot();
+    }
+
+function material(){
+   
+        fetch("Modulos/moduloMateriales/data_Materiales.json")
+                .then(response => {
+                return response.json();
+                })
+                .then(function (jsondata) {
+                materiales = jsondata;
+                }
+                );
+        
+        fetch("./Modulos/moduloMateriales/view_Materiales.html")
+        
+                .then(function (respuesta) {
+                return respuesta.text();
+                })
+                .then(function (html) {
+                document.getElementById("contenedor2").innerHTML = html;
+        
+                import ("../Modulos/moduloAccesorios/controller_Accesorio").then(
+                        function (controller) {
+                           
+                        moduloMateriales = controller;
+                        moduloMateriales.cargarMaterial();
+                                $('#table_id').DataTable();
+                                document.getElementById("table_id_filter").style.display = "none";
+                        }
+                );
+        
+                });
+                foot();
+    }
 
 function ventas(){
    

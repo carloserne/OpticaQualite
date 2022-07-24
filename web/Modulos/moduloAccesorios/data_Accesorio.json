@@ -1,0 +1,23 @@
+[
+    {
+      "Persona": {
+        "IdPersona": "1",
+        "Nombre": "Carlos",
+        "ApellidoPaterno": "Moreno",
+        "ApellidoMaterno": "Ramirez",
+        "Genero": "Masculino",
+        "RFC": "1EFDAS2E42",
+        "TelCasa": "4721132454",
+        "TelMovil": "4721132454",
+        "Correo": "carebe654@gmail.com",
+        "Estatus": 1
+      },
+      "nombreAccesorio": "Correa para lentes",
+      "marcaAccesorio": "Coca-Cola",
+      "precioCompra": "300",
+      "PrecioVenta": "350",
+      "existencias": "55", 
+      "estatus": "1" 
+    }
+]
+  
