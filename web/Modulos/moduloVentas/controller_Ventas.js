@@ -17,6 +17,7 @@ fetch("Modulos/moduloVentas/data_Ventas.json")
 export function cargarVenta() {
 
     venta.forEach(function (venta) {
+
         registroVenta =
             '<tr>' +
             '<td>' + venta.ClaveUnicaVenta + '</td>' +
