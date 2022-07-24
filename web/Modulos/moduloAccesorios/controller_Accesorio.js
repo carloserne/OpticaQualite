@@ -1,12 +1,14 @@
+
 let cuerpotblAccesorios = "";
 let registroAccesorios;
 let accesorio = [];
+
 fetch("Modulos/moduloAccesorios/data_Accesorios.json")
         .then(response => {
             return response.json();
         })
         .then(function (jsondata) {
-            accesorios = jsondata;
+            accesorio = jsondata;
             console.log(accesorio);
             cargarAccesoriostbl();
         }
@@ -14,7 +16,7 @@ fetch("Modulos/moduloAccesorios/data_Accesorios.json")
        
 export function cargarAccesorio() {
      
-    emp.forEach(function (accesorio) {
+    accesorio.forEach(function (accesorio) {
         registroAccesorios =
                 '<tr>' +
                 '<td>' + accesorio.nombreAccesorio + '</td>' +
@@ -33,7 +35,7 @@ export function cargarAccesorio() {
 
 export function cargarAccesoriostbl() {
      
-    empleados.forEach(function (accesorio) {
+    accesorio.forEach(function (accesorio) {
         registroAccesorios =
         '<tr>' +
         '<td>' + accesorio.nombreAccesorio + '</td>' +
@@ -50,7 +52,7 @@ cuerpotblAccesorios = "";
 }
 
 export function registrar(){
-    fetch("./Modulos/moduloEmp/view_RegistrarEmpleado.html")
+    fetch("./Modulos/moduloAccesorios/view_registrarAccesorio.html")
         .then(function (respuesta) {
         return respuesta.text();
         })
@@ -61,7 +63,7 @@ export function registrar(){
 }
 
 export function eliminar(){
-    fetch("./Modulos/moduloEmp/view_eliminarEmpleado.html")
+    fetch("./Modulos/moduloAccesorios/view_eliminarAccesorio.html")
         .then(function (respuesta) {
         return respuesta.text();
         })
@@ -72,7 +74,7 @@ export function eliminar(){
 }
 
 export function catalogo(){
-    fetch("./Modulos/moduloEmp/view_catalogoEmpleados.html")
+    fetch("./Modulos/moduloAccesorios/view_catalogoAccesorio.html")
         .then(function (respuesta) {
         return respuesta.text();
         })

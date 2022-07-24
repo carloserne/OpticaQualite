@@ -18,6 +18,48 @@
       "PrecioVenta": "350",
       "existencias": "55", 
       "estatus": "1" 
+    },
+    {
+      "Persona": {
+        "IdPersona": "2",
+        "Nombre": "Diego",
+        "ApellidoPaterno": "Alonso",
+        "ApellidoMaterno": "Landín",
+        "Genero": "Masculino",
+        "RFC": "2244DFSD",
+        "TelCasa": "4721132454",
+        "TelMovil": "4721132454",
+        "Correo": "alandin@gmail.com",
+        "Estatus": 1
+      },
+      "nombreAccesorio": "Linterna",
+      "marcaAccesorio": "Pepsi",
+      "precioCompra": "700",
+      "PrecioVenta": "750",
+      "existencias": "20", 
+      "estatus": "1" 
+    },
+    {
+      "Persona": {
+        "IdPersona": "3",
+        "Nombre": "Yisus",
+        "ApellidoPaterno": "Luvian",
+        "ApellidoMaterno": "Luís",
+        "Genero": "Masculino",
+        "RFC": "42334FSDF",
+        "TelCasa": "4721132454",
+        "TelMovil": "4721132454",
+        "Correo": "luvijesus@gmail.com",
+        "Estatus": 1
+      },
+      "nombreAccesorio": "Polarizador",
+      "marcaAccesorio": "Bimbo",
+      "precioCompra": "500",
+      "PrecioVenta": "550",
+      "existencias": "35", 
+      "estatus": "1" 
     }
+    
+
 ]
   

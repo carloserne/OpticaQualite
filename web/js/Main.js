@@ -51,8 +51,6 @@ fetch("./Modulos/moduloMenuPrincipal/view_Footer.html")
         });
         }
 
-
-
 function empleados(){
    
     fetch("Modulos/moduloEmp/data_Empleados.json")
@@ -60,7 +58,7 @@ function empleados(){
             return response.json();
             })
             .then(function (jsondata) {
-            accesorio = jsondata;
+            emp = jsondata;
             }
             );
     
@@ -85,9 +83,10 @@ function empleados(){
             });
             foot();
 }
+
 function accesorio(){
    
-        fetch("Modulos/moduloAccesorios/data_Accesorios.json")
+        fetch("Modulos/moduloAccesorios/data_Accesorio.json")
                 .then(response => {
                 return response.json();
                 })
@@ -120,7 +119,7 @@ function accesorio(){
 
 function material(){
    
-        fetch("Modulos/moduloMateriales/data_Materiales.json")
+        fetch("Modulos/moduloMateriales/data_Materiale.json")
                 .then(response => {
                 return response.json();
                 })
