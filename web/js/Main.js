@@ -119,7 +119,7 @@ function accesorio(){
 
 function material(){
    
-        fetch("Modulos/moduloMateriales/data_Materiale.json")
+        fetch("Modulos/moduloMateriales/data_Material.json")
                 .then(response => {
                 return response.json();
                 })
@@ -137,6 +137,39 @@ function material(){
                 document.getElementById("contenedor2").innerHTML = html;
         
                 import ("../Modulos/moduloMateriales/controller_Material.js").then(
+                        function (controller) {
+                           
+                        moduloMateriales = controller;
+                        moduloMateriales.cargarMaterial();
+                                $('#table_id').DataTable();
+                                document.getElementById("table_id_filter").style.display = "none";
+                        }
+                );
+        
+                });
+                foot();
+    }
+
+function armazon(){
+   
+        fetch("Modulos/moduloArmazones/data_Armazon.json")
+                .then(response => {
+                return response.json();
+                })
+                .then(function (jsondata) {
+                armazones = jsondata;
+                }
+                );
+        
+        fetch("./Modulos/moduloArmazones/view_Armazones.html")
+        
+                .then(function (respuesta) {
+                return respuesta.text();
+                })
+                .then(function (html) {
+                document.getElementById("contenedor2").innerHTML = html;
+        
+                import ("../Modulos/moduloArmazones/controller_Armazon.js").then(
                         function (controller) {
                            
                         moduloMateriales = controller;
