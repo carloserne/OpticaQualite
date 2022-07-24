@@ -3,6 +3,12 @@ let cuerpotblVentas = "";
 let registroVenta;
 let ventas = [];
 
+export function obtenerFechayHora(){
+    let date = new Date();
+    console.log(""+date.getDay);
+    document.getElementById("txtFechayhora").innerHTML = ""+date.getDay;
+}
+
 fetch("Modulos/moduloVentas/data_Ventas.json")
     .then(response => {
         return response.json();
@@ -53,14 +59,15 @@ export function cargarVentastbl() {
 }
 
 export function registrar() {
-    fetch("./Modulos/moduloEmp/view_RegistrarEmpleado.html")
+    fetch("./Modulos/moduloVentas/view_RegistrarVenta.html")
         .then(function (respuesta) {
             return respuesta.text();
         })
         .then(function (html) {
             document.getElementById("contenedorGestion").innerHTML = html;
-
         });
+
+    obtenerFechayHora();
 }
 
 export function eliminar() {
