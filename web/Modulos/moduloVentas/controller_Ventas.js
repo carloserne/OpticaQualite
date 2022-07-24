@@ -5,8 +5,8 @@ let ventas = [];
 
 export function obtenerFechayHora(){
     let date = new Date();
-    console.log(""+date.getDay);
-    document.getElementById("txtFechayhora").innerHTML = ""+date.getDay;
+    console.log(""+date.getDay());
+    document.getElementById("claveEmpleado").innerHTML = ""+date.toISOString();
 }
 
 fetch("Modulos/moduloVentas/data_Ventas.json")
