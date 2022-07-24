@@ -104,7 +104,7 @@ function accesorio(){
                 .then(function (html) {
                 document.getElementById("contenedor2").innerHTML = html;
         
-                import ("../Modulos/moduloAccesorios/controller_Accesorio").then(
+                import ("../Modulos/moduloAccesorios/controller_Accesorio.js").then(
                         function (controller) {
                            
                         moduloAccesorios = controller;
@@ -137,7 +137,7 @@ function material(){
                 .then(function (html) {
                 document.getElementById("contenedor2").innerHTML = html;
         
-                import ("../Modulos/moduloAccesorios/controller_Accesorio").then(
+                import ("../Modulos/moduloMateriales/controller_Material.js").then(
                         function (controller) {
                            
                         moduloMateriales = controller;
