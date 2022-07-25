@@ -2,12 +2,7 @@
 let cuerpotblVentas = "";
 let registroVenta;
 let ventas = [];
-
-export function obtenerFechayHora(){
-    let date = new Date();
-    console.log(""+date.getDay());
-    document.getElementById("claveEmpleado").innerHTML = ""+date.toISOString();
-}
+let productos = new Array;
 
 fetch("Modulos/moduloVentas/data_Ventas.json")
     .then(response => {
@@ -15,7 +10,6 @@ fetch("Modulos/moduloVentas/data_Ventas.json")
     })
     .then(function (jsondata) {
         ventas = jsondata;
-        console.log(ventas);
         cargarVentastbl();
     }
     );
@@ -67,7 +61,7 @@ export function registrar() {
             document.getElementById("contenedorGestion").innerHTML = html;
         });
 
-    obtenerFechayHora();
+    console.log(productos);
 }
 
 export function eliminar() {
@@ -90,4 +84,78 @@ export function catalogo() {
             document.getElementById("contenedorGestion").innerHTML = html;
 
         });
+}
+
+export function agregarProductoTabla(){
+    let idNombreProducto = parseInt(document.getElementById("seleccionProducto").value);
+    let nombreProducto;
+    let claveUnicaProducto;
+    let producto;
+    let descuento = 0;
+    let precioProducto;
+
+    if(idNombreProducto === 1){
+        claveUnicaProducto = 1;
+        precioProducto = 10;
+        nombreProducto = "Armazon";
+    }
+    if(idNombreProducto === 2){
+        claveUnicaProducto = 2;
+        precioProducto = 20;
+        nombreProducto = "Solucion";
+    }
+
+    if(idNombreProducto === 3){
+        claveUnicaProducto = 3;
+        precioProducto = 30;
+        nombreProducto = "Accesorio";
+    }
+
+    let cantidad = document.getElementById("txtCantidad").value;
+    descuento = document.getElementById("txtDescuento").value;
+
+    producto = {
+        "claveUnicaProducto": claveUnicaProducto,
+        "nombre": nombreProducto,
+        "cantidad": cantidad,
+        "precio": precioProducto,
+        "descuento": descuento,
+        "total": cantidad*precioProducto-descuento
+    }
+
+    productos.push(producto);
+
+    cargarTablaVentasProductos();
+}
+
+export function cargarTablaVentasProductos() {
+    let registroVentaProducto;
+    let cuerpotblVentasProducto;
+
+    productos.forEach(function (producto) {
+        registroVentaProducto =
+        '<tr>' +
+        '<td>' + producto.claveUnicaProducto + '</td>' +
+        '<td>' + producto.nombre + '</td>' +
+        '<td>' + producto.cantidad + '</td>' +
+        '<td>' + producto.precio + '</td>' +
+        '<td>' + producto.descuento + '</td>' +
+        '<td>' + producto.total + '</td></tr>';
+    cuerpotblVentasProducto += registroVentaProducto;
+    });
+    document.getElementById("tblVentaProducto").innerHTML = cuerpotblVentasProducto;
+}
+
+export function registrarVenta(){
+    let json;
+    let jsonfinal
+    const fs = require('fs');
+
+    productos.forEach(function (producto) {
+        jsonfinal += json;
+    });
+
+    let data = productos.forEach(function (producto){
+        array = 
+    });
 }
