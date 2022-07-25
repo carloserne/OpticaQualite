@@ -13,16 +13,21 @@
                 </div>
 
             </div>
-
+           
             <div class="col-12 row align-items-center justify-content-center mt-3">
                 <div class="col-6"><!<!-- Izquierza -->
+                  
                     <div class="col-12 row float-left mt-4">
                         <label for="numeroUnicoEmpleado" class="col-6 p-0" disabled>Número único de empleado</label>
-                        <input type="text" class="form-control col-6 p-0"  id="numeroUnicoEmpleado" name="numeroUnicoEmpleado" required disabled>
+                        <input type="text" class="form-control col-6 p-0"  id="numeroUnicoEmpleado" name="numeroUnicoEmpleado" required disabled value="xx-xx-">
+
                     </div>
                     <div class="col-12 row float-left mt-4">
                         <label for="nombres" class="col-6 p-0" >Nombre(s)</label>
                         <input type="text" class="form-control col-6 p-0"  id="nombres" name="nombres" required >
+                        <div class="invalid-feedback">
+                            Please choose a name.
+                        </div>
                     </div>
                     <div class="col-12 row float-left mt-4">
                         <label for="apellidoP" class="col-6 p-0" >Apellido paterno</label>
@@ -49,11 +54,11 @@
                     </div>
                     <div class="col-12 row float-left mt-4">
                         <label for="telCasa" class="col-6 p-0" >Tel. Casa</label>
-                        <input type="text" class="form-control col-6 p-0"  id="telCasa" name="telCasa" required>
+                        <input type="number" class="form-control col-6 p-0"  id="telCasa" name="telCasa" required>
                     </div>
                     <div class="col-12 row float-left mt-4">
                         <label for="telMovil" class="col-6 p-0" >Tel. Movil</label>
-                        <input type="text" class="form-control col-6 p-0"  id="telMovil" name="telMovil" required>
+                        <input type="number" class="form-control col-6 p-0"  id="telMovil" name="telMovil" required>
                     </div>
                     <div class="col-12 row float-left mt-4">
                         <label for="correo" class="col-6 p-0" >Correo Electronico</label>
@@ -71,7 +76,7 @@
 
                 <div class="col-8"></div>
                 <div class="col-4 mt-3 mb-3">
-                    <button type="button" class="btn btn-success" onclick="moduloEmp.registrarNuevo();"><i class="fa fa-user-plus" aria-hidden="true"></i>Registrar empleado</button>
+                    <button type="submit" class="btn btn-success" onclick="moduloEmp.registrarNuevo();"><i class="fa fa-user-plus" aria-hidden="true"></i>Registrar empleado</button>
                 </div>
             </div>
 
