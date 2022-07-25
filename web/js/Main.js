@@ -126,7 +126,7 @@ function material(){
                 return response.json();
                 })
                 .then(function (jsondata) {
-                materiales = jsondata;
+                material = jsondata;
                 }
                 );
         
