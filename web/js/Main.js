@@ -57,37 +57,37 @@ fetch("./Modulos/moduloMenuPrincipal/view_Footer.html")
         }
 
 function empleados(){
-   
-    fetch("Modulos/moduloEmp/data_Empleados.json")
-            .then(response => {
-            return response.json();
-            })
-            .then(function (jsondata) {
-            emp = jsondata;
-            }
-            );
-    
-    fetch("./Modulos/moduloEmp/view_Empleados.html")
-    
-            .then(function (respuesta) {
-            return respuesta.text();
-            })
-            .then(function (html) {
-            document.getElementById("contenedor2").innerHTML = html;
-    
-            import ("../Modulos/moduloEmp/controller_Empleados.js").then(
-                    function (controller) {
-                       
-                    moduloEmp = controller;
-                            moduloEmp.cargarEmp();
-                            $('#table_id').DataTable();
-                            document.getElementById("table_id_filter").style.display = "none";
-                    }
-            );
-    
-            });
-            foot();
-}
+                if (emp.length === 0){
+                    fetch("Modulos/moduloEmp/data_Empleados.json")
+                         .then(response => {
+                         return response.json();
+                         })
+                         .then(function (jsondata) {
+                         emp = jsondata;
+                         }
+                         );
+                }
+                 fetch("./Modulos/moduloEmp/view_Empleados.html")
+                 
+                         .then(function (respuesta) {
+                         return respuesta.text();
+                         })
+                         .then(function (html) {
+                         document.getElementById("contenedor2").innerHTML = html;
+                 
+                         import ("../Modulos/moduloEmp/controller_Empleados.js").then(
+                                 function (controller) {
+                                    
+                                 moduloEmp = controller;
+                                         moduloEmp.cargarEmp();
+                                         $('#table_id').DataTable();
+                                         document.getElementById("table_id_filter").style.display = "none";
+                                 }
+                         );
+                 
+                         });
+                         foot();
+             }
 
 function accesorio(){
    
