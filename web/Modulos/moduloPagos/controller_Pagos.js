@@ -1,6 +1,8 @@
 let pagos = [];
 let cuerpotblPagos;
 let lineaPago;
+let date = new Date;
+let fecha;
 
 fetch("Modulos/moduloPagos/data_Pagos.json")
     .then(response => {
@@ -34,6 +36,12 @@ export function registrar() {
         })
         .then(function (html) {
             document.getElementById("contenedorGestion").innerHTML = html;
+
+            fecha = date.toISOString();
+            let fecha_filtrada = fecha.replace("T", " ");
+            fecha_filtrada = fecha_filtrada.replace("Z", "");
+
+            document.getElementById("fecha").value = fecha_filtrada;
         });
 }
 
@@ -57,4 +65,27 @@ export function catalogo() {
             document.getElementById("contenedorGestion").innerHTML = html;
 
         });
+}
+
+export function guardarPago() {
+
+    const fs = require('fs');
+
+    let jason;
+    
+    pagos.forEach(function (pago) {
+        let lineaPago = "{\"idpago\":"+pago.idPago+",\"fechaHora\":"+pago.fechaHora+",\"monto\":"+pago.monto+",\"idVenta\":"+pago.idVenta+",\"nombre\":"+pago.nombre+"},";
+        jason += lineaPago;
+    });
+
+    let pagos = {
+        name: 'Mike',
+        age: 23,
+        gender: 'Male',
+        department: 'English',
+        car: 'Honda'
+    };
+
+    let data = JSON.stringify(student);
+    fs.writeFileSync('student-2.json', data);
 }

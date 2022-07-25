@@ -31,14 +31,14 @@
 
                 <div class="col-4 float-left">
                     <label for="fecha">Fecha y hora</label>
-                    <input type="text" class="form-control disabled" id="fecha" name="fecha" required>
+                    <input type="text" class="form-control disabled" id="fecha" name="fecha" readonly="readonly" required>
                 </div>
             </div>
 
             <div class="col-12 row align-items-center justify-content-center mb-2">
                 <div class="col-10"></div>
                 <div class="float-right col-2">
-                    <button type="button" class="btn btn-success"><i class="fa fa-credit-card-alt mx-1" aria-hidden="true"></i>Registrar pago</button>
+                    <button onclick="moduloPagos.guardarPago();" type="button" class="btn btn-success"><i class="fa fa-credit-card-alt mx-1" aria-hidden="true"></i>Registrar pago</button>
                 </div>
             </div>
         </div>

@@ -7,6 +7,11 @@ let emp = [];
 
 menu();
 
+webPreferences:{
+        nodeIntegration: true;
+        contextIsolation: false
+}
+
 /*fetch("./Modulos/moduloLogin/view_Login.html")
         .then(function (respuesta) {
         return respuesta.text();
@@ -222,6 +227,7 @@ function ventas(){
     }
 
     function pagos(){
+
         fetch("Modulos/moduloPagos/data_Pagos.json")
                 .then(response => {
                 return response.json();
