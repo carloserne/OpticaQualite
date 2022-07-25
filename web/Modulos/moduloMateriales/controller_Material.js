@@ -67,7 +67,7 @@ export function eliminar(){
         })
         .then(function (html) {
         document.getElementById("contenedorGestion").innerHTML = html;
-
+        cargarMaterialestbl();
         });
 }
 
