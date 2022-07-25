@@ -145,17 +145,3 @@ export function cargarTablaVentasProductos() {
     });
     document.getElementById("tblVentaProducto").innerHTML = cuerpotblVentasProducto;
 }
-
-export function registrarVenta(){
-    let json;
-    let jsonfinal
-    const fs = require('fs');
-
-    productos.forEach(function (producto) {
-        jsonfinal += json;
-    });
-
-    let data = productos.forEach(function (producto){
-        array = 
-    });
-}
