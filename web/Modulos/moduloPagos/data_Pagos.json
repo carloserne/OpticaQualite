@@ -1,0 +1,37 @@
+[
+  {
+    "idPago": 1,
+    "fechaHora": "2022-07-25 04:41:21.706",
+    "monto": 2000,
+    "idVenta": 1,
+    "nombre": "Carlos"
+  },
+  {
+    "idPago": 2,
+    "fechaHora": "2022-07-25 05:25:28.706",
+    "monto": 1000,
+    "idVenta": 2,
+    "nombre": "Samuel"
+  },
+  {
+    "idPago": 3,
+    "fechaHora": "2022-07-25 11:41:30.706",
+    "monto": 300,
+    "idVenta": 3,
+    "nombre": "Diego"
+  },
+  {
+    "idPago": 4,
+    "fechaHora": "2022-07-25 3:30:08.706",
+    "monto": 130,
+    "idVenta": 4,
+    "nombre": "Marco"
+  },
+  {
+    "idPago": 5,
+    "fechaHora": "2022-07-25 07:20:01.706",
+    "monto": 250,
+    "idVenta": 5,
+    "nombre": "Jesus"
+  }
+]

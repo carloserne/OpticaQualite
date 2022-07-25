@@ -1,0 +1,78 @@
+<div class="container-fluid d-flex align-items-center justify-content-center col-12 p-0 m-0">
+    <div class="row col-lg-10 p-0" id="contentRegistro">
+        <div class="col-12 m-0 p-0 text-center ">
+            <div class="col-12 row align-items-center justify-content-center">
+                <div class="col-2 ">
+                    <button type="button" class="btn btn-danger">
+                        < Regresar</button>
+                </div>
+                <div class="col-8 ">
+                    <h1 class="mt-1"><b>Registrar nueva venta</b></h1>
+                </div>
+                <div class="col-2 "><button type="button" class="btn btn-success">
+                        <i class="fa fa-usd mx-1" aria-hidden="true"></i> Registrar venta</button>
+                </div>
+            </div>
+
+            <div class="col-12 row align-items-center justify-content-center">
+                <div class="col-4 float-left">
+                    <label for="claveCliente">Clave del cliente</label>
+                    <input type="text" class="form-control" id="claveCliente" name="claveCliente" required>
+                </div>
+
+                <div class="col-4 float-left">
+                    <label for="claveEmpleado">Clave del empleado</label>
+                    <input type="text" class="form-control" id="claveEmpleado" name="claveEmpleado" required>
+                </div>
+
+                <div class="col-4 float-left">
+                    <label for="fechayhora">Fecha y hora</label>
+                    <input type="text" class="form-control" id="fechayHora" name="fechayhora" required>
+                </div>
+
+
+                <div class="col-4 float-left">
+                    <label for="producto">Producto</label>
+                    <select class="custom-select mr-sm-2 text-center" id="seleccionProducto">
+                        <option value="0">Elige...</option>
+                        <option value="1">Armazon</option>
+                        <option value="2">Solucion</option>
+                        <option value="3">Accesorio</option>
+                    </select>
+                </div>
+
+                <div class="col-4 float-left">
+                    <label for="cantidad">Cantidad</label>
+                    <input type="text" class="form-control disabled" id="txtCantidad" name="cantidad" required>
+                </div>
+
+                <div class="col-4 float-left">
+                    <label for="descuento">Descuento</label>
+                    <input type="text" class="form-control disabled" id="txtDescuento" name="descuento" required>
+                </div>
+
+                <div class="col-4 float-left mt-3">
+                    <button class="btn btn-success" onclick="moduloVentas.agregarProductoTabla();"><i class="fa fa-dropbox mx-2" aria-hidden="true"></i> Agregar producto</button>
+                </div>
+            </div>
+
+                <div class="table-responsive" id="mydatatable-container">
+                    <table id="table_id" class="records_list table table-striped table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>Clave única de producto</th>
+                                <th>Nombre producto</th>
+                                <th>Cantidad del producto</th>
+                                <th>Precio del producto</th>
+                                <th>Descuento</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tblVentaProducto">
+                        </tbody>
+                    </table>
+                </div>
+            
+        </div>
+    </div>
+</div>

@@ -220,3 +220,35 @@ function ventas(){
                 });
                 foot();
     }
+
+    function pagos(){
+        fetch("Modulos/moduloPagos/data_Pagos.json")
+                .then(response => {
+                return response.json();
+                })
+                .then(function (jsondata) {
+                pago = jsondata;
+                }
+                );
+        
+        fetch("./Modulos/moduloPagos/view_Pagos.html")
+        
+                .then(function (respuesta) {
+                return respuesta.text();
+                })
+                .then(function (html) {
+                document.getElementById("contenedor2").innerHTML = html;
+        
+                import ("../Modulos/moduloPagos/controller_Pagos.js").then(
+                        function (controller) {
+                           
+                        moduloPagos = controller;
+                        moduloPagos.cargarPagosTbl();
+                                $('#table_id').DataTable();
+                                document.getElementById("table_id_filter").style.display = "none";
+                        }
+                );
+        
+                });
+                foot();
+    }
