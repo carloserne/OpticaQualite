@@ -8,7 +8,7 @@ fetch("Modulos/moduloEmp/data_Empleados.json")
         })
         .then(function (jsondata) {
             empleados = jsondata;
-            console.log(empleados);
+
             cargarEmptbl();
         }
         );
@@ -63,7 +63,7 @@ export function cargarEmptbl() {
 }
 
 export function registrar(){
-    fetch("./Modulos/moduloEmp/view_RegistrarEmpleado.html")
+    fetch("Modulos/moduloEmp/view_RegistrarEmpleado.html")
         .then(function (respuesta) {
         return respuesta.text();
         })
@@ -74,7 +74,7 @@ export function registrar(){
 }
 
 export function eliminar(){
-    fetch("./Modulos/moduloEmp/view_eliminarEmpleado.html")
+    fetch("Modulos/moduloEmp/view_eliminarEmpleado.html")
         .then(function (respuesta) {
         return respuesta.text();
         })
@@ -85,7 +85,7 @@ export function eliminar(){
 }
 
 export function catalogo(){
-    fetch("./Modulos/moduloEmp/view_catalogoEmpleados.html")
+    fetch("Modulos/moduloEmp/view_catalogoEmpleados.html")
         .then(function (respuesta) {
         return respuesta.text();
         })
