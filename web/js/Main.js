@@ -5,7 +5,9 @@ let tabla;
 let moduloEmp;
 let emp = [];
 
-fetch("./Modulos/moduloMenuPrincipal/view_Menu.html")
+menu();
+
+/*fetch("./Modulos/moduloLogin/view_Login.html")
         .then(function (respuesta) {
         return respuesta.text();
         })
@@ -16,7 +18,8 @@ fetch("./Modulos/moduloMenuPrincipal/view_Menu.html")
                 moduloLogin = controller;
                 }
         );
-        });
+        
+        });*/
 
         function menu(){
         fetch("./Modulos/moduloMenuPrincipal/view_Menu.html")
