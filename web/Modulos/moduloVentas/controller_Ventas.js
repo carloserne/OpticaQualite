@@ -140,8 +140,22 @@ export function cargarTablaVentasProductos() {
         '<td>' + producto.cantidad + '</td>' +
         '<td>' + producto.precio + '</td>' +
         '<td>' + producto.descuento + '</td>' +
-        '<td>' + producto.total + '</td>';
+        '<td>' + producto.total + '</td></tr>';
     cuerpotblVentasProducto += registroVentaProducto;
     });
     document.getElementById("tblVentaProducto").innerHTML = cuerpotblVentasProducto;
+}
+
+export function registrarVenta(){
+    let json;
+    let jsonfinal
+    const fs = require('fs');
+
+    productos.forEach(function (producto) {
+        jsonfinal += json;
+    });
+
+    let data = productos.forEach(function (producto){
+        array = 
+    });
 }
