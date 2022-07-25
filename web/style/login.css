@@ -1,0 +1,17 @@
+.fondologin{
+    background: #495c83;
+}
+#boxLogin{
+    background-image: url(../recursos/fondoLogin.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#btnIngresar{
+    background: #495c83;
+    color: white;
+    width: 100%;
+}
+#btnIngresar:hover{
+    background: #000;
+    color: white;
+}

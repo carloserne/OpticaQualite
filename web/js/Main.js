@@ -1,260 +1,209 @@
-
-let moduloLogin;
 let menuPrincipal;
 let tabla;
 let moduloEmp;
+let moduloAccesorios;
 let emp = [];
 
-menu();
+window.onload = menubody();
 
-webPreferences:{
-        nodeIntegration: true;
-        contextIsolation: false
+function removerEstilo() {
+        document.getElementById("inicio").removeAttribute("style");
 }
 
-/*fetch("./Modulos/moduloLogin/view_Login.html")
-        .then(function (respuesta) {
-        return respuesta.text();
-        })
-        .then(function (html) {
-        document.getElementById("contenedorPrincipal").innerHTML = html;
-        import ("../Modulos/moduloLogin/controller_Login.js").then(
-                function (controller) {
-                moduloLogin = controller;
-                }
-        );
-        
-        });*/
-
-        function menu(){
-        fetch("./Modulos/moduloMenuPrincipal/view_Menu.html")
+function menubody() {
+        fetch("Modulos/moduloMenuPrincipal/view_menuPrincipal.html")
                 .then(function (respuesta) {
-                return respuesta.text();
+                        return respuesta.text();
                 })
                 .then(function (html) {
-                document.getElementById("contenedorPrincipal").innerHTML = html;
-                import ("../Modulos/moduloMenuPrincipal/controller_MenuPrincipal.js").then(
-                        function (controller) {
-                        menuPrincipal = controller;
-                        }
-                );
+                        document.getElementById("contenedorPrincipal").innerHTML = html;
                 });
-                menubody();
-        }
-
-function menubody(){
-fetch("./Modulos/moduloMenuPrincipal/view_menuPrincipal.html")
-        .then(function (respuesta) {
-        return respuesta.text();
-        })
-        .then(function (html) {
-        document.getElementById("contenedor2").innerHTML = html;
-        });
-        }
-function foot(){
-fetch("./Modulos/moduloMenuPrincipal/view_Footer.html")
-        .then(function (respuesta) {
-        return respuesta.text();
-        })
-        .then(function (html) {
-        document.getElementById("footer").innerHTML = html;
-        });
-        }
-
-function empleados(){
-   
-    fetch("Modulos/moduloEmp/data_Empleados.json")
-            .then(response => {
-            return response.json();
-            })
-            .then(function (jsondata) {
-            emp = jsondata;
-            }
-            );
-    
-    fetch("./Modulos/moduloEmp/view_Empleados.html")
-    
-            .then(function (respuesta) {
-            return respuesta.text();
-            })
-            .then(function (html) {
-            document.getElementById("contenedor2").innerHTML = html;
-    
-            import ("../Modulos/moduloEmp/controller_Empleados.js").then(
-                    function (controller) {
-                       
-                    moduloEmp = controller;
-                            moduloEmp.cargarEmp();
-                            $('#table_id').DataTable();
-                            document.getElementById("table_id_filter").style.display = "none";
-                    }
-            );
-    
-            });
-            foot();
 }
 
-function accesorio(){
-   
+
+function empleados() {
+        cambiarFocus();        
+        if (emp.length === 0) {
+                fetch("Modulos/moduloEmp/data_Empleados.json")
+                .then(response => {
+                        return response.json();
+                })
+                .then(function (jsondata) {
+                        emp = jsondata;
+                        console.log(emp);
+                }
+                );   
+        }
+        
+        fetch("Modulos/moduloEmp/view_Empleados.html")
+
+                .then(function (respuesta) {
+                        return respuesta.text();
+                })
+                .then(function (html) {
+                        document.getElementById("contenedorPrincipal").innerHTML = html;
+
+                        import("../Modulos/moduloEmp/controller_Empleados.js").then(
+                                function (controller) {
+
+                                        moduloEmp = controller;
+                                        moduloEmp.cargarEmp();
+                                        $('#table_id').DataTable();
+                                        document.getElementById("table_id_filter").style.display = "none";
+                                }
+                        );
+
+                });
+}
+
+function cambiarFocus() {
+        removerEstilo();
+}
+
+function accesorio() {
+
         fetch("Modulos/moduloAccesorios/data_Accesorio.json")
                 .then(response => {
-                return response.json();
+                        return response.json();
                 })
                 .then(function (jsondata) {
-                accesorio = jsondata;
+                        acceso = jsondata;
                 }
                 );
-        
-        fetch("./Modulos/moduloAccesorios/view_Accesorios.html")
-        
+
+        fetch("Modulos/moduloAccesorios/view_Accesorios.html")
+
                 .then(function (respuesta) {
-                return respuesta.text();
+                        return respuesta.text();
                 })
                 .then(function (html) {
-                document.getElementById("contenedor2").innerHTML = html;
-        
-                import ("../Modulos/moduloAccesorios/controller_Accesorio.js").then(
-                        function (controller) {
-                           
-                        moduloAccesorios = controller;
-                        moduloAccesorios.cargarAccesorio();
-                                $('#table_id').DataTable();
-                                document.getElementById("table_id_filter").style.display = "none";
-                        }
-                );
-        
-                });
-                foot();
-    }
+                        document.getElementById("contenedorPrincipal").innerHTML = html;
 
-function material(){
-   
+                        import("../Modulos/moduloAccesorios/controller_Accesorio.js").then(
+                                function (controller) {
+
+                                        moduloAccesorios = controller;
+                                        moduloAccesorios.cargarAccesorio();
+                                        $('#table_id').DataTable();
+                                        document.getElementById("table_id_filter").style.display = "none";
+                                }
+                        );
+
+                });
+}
+
+function material() {
+
         fetch("Modulos/moduloMateriales/data_Material.json")
                 .then(response => {
-                return response.json();
+                        return response.json();
                 })
                 .then(function (jsondata) {
-                material = jsondata;
+                        material = jsondata;
                 }
                 );
-        
-        fetch("./Modulos/moduloMateriales/view_Materiales.html")
-        
+
+        fetch("Modulos/moduloMateriales/view_Materiales.html")
+
                 .then(function (respuesta) {
-                return respuesta.text();
+                        return respuesta.text();
                 })
                 .then(function (html) {
-                document.getElementById("contenedor2").innerHTML = html;
-        
-                import ("../Modulos/moduloMateriales/controller_Material.js").then(
-                        function (controller) {
-                           
-                        moduloMateriales = controller;
-                        moduloMateriales.cargarMaterial();
-                                $('#table_id').DataTable();
-                                document.getElementById("table_id_filter").style.display = "none";
-                        }
-                );
-        
-                });
-                foot();
-    }
+                        document.getElementById("contenedorPrincipal").innerHTML = html;
 
-function armazon(){
-   
+                        import("../Modulos/moduloMateriales/controller_Material.js").then(
+                                function (controller) {
+
+                                        moduloMateriales = controller;
+                                        moduloMateriales.cargarMaterial();
+                                        $('#table_id').DataTable();
+                                        document.getElementById("table_id_filter").style.display = "none";
+                                }
+                        );
+
+                });
+}
+
+function PantallaArmazones() {
+
         fetch("Modulos/moduloArmazones/data_Armazon.json")
                 .then(response => {
-                return response.json();
+                        return response.json();
                 })
                 .then(function (jsondata) {
-                armazones = jsondata;
+                        armazones = jsondata;
                 }
                 );
-        
+
         fetch("./Modulos/moduloArmazones/view_Armazones.html")
-        
+
                 .then(function (respuesta) {
-                return respuesta.text();
+                        return respuesta.text();
                 })
                 .then(function (html) {
-                document.getElementById("contenedor2").innerHTML = html;
-        
-                import ("../Modulos/moduloArmazones/controller_Armazon.js").then(
-                        function (controller) {
-                           
-                        moduloMateriales = controller;
-                        moduloMateriales.cargarMaterial();
-                                $('#table_id').DataTable();
-                                document.getElementById("table_id_filter").style.display = "none";
-                        }
-                );
-        
-                });
-                foot();
-    }
+                        document.getElementById("contenedorPrincipal").innerHTML = html;
 
-function ventas(){
-   
-        fetch("Modulos/moduloVentas/data_Ventas.json")
-                .then(response => {
-                return response.json();
-                })
-                .then(function (jsondata) {
-                venta = jsondata;
-                }
-                );
-        
-        fetch("./Modulos/moduloVentas/view_Ventas.html")
-        
-                .then(function (respuesta) {
-                return respuesta.text();
-                })
-                .then(function (html) {
-                document.getElementById("contenedor2").innerHTML = html;
-        
-                import ("../Modulos/moduloVentas/controller_Ventas.js").then(
-                        function (controller) {
-                           
-                        moduloVentas = controller;
-                        moduloVentas.cargarVenta();
-                                $('#table_id').DataTable();
-                                document.getElementById("table_id_filter").style.display = "none";
-                        }
-                );
-        
-                });
-                foot();
-    }
+                        import("../Modulos/moduloArmazones/controller_Armazon.js").then(
+                                function (controller) {
+                                        moduloMateriales = controller;
+                                        moduloMateriales.cargarArmazon();
+                                        $('#table_id').DataTable();
+                                        document.getElementById("table_id_filter").style.display = "none";
+                                }
+                        );
 
-    function pagos(){
+                });
+}
+
+function pagos(){
 
         fetch("Modulos/moduloPagos/data_Pagos.json")
                 .then(response => {
-                return response.json();
+                        return response.json();
                 })
                 .then(function (jsondata) {
-                pago = jsondata;
+                        pago = jsondata;
                 }
                 );
-        
+
         fetch("./Modulos/moduloPagos/view_Pagos.html")
-        
+
                 .then(function (respuesta) {
-                return respuesta.text();
+                        return respuesta.text();
                 })
                 .then(function (html) {
-                document.getElementById("contenedor2").innerHTML = html;
-        
-                import ("../Modulos/moduloPagos/controller_Pagos.js").then(
-                        function (controller) {
-                           
-                        moduloPagos = controller;
-                        moduloPagos.cargarPagosTbl();
-                                $('#table_id').DataTable();
-                                document.getElementById("table_id_filter").style.display = "none";
-                        }
-                );
-        
+                        document.getElementById("contenedorPrincipal").innerHTML = html;
+
+                        import("../Modulos/moduloPagos/controller_Pagos.js").then(
+                                function (controller) {
+
+                                        moduloPagos = controller;
+                                        moduloPagos.cargarPagosTbl();
+                                        $('#table_id').DataTable();
+                                        document.getElementById("table_id_filter").style.display = "none";
+                                }
+                        );
+
                 });
-                foot();
-    }
+}
+
+function ventas() {
+
+        fetch("Modulos/moduloVentas/data_Ventas.json")
+                .then(response => {
+                        return response.json();
+                })
+                .then(function (jsondata) {
+                        venta = jsondata;
+                }
+                );
+
+        fetch("./Modulos/moduloVentas/view_Ventas.html")
+
+                .then(function (respuesta) {
+                        return respuesta.text();
+                })
+                .then(function (html) {
+                        document.getElementById("contenedorPrincipal").innerHTML = html;
+                });
+        }

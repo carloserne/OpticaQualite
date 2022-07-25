@@ -6,10 +6,11 @@ fetch("Modulos/moduloEmp/data_Empleados.json")
         .then(function (jsondata) {
             usuarios = jsondata;
         }
-        );
+);
+        
 function ingresar() {
     let userLogin = document.getElementById("usuario").value;
-    let contraseñaLogin = document.getElementById("contraseña").value;
+    let contraseñaLogin = document.getElementById("contrasena").value;
     let resultado = false;
     for (let i = 0; i < usuarios.length; i++) {
         let usuario = usuarios[i].Usuario.usuario;
@@ -28,13 +29,11 @@ function ingresar() {
             text: 'Bienvenido ' + userLogin,
             confirmButtonText: 'Aceptar'
         }).then((result) => {
-            /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
-                menu();
-                
+                window.location.assign("paginaMain.html");                       
             }
         })
-
+        
     } else {
         Swal.fire({
             icon: 'error',

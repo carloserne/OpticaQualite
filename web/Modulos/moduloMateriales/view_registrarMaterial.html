@@ -1,35 +1,53 @@
-<h1>Gestionar materiales</h1>
 <div class="container-fluid d-flex align-items-center justify-content-center col-12 p-0 m-0">
-    <div class="row col-lg-10 p-0" id="contentRegistro">
-        <div class="col-12 m-0 p-0 text-center ">
-            <div class="col-12 row align-items-center justify-content-center">
-                <div class="col-2 ">
-                    <button type="button" class="btn btn-danger">< Regresar</button>
+    <div class="row col-lg-12 p-0">
+
+        <h1>Gestionar materiales</h1>
+        <div class="col-12 m-0 p-0 text-center " style="background: #F5F5F5; border: 2px solid black;">
+            <div class="col-12 row">
+                <div class="col-2">
+                    <button type="button" class="btn btn-light mt-1" onclick="accesorio();">
+                        < Regresar</button>
                 </div>
                 <div class="col-8 ">
-                    <h2 class="mt-1 text-center"><b>Registrar nuevo material</b></h2>
+                    <h2 class="mt-1">Registrar nuevo material</h2>
                 </div>
 
-            <div class="col-12 row align-items-center justify-content-center mt-2">
-                <div class="col-4 float-left">
-                    <label for="nombreMaterial">Nombre</label>
-                    <input type="text" class="form-control" id="nombreMaterial" name="nombreMaterial" required>
+            </div>
+           
+            <div class="col-12 row align-items-center justify-content-center mt-3">
+                <div class="col-6"><!<!-- Izquierza -->
+                  
+                    <div class="col-12 row float-left mt-4">
+                        <label for="idAccesorio" class="col-6 p-0" disabled>Número único de material</label>
+                        <input type="text" class="form-control col-6 p-0"  id="idAccesorio" name="idAccesorioa" required disabled value="xx-xx-">
+
+                    </div>
+                    <div class="col-12 row float-left mt-4">
+                        <label for="nombreAccesorio" class="col-6 p-0" >Nombre</label>
+                        <input type="text" class="form-control col-6 p-0"  id="nombreAccesorio" name="nombreAccesorio" required >
+                        <div class="invalid-feedback">
+                            Please choose a name.
+                        </div>
+                    </div>
+                    <div class="col-12 row float-left mt-4">
+                        <label for="marcaAcceesorio" class="col-6 p-0" >Precio de compra</label>
+                        <input type="number" class="form-control col-2 p-0"  id="marcaAcceesorio" name="marcaAcceesorio" required >
+                    </div>
+                    <div class="col-12 row float-left mt-4">
+                        <label for="precioCompra" class="col-6 p-0" >Precio de venta</label>
+                        <input type="number" class="form-control col-2 p-0"  id="precioCompra" name="precioCompra" required>
+                    </div>
                 </div>
 
-                <div class="col-4 float-left">
-                    <label for="precioCompra">Precio de compra</label>
-                    <input type="text" class="form-control" id="precioCompra" name="precioCompra" required>
-                </div>
-
-                <div class="col-4 float-left mb-3">
-                    <label for="precioVenta">Precio de venta</label>
-                    <input type="text" class="form-control disabled" id="precioVenta" name="precioVenta" required>
-                </div>
-
-                <div class="col-2 float-left">
-                    <button class="btn btn-success mb-3"><i class="fa fa-plus mx-2" aria-hidden="true"></i> Agregar material</button>
+                <div class="col-8"></div>
+                <div class="col-6 mt-3 mb-3">
+                    <button type="submit" class="btn btn-success" onclick="moduloMateriales.registrarNuevo();"><i class="fa fa-plus" aria-hidden="true"></i> Registrar material</button>
                 </div>
             </div>
+
+
         </div>
+
+
     </div>
 </div>

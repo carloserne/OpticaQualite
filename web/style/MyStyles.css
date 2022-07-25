@@ -23,15 +23,11 @@
 
 #contentRegistro{
     margin-top: 10%;
-    border: 2px solid black;
+    border: 1px solid black;
     border-radius: 10px;
 }
 
-#btnIngresar{
-    background: #495c83;
-    color: white;
-    
-}
+
 #tabla{
     height: 400px;
     overflow-y: scroll;
@@ -58,4 +54,19 @@
         margin-bottom: 10%;
     }
     
+}
+
+#collapseProduc{
+    margin-left: 45px;
+}
+
+#collapseProduc a{
+    padding-left: 5px;
+}
+
+.nav-link:hover{
+    background-color: white;
+}
+.nav-link:hover > span{
+    color: black;
 }
