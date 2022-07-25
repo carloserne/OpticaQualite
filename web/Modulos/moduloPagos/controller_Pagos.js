@@ -12,23 +12,6 @@ fetch("Modulos/moduloPagos/data_Pagos.json")
     }
     );
 
-export function cargarPago() {
-        pagos.forEach(function (pago) {
-            lineaPago =
-                '<tr>' +
-                '<td>' + pago.idPago + '</td>' +
-                '<td>' + pago.fechaHora + '</td>' +
-                '<td>' + pago.nombre + '</td>' +
-                '<td>' + pago.idVenta + '</td>' +
-                '<td>' + pago.monto + '</td></tr>';
-            cuerpotblPagos += lineaPago;
-            console.log(lineaPago);
-        });
-        console.log(cuerpotblPagos);
-        document.getElementById("tblPagos").innerHTML = cuerpotblPagos;
-        cuerpotblPagos = "";
-}
-
 export function cargarPagosTbl() {
     let cuerpotblPagos;
     pagos.forEach(function (pago) {
@@ -45,15 +28,13 @@ export function cargarPagosTbl() {
 }
 
 export function registrar() {
-    fetch("./Modulos/moduloVentas/view_RegistrarVenta.html")
+    fetch("./Modulos/moduloPagos/view_RegistrarPago.html")
         .then(function (respuesta) {
             return respuesta.text();
         })
         .then(function (html) {
             document.getElementById("contenedorGestion").innerHTML = html;
         });
-
-    console.log(productos);
 }
 
 export function eliminar() {
