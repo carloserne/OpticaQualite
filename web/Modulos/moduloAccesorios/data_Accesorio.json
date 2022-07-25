@@ -14,10 +14,10 @@
       },
       "nombreAccesorio": "Correa para lentes",
       "marcaAccesorio": "Coca-Cola",
-      "precioCompra": "300",
-      "PrecioVenta": "350",
-      "existencias": "55", 
-      "estatus": "1" 
+      "precioCompra": 300,
+      "precioVenta": 350,
+      "existencias": 55, 
+      "estatus": 1 
     },
     {
       "Persona": {
@@ -34,10 +34,10 @@
       },
       "nombreAccesorio": "Linterna",
       "marcaAccesorio": "Pepsi",
-      "precioCompra": "700",
-      "PrecioVenta": "750",
-      "existencias": "20", 
-      "estatus": "1" 
+      "precioCompra": 700,
+      "precioVenta": 750,
+      "existencias": 20, 
+      "estatus": 1 
     },
     {
       "Persona": {
@@ -54,10 +54,10 @@
       },
       "nombreAccesorio": "Polarizador",
       "marcaAccesorio": "Bimbo",
-      "precioCompra": "500",
-      "PrecioVenta": "550",
-      "existencias": "35", 
-      "estatus": "1" 
+      "precioCompra": 500,
+      "precioVenta": 550,
+      "existencias": 35, 
+      "estatus": 1
     }
     
 

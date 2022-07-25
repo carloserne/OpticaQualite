@@ -1,15 +1,15 @@
 
 let cuerpotblAccesorios = "";
 let registroAccesorios;
-let accesorio = [];
+let accesorios = [];
 
 fetch("Modulos/moduloAccesorios/data_Accesorios.json")
         .then(response => {
             return response.json();
         })
         .then(function (jsondata) {
-            accesorio = jsondata;
-            console.log(accesorio);
+            accesorios = jsondata;
+            console.log(accesorios);
             cargarAccesoriostbl();
         }
         );
@@ -23,7 +23,7 @@ export function cargarAccesorio() {
                 '<td>' + accesorio.marcaAccesorio + '</td>' +
                 '<td>' + accesorio.precioCompra + '</td>' +
                 '<td>' + accesorio.precioVenta + '</td>' +
-                '<td>' + accesorio.existencia + '</td>' +
+                '<td>' + accesorio.existencias + '</td>' +
                 '<td>' + accesorio.estatus + '</td>';
         cuerpotblAccesorios += registroAccesorios;
     });
@@ -35,7 +35,7 @@ export function cargarAccesorio() {
 
 export function cargarAccesoriostbl() {
      
-    accesorio.forEach(function (accesorio) {
+    accesorios.forEach(function (accesorio) {
         registroAccesorios =
         '<tr>' +
         '<td>' + accesorio.nombreAccesorio + '</td>' +

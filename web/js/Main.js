@@ -91,7 +91,7 @@ function accesorio(){
                 return response.json();
                 })
                 .then(function (jsondata) {
-                accesorios = jsondata;
+                accesorio = jsondata;
                 }
                 );
         
