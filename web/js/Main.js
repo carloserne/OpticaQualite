@@ -3,9 +3,9 @@ let moduloLogin;
 let menuPrincipal;
 let tabla;
 let moduloEmp;
-
 let emp = [];
-fetch("./Modulos/moduloLogin/view_Login.html")
+
+fetch("./Modulos/moduloMenuPrincipal/view_Menu.html")
         .then(function (respuesta) {
         return respuesta.text();
         })
@@ -17,6 +17,7 @@ fetch("./Modulos/moduloLogin/view_Login.html")
                 }
         );
         });
+
         function menu(){
         fetch("./Modulos/moduloMenuPrincipal/view_Menu.html")
                 .then(function (respuesta) {
@@ -32,6 +33,7 @@ fetch("./Modulos/moduloLogin/view_Login.html")
                 });
                 menubody();
         }
+
 function menubody(){
 fetch("./Modulos/moduloMenuPrincipal/view_menuPrincipal.html")
         .then(function (respuesta) {
