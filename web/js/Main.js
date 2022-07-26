@@ -8,7 +8,6 @@ window.onload = menubody();
 
 function removerEstilo() {
         document.getElementById("inicio").removeAttribute("style");
-        document.getElementById("empleados").removeAttribute("style");
 }
 
 function menubody() {
