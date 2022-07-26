@@ -128,7 +128,7 @@ function material() {
                 });
 }
 
-function armazon() {
+function PantallaArmazones() {
 
         fetch("Modulos/moduloArmazones/data_Armazon.json")
                 .then(response => {
@@ -149,9 +149,8 @@ function armazon() {
 
                         import("../Modulos/moduloArmazones/controller_Armazon.js").then(
                                 function (controller) {
-
                                         moduloMateriales = controller;
-                                        moduloMateriales.cargarMaterial();
+                                        moduloMateriales.cargarArmazon();
                                         $('#table_id').DataTable();
                                         document.getElementById("table_id_filter").style.display = "none";
                                 }

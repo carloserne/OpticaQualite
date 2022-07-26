@@ -15,7 +15,7 @@ fetch("Modulos/moduloArmazones/data_Armazon.json")
        
 export function cargarArmazon() {
      
-    armazon.forEach(function (armazon) {
+    armazones.forEach(function (armazon) {
         registroArmazones =
                 '<tr>' +
                 '<td>' + armazon.codigoBarras + '</td>' +
