@@ -71,7 +71,7 @@ function accesorio() {
                         return response.json();
                 })
                 .then(function (jsondata) {
-                        accesorio = jsondata;
+                        acceso = jsondata;
                 }
                 );
 

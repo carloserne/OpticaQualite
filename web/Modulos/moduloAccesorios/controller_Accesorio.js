@@ -16,7 +16,7 @@ fetch("Modulos/moduloAccesorios/data_Accesorios.json")
        
 export function cargarAccesorio() {
      
-    accesorio.forEach(function (accesorio) {
+    acceso.forEach(function (accesorio) {
         registroAccesorios =
                 '<tr>' +
                 '<td>' + accesorio.nombreAccesorio + '</td>' +
