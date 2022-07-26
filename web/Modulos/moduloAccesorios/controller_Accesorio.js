@@ -336,3 +336,28 @@ export function modificarDatos() {
 
     mostrarAccesorios();
 }
+
+/*Eliminar accesorio */
+export function eliminarAccesorio(posAccesorio) {
+    Swal.fire({
+        title: 'Advertencia',
+        text: "¿Esta seguro de eliminar a este accesorio?",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si',
+        cancelButtonText: 'No'
+
+    }).then((result) => {
+        if (result.isConfirmed) {
+            accesorios[posAccesorio].estatus = 0;
+            moduloAccesorios.eliminar();
+            Swal.fire(
+                    'Eliminado!',
+                    'El accesorio se ha eliminado con exito',
+                    'success'
+                    )
+        }
+    })
+}
