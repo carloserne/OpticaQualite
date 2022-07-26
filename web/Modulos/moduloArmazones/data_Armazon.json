@@ -1,0 +1,82 @@
+[
+    {
+      "Persona": {
+        "IdPersona": "1",
+        "Nombre": "Carlos",
+        "ApellidoPaterno": "Moreno",
+        "ApellidoMaterno": "Ramirez",
+        "Genero": "Masculino",
+        "RFC": "1EFDAS2E42",
+        "TelCasa": "4721132454",
+        "TelMovil": "4721132454",
+        "Correo": "carebe654@gmail.com",
+        "Estatus": 1
+      },
+      "codigoBarras": "8325891",
+      "nombre": "Armazon negro",
+      "marca": "Amazon",
+      "modelo": "AN101",
+      "color": "Negro", 
+      "descripcion": "Armazon generico de color negro", 
+      "fotografia": "Foto",
+      "dimensiones": "200 x 350",
+      "precioCompra": 245,
+      "precioVenta": 341,
+      "existencias": 19,
+      "estatus": 1
+    },
+    {
+      "Persona": {
+        "IdPersona": "2",
+        "Nombre": "Diego",
+        "ApellidoPaterno": "Alonso",
+        "ApellidoMaterno": "Landín",
+        "Genero": "Masculino",
+        "RFC": "2244DFSD",
+        "TelCasa": "4721132454",
+        "TelMovil": "4721132454",
+        "Correo": "alandin@gmail.com",
+        "Estatus": 1
+      },
+      "codigoBarras": "12489812",
+      "nombre": "Armazon negro con rojo",
+      "marca": "Amazon",
+      "modelo": "AN102",
+      "color": "Negro y rojo", 
+      "descripcion": "Armazon generico de color negro con rojo", 
+      "fotografia": "Foto",
+      "dimensiones": "200 x 350",
+      "precioCompra": 300,
+      "precioVenta": 350,
+      "existencias": 28,
+      "estatus": 1
+    },
+    {
+      "Persona": {
+        "IdPersona": "3",
+        "Nombre": "Yisus",
+        "ApellidoPaterno": "Luvian",
+        "ApellidoMaterno": "Luís",
+        "Genero": "Masculino",
+        "RFC": "42334FSDF",
+        "TelCasa": "4721132454",
+        "TelMovil": "4721132454",
+        "Correo": "luvijesus@gmail.com",
+        "Estatus": 1
+      },
+      "codigoBarras": "3192194",
+      "nombre": "Armazon negro con plateado",
+      "marca": "Amazon",
+      "modelo": "AN103",
+      "color": "Negro y plateado", 
+      "descripcion": "Armazon generico de color negro con plateado", 
+      "fotografia": "Foto",
+      "dimensiones": "200 x 350",
+      "precioCompra": 250,
+      "precioVenta": 320,
+      "existencias": 12,
+      "estatus": 1
+    }
+    
+
+]

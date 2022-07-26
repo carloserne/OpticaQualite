@@ -2,6 +2,7 @@ let cuerpotblMateriales = "";
 let registroMateriales;
 let materiales = [];
 
+
 fetch("Modulos/moduloAccesorios/data_Accesorios.json")
         .then(response => {
             return response.json();
