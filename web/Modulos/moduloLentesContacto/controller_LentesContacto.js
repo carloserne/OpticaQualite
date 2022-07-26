@@ -2,7 +2,7 @@
 let cuerpotblEmp = "";
 let registroLentes;
 let lentesC = [];
-let countIdPersona;
+let countIdLentes;
 let countIdLentes;
 let posLentes;
 fetch("Modulos/moduloLentesContacto/data_LentesContacto.json")
