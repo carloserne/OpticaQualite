@@ -79,7 +79,7 @@ function accesorio() {
                 .then(function (html) {
                         document.getElementById("contenedorPrincipal").innerHTML = html;
 
-                        import("../Modulos/moduloAccesorios/controller_Accesorio.js").then(
+                        import("../Modulos/moduloAccesorios/controller_AccesorioC.js").then(
                                 function (controller) {
 
                                         moduloAccesorios = controller;

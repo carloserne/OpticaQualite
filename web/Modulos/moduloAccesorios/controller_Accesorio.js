@@ -1,10 +1,10 @@
 
-let cuerpotblAccesorios = "";
+/*let cuerpotblAccesorios = "";
 let registroAccesorios;
 let accesorios = [];
 let posAccesorio;
 
-fetch("Modulos/moduloAccesorios/data_Accesorios.json")
+fetch("Modulos/moduloAccesorios/data_Accesorio.json")
     .then(response => {
         return response.json();
     })
@@ -56,7 +56,7 @@ export function cargarAccesoriostbl() {
     cuerpotblAccesorios = "";
 
 }
-export function cargarAccesoriotblM() {
+export function cargarAccesoriostblM() {
     posAccesorio = 0;
     accesorios.forEach(function (accesorioss) {
         if (accesorioss.estatus !== 0) {
@@ -66,9 +66,9 @@ export function cargarAccesoriotblM() {
                 '<td>' + accesorioss.marcaAccesorio + '</td>' +
                 '<td>' + accesorioss.precioCompra + '</td>' +
                 '<td>' + accesorioss.precioVenta + '</td>' +
-                '<td>' + accesorioss.existencia + '</td>' +
+                '<td>' + accesorioss.existencias + '</td>' +
                 '<td>' + accesorioss.estatus + '</td>';
-            '<td>' + '<a onclick="moduloAccesorio.eliminarAccesorio(' + posAccesorio + ');"  class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i><a>' +
+                '<td>' + '<a onclick="moduloAccesorio.eliminarAccesorio(' + posAccesorio + ');"  class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i><a>' +
                 '<a onclick="moduloAccesorio.modificar(' + posAccesorio + ');"  class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i><a></td>';
             posAccesorio++;
             cuerpotblAccesorios += registroAccesorios;
@@ -100,12 +100,30 @@ export function eliminar() {
             import ("./controller_Accesorio.js").then(
                 function (controller) {
                     moduloAccesorios = controller;
-                    moduloAccesorios.cargarAccesoriotblM();
+                    moduloAccesorios.cargarAccesoriostblM();
                     $('#table_id').DataTable();
                     document.getElementById("table_id_filter").style.display = "block";
                 }
         );
         });
+}
+export function modificar(pos) {
+    fetch("./Modulos/moduloAccesorios/view_modificarAccesorio.html")
+            .then(function (respuesta) {
+                return respuesta.text();
+            })
+            .then(function (html) {
+                document.getElementById("contenedorGestion").innerHTML = html;
+                let accesorioSelec = accesorios[pos];
+                posAccesorio = pos;
+                document.getElementById("nombreAccesorio").value = accesorioSelec.nombreAccesorio;
+                document.getElementById("marcaAccesorio").value = accesorioSelec.marcaAccesorio;
+                document.getElementById("precioCompra").value = accesorioSelec.precioCompra;
+                document.getElementById("precioVenta").value = accesorioSelec.precioVenta;
+                document.getElementById("existencias").value = accesorioSelec.existencias;
+            });
+
+
 }
 
 export function catalogo() {
@@ -202,4 +220,4 @@ export function almacenarDatos() {
     accesorios.push(accesorioss);
 
     accesorio();
-}
+} */
