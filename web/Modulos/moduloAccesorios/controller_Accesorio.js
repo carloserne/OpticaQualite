@@ -262,3 +262,77 @@ export function almacenarDatos() {
 
     mostrarAccesorios();
 }
+
+
+/*Modificar datos*/
+export function modificarAccesorio() {
+    let inputs = document.getElementsByTagName("input");
+    let input;
+    let vacios = 0;
+    let comprobarString = true;
+    for (var i = 0; i < inputs.length; i++) {
+        input = inputs[i];
+
+        if (input.value === "") {
+            vacios++;
+        }
+
+    }
+
+    if (vacios === 0) {
+        if (comprobarString === true) {
+            Swal.fire({
+                title: '¿Seguro de modificar el accesorio?',
+                showDenyButton: true,
+                confirmButtonText: 'Si',
+                denyButtonText: `No`
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire('¡Accesorio modificado con exito!', '', 'success')
+                    moduloAccesorios.modificarDatos();
+                } else if (result.isDenied) {
+
+                }
+            });
+        } else {
+            Swal.fire({
+                title: 'Algo salió mal',
+                text: "¡Asegurese de que ningun campo que no requiera números no contenga ningun número!",
+                icon: 'warning',
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'Aceptar!'
+            })
+        }
+
+    } else {
+        Swal.fire({
+            title: 'Algo salió mal',
+            text: "¡Asegurese de llenar todos los campos!",
+            icon: 'warning',
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'Aceptar!'
+        })
+    }
+}
+export function modificarDatos() {
+    let nombreAccesorio = document.getElementById("nombreAccesorio").value;
+    let marcaAccesorio = document.getElementById("marcaAccesorio").value;
+    let precioCompra = document.getElementById("precioCompra").value;
+    let precioVenta = document.getElementById("precioVenta").value;
+    let existencia = document.getElementById("existencias").value;
+
+    let accesorio = {
+        "nombreAccesorio": nombreAccesorio,
+        "marcaAccesorio": marcaAccesorio,
+        "precioCompra": precioCompra,
+        "precioVenta": precioVenta,
+        "existencias": existencia,
+        "estatus": 1
+    };
+
+    accesorios[posAccesorio]= accesorio;
+
+    console.log(accesorios);
+
+    mostrarAccesorios();
+}
