@@ -50,8 +50,7 @@ function empleados(){
                                  }
                          );
                  
-                         });
-                         foot();
+                         });                        
              }
 function cambiarFocus(){
         removerEstilo();

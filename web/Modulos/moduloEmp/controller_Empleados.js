@@ -9,13 +9,12 @@ fetch("Modulos/moduloEmp/data_Empleados.json")
             return response.json();
         })
         .then(function (jsondata) {
-<<<<<<< HEAD
+
             empleados = jsondata;
 
             cargarEmptbl();
-=======
+
             emps = jsondata;
->>>>>>> 415675c66f71defc854669ccc70f0966496bf286
         }
         );
 
@@ -75,45 +74,25 @@ export function cargarEmptbl() {
 
 }
 
-<<<<<<< HEAD
-export function registrar(){
-    fetch("Modulos/moduloEmp/view_RegistrarEmpleado.html")
-        .then(function (respuesta) {
-        return respuesta.text();
-        })
-        .then(function (html) {
-        document.getElementById("contenedorGestion").innerHTML = html;
-=======
+
 export function registrar() {
-    fetch("./Modulos/moduloEmp/view_RegistrarEmpleado.html")
+    fetch("Modulos/moduloEmp/view_RegistrarEmpleado.html")
             .then(function (respuesta) {
                 return respuesta.text();
             })
             .then(function (html) {
                 document.getElementById("contenedorGestion").innerHTML = html;
->>>>>>> 415675c66f71defc854669ccc70f0966496bf286
-
             });
 }
 
-<<<<<<< HEAD
-export function eliminar(){
-    fetch("Modulos/moduloEmp/view_eliminarEmpleado.html")
-        .then(function (respuesta) {
-        return respuesta.text();
-        })
-        .then(function (html) {
-        document.getElementById("contenedorGestion").innerHTML = html;
-=======
 export function eliminar() {
-
-    fetch("./Modulos/moduloEmp/view_eliminarEmpleado.html")
+    fetch("Modulos/moduloEmp/view_eliminarEmpleado.html")
             .then(function (respuesta) {
                 return respuesta.text();
             })
             .then(function (html) {
                 document.getElementById("contenedorGestion").innerHTML = html;
-                import ("./controller_Empleados.js").then(
+                import ("controller_Empleados.js").then(
                         function (controller) {
                             moduloEmp = controller;
                             moduloEmp.cargarEmp();
@@ -122,19 +101,8 @@ export function eliminar() {
                         }
                 );
             });
->>>>>>> 415675c66f71defc854669ccc70f0966496bf286
-
 }
 
-<<<<<<< HEAD
-export function catalogo(){
-    fetch("Modulos/moduloEmp/view_catalogoEmpleados.html")
-        .then(function (respuesta) {
-        return respuesta.text();
-        })
-        .then(function (html) {
-        document.getElementById("contenedorGestion").innerHTML = html;
-=======
 export function catalogo() {
     fetch("./Modulos/moduloEmp/view_catalogoEmpleados.html")
             .then(function (respuesta) {
@@ -142,8 +110,6 @@ export function catalogo() {
             })
             .then(function (html) {
                 document.getElementById("contenedorGestion").innerHTML = html;
->>>>>>> 415675c66f71defc854669ccc70f0966496bf286
-
             });
 }
 export function registrarNuevo() {
