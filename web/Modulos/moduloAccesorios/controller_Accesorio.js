@@ -12,8 +12,6 @@ fetch("Modulos/moduloAccesorios/data_Accesorio.json")
 
         accesorios = jsondata;
         cargarAccesoriostbl();
-        accesorios = jsondata;
-
     }
     );
 
@@ -91,7 +89,7 @@ export function registrar() {
 }
 
 export function eliminar() {
-    fetch("./Modulos/moduloAccesorios/view_eliminarAccesorio.html")
+    fetch("Modulos/moduloAccesorios/view_eliminarAccesorio.html")
         .then(function (respuesta) {
             return respuesta.text();
         })
@@ -103,6 +101,7 @@ export function eliminar() {
                     moduloAccesorios.cargarAccesoriostblM();
                     $('#table_id').DataTable();
                     document.getElementById("table_id_filter").style.display = "block";
+
                 }
         );
         });

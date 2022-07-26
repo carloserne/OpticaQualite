@@ -1,0 +1,46 @@
+<div class="container-fluid d-flex align-items-center justify-content-center col-12 p-0 m-0">
+    <div class="row col-lg-10 p-0" id="contentRegistro">
+        <div class="col-12 m-0 p-0 text-center ">
+            <div class="col-12 row align-items-center justify-content-center">
+                <div class="col-2 ">
+                    <button type="button" class="btn btn-danger">
+                        < Regresar</button>
+                </div>
+                <div class="col-8 ">
+                    <h1 class="mt-1"><b>Registrar nuevo pago</b></h1>
+                </div>
+                <div class="col-2 ">
+                </div>
+            </div>
+
+            <div class="col-12 row align-items-center justify-content-center">
+                <div class="col-4 float-left">
+                    <label for="clavePago">Clave unica de pago</label>
+                    <input type="text" class="form-control" id="clavePago" name="clavePago" required>
+                </div>
+
+                <div class="col-4 float-left">
+                    <label for="claveVenta">Clave de venta</label>
+                    <input type="text" class="form-control" id="claveVenta" name="claveVenta" required>
+                </div>
+
+                <div class="col-4 float-left">
+                    <label for="montoPago">Monto del pago</label>
+                    <input type="text" class="form-control" id="montoPago" name="montoPago" required>
+                </div>
+
+                <div class="col-4 float-left">
+                    <label for="fecha">Fecha y hora</label>
+                    <input type="text" class="form-control disabled" id="fecha" name="fecha" readonly="readonly" required>
+                </div>
+            </div>
+
+            <div class="col-12 row align-items-center justify-content-center mb-2">
+                <div class="col-10"></div>
+                <div class="float-right col-2">
+                    <button onclick="moduloPagos.guardarPago();" type="button" class="btn btn-success"><i class="fa fa-credit-card-alt mx-1" aria-hidden="true"></i>Registrar pago</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

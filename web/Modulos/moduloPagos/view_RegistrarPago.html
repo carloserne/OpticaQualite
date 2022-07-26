@@ -1,46 +1,55 @@
 <div class="container-fluid d-flex align-items-center justify-content-center col-12 p-0 m-0">
-    <div class="row col-lg-10 p-0" id="contentRegistro">
-        <div class="col-12 m-0 p-0 text-center ">
-            <div class="col-12 row align-items-center justify-content-center">
-                <div class="col-2 ">
-                    <button type="button" class="btn btn-danger">
+    <div class="row col-lg-12 p-0">
+        <h1>Gestionar pagos</h1>
+        <div class="col-12 m-0 p-0 text-center " style="background: #F5F5F5; border: 2px solid black;">
+            <div class="col-12 row">
+                <div class="col-2">
+                    <button type="button" class="btn btn-light mt-1" onclick="pagos();">
                         < Regresar</button>
                 </div>
                 <div class="col-8 ">
-                    <h1 class="mt-1"><b>Registrar nuevo pago</b></h1>
+                    <h2 class="mt-1">Registrar nuevo pago</h2>
                 </div>
-                <div class="col-2 ">
+
+            </div>
+           
+            <div class="col-12 row align-items-center justify-content-center mt-3">
+                <div class="col-6"><!<!-- Izquierza -->
+                  
+                    <div class="col-12 row float-left mt-4">
+                        <label for="idAccesorio" class="col-6 p-0" disabled>Clave unica de pago</label>
+                        <input type="text" class="form-control col-6 p-0"  id="idAccesorio" name="idAccesorioa" required disabled value="xx-xx-">
+
+                    </div>
+                    <div class="col-12 row float-left mt-4">
+                        <label for="nombreAccesorio" class="col-6 p-0" >Clave de venta</label>
+                        <input type="text" class="form-control col-6 p-0"  id="nombreAccesorio" name="nombreAccesorio" required >
+                        <div class="invalid-feedback">
+                            Please choose a name.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6"><!-- Derecha -->
+                    <div class="col-12 row float-left mt-4">
+                        <label for="marcaAcceesorio" class="col-6 p-0" >Monto del pago</label>
+                        <input type="text" class="form-control col-6 p-0"  id="marcaAcceesorio" name="marcaAcceesorio" required >
+                    </div>
+                    <div class="col-12 row float-left mt-4">
+                        <label for="precioCompra" class="col-6 p-0" >Fecha y hora</label>
+                        <input type="number" class="form-control col-6 p-0"  id="precioCompra" name="precioCompra" required>
+                    </div>
+                </div>
+
+                <div class="col-8"></div>
+                <div class="col-4 mt-3 mb-3">
+                    <button onclick="moduloPagos.guardarPago();" type="button" class="btn btn-success"><i class="fa fa-credit-card-alt mx-1" aria-hidden="true"></i>Registrar pago</button>
                 </div>
             </div>
 
-            <div class="col-12 row align-items-center justify-content-center">
-                <div class="col-4 float-left">
-                    <label for="clavePago">Clave unica de pago</label>
-                    <input type="text" class="form-control" id="clavePago" name="clavePago" required>
-                </div>
 
-                <div class="col-4 float-left">
-                    <label for="claveVenta">Clave de venta</label>
-                    <input type="text" class="form-control" id="claveVenta" name="claveVenta" required>
-                </div>
-
-                <div class="col-4 float-left">
-                    <label for="montoPago">Monto del pago</label>
-                    <input type="text" class="form-control" id="montoPago" name="montoPago" required>
-                </div>
-
-                <div class="col-4 float-left">
-                    <label for="fecha">Fecha y hora</label>
-                    <input type="text" class="form-control disabled" id="fecha" name="fecha" required>
-                </div>
-            </div>
-
-            <div class="col-12 row align-items-center justify-content-center mb-2">
-                <div class="col-10"></div>
-                <div class="float-right col-2">
-                    <button type="button" class="btn btn-success"><i class="fa fa-credit-card-alt mx-1" aria-hidden="true"></i>Registrar pago</button>
-                </div>
-            </div>
         </div>
+
+
     </div>
 </div>
