@@ -58,9 +58,6 @@ function empleados() {
 
 function cambiarFocus() {
         removerEstilo();
-        let empleados = document.getElementById("empleados");
-        empleados.style.backgroundColor = "white";
-        empleados.style.color = "black";
 }
 
 function accesorio() {
