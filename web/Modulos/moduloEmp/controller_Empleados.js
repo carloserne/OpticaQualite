@@ -11,7 +11,7 @@ fetch("Modulos/moduloEmp/data_Empleados.json")
         })
         .then(function (jsondata) {
 
-            empleados = jsondata;
+            emps = jsondata;
 
             cargarEmptbl();
 
