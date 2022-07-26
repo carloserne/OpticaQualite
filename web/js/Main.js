@@ -1,11 +1,12 @@
 let menuPrincipal;
 let tabla;
 let moduloEmp;
+let moduloAccesorios;
 let emp = [];
 
 window.onload = menubody();
 
-function removerEstilo(){
+function removerEstilo() {
         document.getElementById("inicio").removeAttribute("style");
         document.getElementById("empleados").removeAttribute("style");
 }
@@ -17,46 +18,50 @@ function menubody() {
                 })
                 .then(function (html) {
                         document.getElementById("contenedorPrincipal").innerHTML = html;
-                });        
+                });
 }
 
 
-function empleados(){
-                if (emp.length === 0){
-                    fetch("Modulos/moduloEmp/data_Empleados.json")
-                         .then(response => {
-                         return response.json();
-                         })
-                         .then(function (jsondata) {
-                         emp = jsondata;
-                         }
-                         );
+function empleados() {
+        cambiarFocus();        
+        if (emp.length === 0) {
+                fetch("Modulos/moduloEmp/data_Empleados.json")
+                .then(response => {
+                        return response.json();
+                })
+                .then(function (jsondata) {
+                        emp = jsondata;
+                        console.log(emp);
                 }
-                 fetch("./Modulos/moduloEmp/view_Empleados.html")
-                 
-                         .then(function (respuesta) {
-                         return respuesta.text();
-                         })
-                         .then(function (html) {
-                         document.getElementById("contenedorPrincipal").innerHTML = html;
-                 
-                         import ("../Modulos/moduloEmp/controller_Empleados.js").then(
-                                 function (controller) {
-                                    
-                                 moduloEmp = controller;
-                                         moduloEmp.cargarEmp();
-                                         $('#table_id').DataTable();
-                                         document.getElementById("table_id_filter").style.display = "none";
-                                 }
-                         );
-                 
-                         });                        
-             }
-function cambiarFocus(){
+                );   
+        }
+        
+        fetch("Modulos/moduloEmp/view_Empleados.html")
+
+                .then(function (respuesta) {
+                        return respuesta.text();
+                })
+                .then(function (html) {
+                        document.getElementById("contenedorPrincipal").innerHTML = html;
+
+                        import("../Modulos/moduloEmp/controller_Empleados.js").then(
+                                function (controller) {
+
+                                        moduloEmp = controller;
+                                        moduloEmp.cargarEmp();
+                                        $('#table_id').DataTable();
+                                        document.getElementById("table_id_filter").style.display = "none";
+                                }
+                        );
+
+                });
+}
+
+function cambiarFocus() {
         removerEstilo();
         let empleados = document.getElementById("empleados");
-        empleados.style.backgroundColor="white";
-        empleados.style.color="black";
+        empleados.style.backgroundColor = "white";
+        empleados.style.color = "black";
 }
 
 function accesorio() {
@@ -70,7 +75,7 @@ function accesorio() {
                 }
                 );
 
-        fetch("./Modulos/moduloAccesorios/view_Accesorios.html")
+        fetch("Modulos/moduloAccesorios/view_Accesorios.html")
 
                 .then(function (respuesta) {
                         return respuesta.text();
@@ -89,7 +94,6 @@ function accesorio() {
                         );
 
                 });
-        foot();
 }
 
 function material() {
@@ -103,7 +107,7 @@ function material() {
                 }
                 );
 
-        fetch("./Modulos/moduloMateriales/view_Materiales.html")
+        fetch("Modulos/moduloMateriales/view_Materiales.html")
 
                 .then(function (respuesta) {
                         return respuesta.text();
@@ -122,7 +126,6 @@ function material() {
                         );
 
                 });
-        foot();
 }
 
 function armazon() {
@@ -155,7 +158,6 @@ function armazon() {
                         );
 
                 });
-        foot();
 }
 
 function ventas() {
@@ -188,7 +190,6 @@ function ventas() {
                         );
 
                 });
-        foot();
 }
 
 function pagos() {
@@ -220,5 +221,4 @@ function pagos() {
                         );
 
                 });
-        foot();
 }

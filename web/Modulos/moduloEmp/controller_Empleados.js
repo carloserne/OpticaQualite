@@ -4,6 +4,7 @@ let registroEmp;
 let emps = [];
 let countIdPersona;
 let countIdEmpleado;
+
 fetch("Modulos/moduloEmp/data_Empleados.json")
         .then(response => {
             return response.json();
