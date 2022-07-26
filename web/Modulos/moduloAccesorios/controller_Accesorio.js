@@ -60,7 +60,7 @@ export function cargarAccesoriotblM() {
     posAccesorio = 0;
     accesorios.forEach(function (accesorioss) {
         if (accesorioss.estatus !== 0) {
-            registroAccesorio =
+            registroAccesorios =
                 '<tr>' +
                 '<td>' + accesorioss.nombreAccesorio + '</td>' +
                 '<td>' + accesorioss.marcaAccesorio + '</td>' +
@@ -68,7 +68,7 @@ export function cargarAccesoriotblM() {
                 '<td>' + accesorioss.precioVenta + '</td>' +
                 '<td>' + accesorioss.existencia + '</td>' +
                 '<td>' + accesorioss.estatus + '</td>';
-            '<td>' + '<a onclick="moduloAccesrio.eliminarAccesorio(' + posAccesorio + ');"  class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i><a>' +
+            '<td>' + '<a onclick="moduloAccesorio.eliminarAccesorio(' + posAccesorio + ');"  class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i><a>' +
                 '<a onclick="moduloAccesorio.modificar(' + posAccesorio + ');"  class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i><a></td>';
             posAccesorio++;
             cuerpotblAccesorios += registroAccesorios;
@@ -99,7 +99,7 @@ export function eliminar() {
             document.getElementById("contenedorGestion").innerHTML = html;
             import ("./controller_Accesorio.js").then(
                 function (controller) {
-                    moduloAccesorios= controller;
+                    moduloAccesorios = controller;
                     moduloAccesorios.cargarAccesoriotblM();
                     $('#table_id').DataTable();
                     document.getElementById("table_id_filter").style.display = "block";
