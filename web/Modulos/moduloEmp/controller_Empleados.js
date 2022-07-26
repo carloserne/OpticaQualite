@@ -1,21 +1,28 @@
 
 let cuerpotblEmp = "";
 let registroEmp;
-let empleados = [];
+let emps = [];
+let countIdPersona;
+let countIdEmpleado;
 fetch("Modulos/moduloEmp/data_Empleados.json")
         .then(response => {
             return response.json();
         })
         .then(function (jsondata) {
+<<<<<<< HEAD
             empleados = jsondata;
 
             cargarEmptbl();
+=======
+            emps = jsondata;
+>>>>>>> 415675c66f71defc854669ccc70f0966496bf286
         }
         );
-       
+
 export function cargarEmp() {
-     
+    let pos = 0;
     emp.forEach(function (empleado) {
+        console.log(pos);
         registroEmp =
                 '<tr>' +
                 '<td>' + empleado.ClaveUnicaEmp + '</td>' +
@@ -31,6 +38,10 @@ export function cargarEmp() {
                 '<td>' + empleado.Usuario.contasena + '</td>' +
                 '<td>' + empleado.Persona.Estatus + '</td>';
         cuerpotblEmp += registroEmp;
+        countIdPersona = parseInt(empleado.Persona.IdPersona);
+        countIdEmpleado = parseInt(empleado.IdEmpleado);
+        pos++;
+
     });
     document.getElementById("tblEmpleados").innerHTML = cuerpotblEmp;
     cuerpotblEmp = "";
@@ -39,8 +50,8 @@ export function cargarEmp() {
 
 
 export function cargarEmptbl() {
-     
-    empleados.forEach(function (empleado) {
+
+    emps.forEach(function (empleado) {
         registroEmp =
                 '<tr>' +
                 '<td>' + empleado.ClaveUnicaEmp + '</td>' +
@@ -56,12 +67,15 @@ export function cargarEmptbl() {
                 '<td>' + empleado.Usuario.contasena + '</td>' +
                 '<td>' + empleado.Persona.Estatus + '</td>';
         cuerpotblEmp += registroEmp;
+        countIdPersona = parseInt(empleado.Persona.IdPersona);
+        countIdEmpleado = parseInt(empleado.IdEmpleado);
     });
     document.getElementById("tblEmpleados").innerHTML = cuerpotblEmp;
     cuerpotblEmp = "";
 
 }
 
+<<<<<<< HEAD
 export function registrar(){
     fetch("Modulos/moduloEmp/view_RegistrarEmpleado.html")
         .then(function (respuesta) {
@@ -69,10 +83,20 @@ export function registrar(){
         })
         .then(function (html) {
         document.getElementById("contenedorGestion").innerHTML = html;
+=======
+export function registrar() {
+    fetch("./Modulos/moduloEmp/view_RegistrarEmpleado.html")
+            .then(function (respuesta) {
+                return respuesta.text();
+            })
+            .then(function (html) {
+                document.getElementById("contenedorGestion").innerHTML = html;
+>>>>>>> 415675c66f71defc854669ccc70f0966496bf286
 
-        });
+            });
 }
 
+<<<<<<< HEAD
 export function eliminar(){
     fetch("Modulos/moduloEmp/view_eliminarEmpleado.html")
         .then(function (respuesta) {
@@ -80,10 +104,29 @@ export function eliminar(){
         })
         .then(function (html) {
         document.getElementById("contenedorGestion").innerHTML = html;
+=======
+export function eliminar() {
 
-        });
+    fetch("./Modulos/moduloEmp/view_eliminarEmpleado.html")
+            .then(function (respuesta) {
+                return respuesta.text();
+            })
+            .then(function (html) {
+                document.getElementById("contenedorGestion").innerHTML = html;
+                import ("./controller_Empleados.js").then(
+                        function (controller) {
+                            moduloEmp = controller;
+                            moduloEmp.cargarEmp();
+                            $('#table_id').DataTable();
+                            document.getElementById("table_id_filter").style.display = "block";
+                        }
+                );
+            });
+>>>>>>> 415675c66f71defc854669ccc70f0966496bf286
+
 }
 
+<<<<<<< HEAD
 export function catalogo(){
     fetch("Modulos/moduloEmp/view_catalogoEmpleados.html")
         .then(function (respuesta) {
@@ -91,6 +134,111 @@ export function catalogo(){
         })
         .then(function (html) {
         document.getElementById("contenedorGestion").innerHTML = html;
+=======
+export function catalogo() {
+    fetch("./Modulos/moduloEmp/view_catalogoEmpleados.html")
+            .then(function (respuesta) {
+                return respuesta.text();
+            })
+            .then(function (html) {
+                document.getElementById("contenedorGestion").innerHTML = html;
+>>>>>>> 415675c66f71defc854669ccc70f0966496bf286
 
+            });
+}
+export function registrarNuevo() {
+    let inputs = document.getElementsByTagName("input");
+    let input;
+    let vacios = 0;
+    let comprobarString = true;
+    for (var i = 0; i < inputs.length; i++) {
+        input = inputs[i];
+        
+        if (input.value === "") {
+            
+            vacios++;
+        }
+        if(input.name !== "telCasa" && input.name !== "telMovil" && input.name !== "contrasena"){
+                if(isNaN(input.value) === false ){
+                    comprobarString = false;
+                }
+                
+            }  
+    }
+    
+    if (vacios === 0) {
+        if(comprobarString === true){
+            Swal.fire({
+            title: '¿Seguro de registrar al empleado?',
+            showDenyButton: true,
+            confirmButtonText: 'Si',
+            denyButtonText: `No`
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire('Epleado registrado con exito!', '', 'success')
+                alacenarDatos();
+            } else if (result.isDenied) {
+
+            }
         });
+        }else{
+            Swal.fire({
+            title: 'Algo salio mal',
+            text: "Asegurese de que ningun campo que no requiera numeros no contenga ningun número!",
+            icon: 'warning',
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'Aceptar!'
+        })
+        }
+        
+    } else {
+        Swal.fire({
+            title: 'Algo salio mal',
+            text: "Asegurese de llenar todos los campos!",
+            icon: 'warning',
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'Aceptar!'
+        })
+    }
+}
+
+export function alacenarDatos() {
+    let numeroUnicoEmpleado = document.getElementById("numeroUnicoEmpleado").value;
+    let nombres = document.getElementById("nombres").value;
+    let apellidoP = document.getElementById("apellidoP").value;
+    let apellidoM = document.getElementById("apellidoM").value;
+    let genero = document.getElementById("genero").value;
+    let rfc = document.getElementById("rfc").value;
+    let telCasa = document.getElementById("telCasa").value;
+    let telMovil = document.getElementById("telMovil").value;
+    let correo = document.getElementById("correo").value;
+    let usuario = document.getElementById("usuario").value;
+    let contrasena = document.getElementById("contrasena").value;
+
+    let idPersona = ((countIdPersona + 1).toString());
+    let idEmpleado = ((countIdEmpleado + 1).toString());
+
+    let persona = {"IdPersona": idPersona,
+        "Nombre": nombres,
+        "ApellidoPaterno": apellidoP,
+        "ApellidoMaterno": apellidoM,
+        "Genero": genero,
+        "RFC": rfc,
+        "TelCasa": telCasa,
+        "TelMovil": telMovil,
+        "Correo": correo,
+        "Estatus": 1};
+    let empleado = {
+        "Persona": persona,
+        "IdEmpleado": idEmpleado,
+        "ClaveUnicaEmp": numeroUnicoEmpleado,
+        "Administrador": "Sam",
+        "Usuario": {"usuario": usuario,
+            "contasena": contrasena}
+    };
+
+    emp.push(empleado);
+    emps.push(empleado);
+
+    empleados();
 }
