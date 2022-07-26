@@ -145,8 +145,8 @@ function PantallaArmazones() {
 
                         import("../Modulos/moduloArmazones/controller_Armazon.js").then(
                                 function (controller) {
-                                        moduloMateriales = controller;
-                                        moduloMateriales.cargarArmazon();
+                                        moduloArmazones = controller;
+                                        moduloArmazones.cargarArmazon();
                                         $('#table_id').DataTable();
                                         document.getElementById("table_id_filter").style.display = "none";
                                 }
