@@ -63,7 +63,7 @@ export function cargarArmazonestbl() {
 }
 
 export function registrar(){
-    fetch("./Modulos/moduloAccesorios/view_registrarAccesorio.html")
+    fetch("./Modulos/moduloArmazones/view_registrarArmazon.html")
         .then(function (respuesta) {
         return respuesta.text();
         })
@@ -74,7 +74,7 @@ export function registrar(){
 }
 
 export function eliminar(){
-    fetch("./Modulos/moduloAccesorios/view_eliminarAccesorio.html")
+    fetch("./Modulos/moduloArmazones/view_eliminarArmazon.html")
         .then(function (respuesta) {
         return respuesta.text();
         })
@@ -85,7 +85,7 @@ export function eliminar(){
 }
 
 export function catalogo(){
-    fetch("./Modulos/moduloAccesorios/view_catalogoAccesorio.html")
+    fetch("./Modulos/moduloArmazones/view_catalogoArmazon.html")
         .then(function (respuesta) {
         return respuesta.text();
         })
