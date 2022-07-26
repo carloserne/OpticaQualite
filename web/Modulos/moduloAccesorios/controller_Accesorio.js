@@ -125,7 +125,6 @@ export function modificar(pos) {
 }
 export function cargarAccesoriostblC() {
     let filtro = document.getElementById("filtro").value;
-
     accesorios.forEach(function (accesorioss) {
         if (filtro === "A" && accesorioss.estatus !== 0) {
             registroAccesorios =
@@ -167,6 +166,7 @@ export function cargarAccesoriostblC() {
     $('#table_id').DataTable();
     document.getElementById("table_id_filter").style.display = "none";
     document.getElementById("tblAccesorios").innerHTML = cuerpotblAccesorios;
+    cuerpotblAccesorios = "";
 }
 
 export function catalogo() {
