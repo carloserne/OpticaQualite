@@ -2,6 +2,7 @@ let menuPrincipal;
 let tabla;
 let moduloEmp;
 let moduloAccesorios;
+let moduloLentes;
 let emp = [];
 
 window.onload = menubody();
@@ -187,19 +188,19 @@ function pagos(){
                 });
 }
 
+
 function ventas() {
 
         fetch("Modulos/moduloVentas/data_Ventas.json")
                 .then(response => {
                         return response.json();
                 })
-                .then(function (jsondata) {
+                .then(function (jsondata) {                
                         venta = jsondata;
                 }
                 );
 
         fetch("./Modulos/moduloVentas/view_Ventas.html")
-
                 .then(function (respuesta) {
                         return respuesta.text();
                 })
@@ -216,4 +217,37 @@ function ventas() {
                                 }
                         );
                 });
+        
+}
+
+function lentes() {
+        fetch("Modulos/moduloLentesContacto/data_LentesContacto.json")
+        .then(response => {
+                return response.json();
+        })
+        .then(function (jsondata) {
+
+                lentes = jsondata;
+                console.log(lentes);
         }
+        );
+        fetch("Modulos/moduloLentesContacto/view_LentesContacto.html")
+        .then(function (respuesta) {
+                return respuesta.text();
+        })
+        .then(function (html) {
+                document.getElementById("contenedorPrincipal").innerHTML = html;
+
+
+                import("../Modulos/moduloLentesContacto/controller_LentesContacto.js").then(
+                        function (controller) {
+
+                                moduloLentes = controller;
+                                moduloLentes.cargarLentes();
+                                $('#table_id').DataTable();
+                                document.getElementById("table_id_filter").style.display = "none";
+                        }
+                );
+
+        });
+}
