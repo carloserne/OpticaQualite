@@ -1,44 +1,44 @@
 <div class="container-fluid d-flex align-items-center justify-content-center col-12 p-0 m-0">
+    <div class="card row col-lg-12 p-0" id="" style="margin-top: 5%; border: 1px solid black;">
     <div class="row col-lg-12 p-0 mb-2" >
-
         <h1>Gestionar empleados</h1>
-        <div class="col-12 m-0 p-0 text-center " style="background: #F5F5F5; border: 2px solid black;">
-            <div class="col-12 row">
-                <div class="col-2">
-                    <button type="button" class="btn btn-light mt-1" onclick="empleados();">
-                        < Regresar</button>
+        <div class="col-12 m-0 p-0 text-center" style="background: #F5F5F5; border: 1px solid #bcbcbc;">
+            <div class="col-12 row">                            
+                <div class="col-1 bg-info m-0 p-0">
+                    <button type="button" class="btn mt-1" onclick="empleados();">
+                        <i class="fa fa-angle-left" aria-hidden="true"></i> <span>Regresar</span>
+                    </button>
                 </div>
-                <div class="col-8 ">
+                <div class="col-11 bg-danger m-0 p-0">
                     <h2 class="mt-1">Registrar nuevo empleado</h2>
                 </div>
-
             </div>
            
             <div class="col-12 row align-items-center justify-content-center mt-3">
-                <div class="col-6"><!<!-- Izquierza -->
+                <div class="col-6"><!-- Izquierza -->
                   
                     <div class="col-12 row float-left mt-4">
-                        <label for="numeroUnicoEmpleado" class="col-6 p-0" disabled>Número único de empleado</label>
+                        <label for="numeroUnicoEmpleado" class="col-6 p-0 text-end px-2" disabled>Número único de empleado</label>
                         <input type="text" class="form-control col-6 p-0"  id="numeroUnicoEmpleado" name="numeroUnicoEmpleado" required disabled value="xx-xx-">
 
                     </div>
                     <div class="col-12 row float-left mt-4">
-                        <label for="nombres" class="col-6 p-0" >Nombre(s)</label>
+                        <label for="nombres" class="col-6 p-0  text-end px-2">Nombre(s)</label>
                         <input type="text" class="form-control col-6 p-0"  id="nombres" name="nombres" required >
                         <div class="invalid-feedback">
                             Please choose a name.
                         </div>
                     </div>
                     <div class="col-12 row float-left mt-4">
-                        <label for="apellidoP" class="col-6 p-0" >Apellido paterno</label>
+                        <label for="apellidoP" class="col-6 p-0  text-end px-2" >Apellido paterno</label>
                         <input type="text" class="form-control col-6 p-0"  id="apellidoP" name="apellidoP" required >
                     </div>
                     <div class="col-12 row float-left mt-4">
-                        <label for="apellidoM" class="col-6 p-0" >Apellido materno</label>
+                        <label for="apellidoM" class="col-6 p-0  text-end px-2" >Apellido materno</label>
                         <input type="text" class="form-control col-6 p-0"  id="apellidoM" name="apellidoM" required>
                     </div>
                     <div class="col-12 row float-left mt-4">
-                        <label for="genero" class="col-6 p-0">Género</label>
+                        <label for="genero" class="col-6 p-0  text-end px-2">Género</label>
                         <select class="custom-select mr-sm-2 text-center col-4 p-0" id="genero" name="genero">
                             <option value="Masculino">Masculino</option>
                             <option value="Femenino">Femenino</option>
@@ -47,29 +47,29 @@
                     </div>
                 </div>
 
-                <div class="col-6"><!<!-- Derecha -->
+                <div class="col-6"><!-- Derecha -->
                     <div class="col-12 row float-left">
-                        <label for="rfc" class="col-6 p-0">RFC</label>
+                        <label for="rfc" class="col-6 p-0  text-end px-2">RFC</label>
                         <input type="text" class="form-control col-6 p-0" id="rfc" name="rfc" required>
                     </div>
                     <div class="col-12 row float-left mt-4">
-                        <label for="telCasa" class="col-6 p-0" >Tel. Casa</label>
+                        <label for="telCasa" class="col-6 p-0  text-end px-2" >Tel. Casa</label>
                         <input type="number" class="form-control col-6 p-0"  id="telCasa" name="telCasa" required>
                     </div>
                     <div class="col-12 row float-left mt-4">
-                        <label for="telMovil" class="col-6 p-0" >Tel. Movil</label>
+                        <label for="telMovil" class="col-6 p-0  text-end px-2" >Tel. Movil</label>
                         <input type="number" class="form-control col-6 p-0"  id="telMovil" name="telMovil" required>
                     </div>
                     <div class="col-12 row float-left mt-4">
-                        <label for="correo" class="col-6 p-0" >Correo Electronico</label>
+                        <label for="correo" class="col-6 p-0  text-end px-2" >Correo Electronico</label>
                         <input type="email" class="form-control col-6 p-0"  id="correo" name="correo" required>
                     </div>
                     <div class="col-12 row float-left mt-4">
-                        <label for="usuario" class="col-6 p-0" >Usuario</label>
+                        <label for="usuario" class="col-6 p-0  text-end px-2" >Usuario</label>
                         <input type="text" class="form-control col-6 p-0"  id="usuario" name="usuario" required>
                     </div>
                     <div class="col-12 row float-left mt-4">
-                        <label for="contrasena" class="col-6 p-0" >Contraseña</label>
+                        <label for="contrasena" class="col-6 p-0  text-end px-2" >Contraseña</label>
                         <input type="password" class="form-control col-6 p-0"  id="contrasena" name="contrasena" required>
                     </div>
                 </div>
