@@ -141,7 +141,7 @@ export function registrarNuevo() {
             denyButtonText: `No`
         }).then((result) => {
             if (result.isConfirmed) {
-                Swal.fire('Epleado registrado con exito!', '', 'success')
+                Swal.fire('Empleado registrado con exito!', '', 'success')
                 alacenarDatos();
             } else if (result.isDenied) {
 
@@ -168,7 +168,7 @@ export function registrarNuevo() {
     }
 }
 
-export function alacenarDatos() {
+export function almacenarDatos() {
     let numeroUnicoEmpleado = document.getElementById("numeroUnicoEmpleado").value;
     let nombres = document.getElementById("nombres").value;
     let apellidoP = document.getElementById("apellidoP").value;
