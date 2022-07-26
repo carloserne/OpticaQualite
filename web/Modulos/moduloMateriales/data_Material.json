@@ -12,7 +12,7 @@
         "Correo": "carebe654@gmail.com",
         "Estatus": 1
       },
-      "numeroUnicoMaterial": 1,
+      "numeroUnicoMaterial": 325,
       "nombreMaterial": "Vidrio",
       "precioCompra": 150,
       "precioVenta": 200,
@@ -31,7 +31,7 @@
         "Correo": "alandin@gmail.com",
         "Estatus": 1
       },
-      "numeroUnicoMaterial": 2,
+      "numeroUnicoMaterial": 267,
       "nombreMaterial": "Policarbonato",
       "precioCompra": 200,
       "precioVenta": 235,
@@ -50,7 +50,7 @@
         "Correo": "luvijesus@gmail.com",
         "Estatus": 1
       },
-      "numeroUnicoMaterial": 3,
+      "numeroUnicoMaterial": 896,
       "nombreMaterial": "Espuma",
       "precioCompra": 75,
       "precioVenta": 85,
