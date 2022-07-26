@@ -123,17 +123,72 @@ export function modificar(pos) {
 
 
 }
+export function cargarAccesoriostblC() {
+    let filtro = document.getElementById("filtro").value;
+
+    accesorios.forEach(function (accesorioss) {
+        if (filtro === "A" && accesorioss.estatus !== 0) {
+            registroAccesorios =
+                '<tr>' +
+                '<td>' + accesorioss.nombreAccesorio + '</td>' +
+                '<td>' + accesorioss.marcaAccesorio + '</td>' +
+                '<td>' + accesorioss.precioCompra + '</td>' +
+                '<td>' + accesorioss.precioVenta + '</td>' +
+                '<td>' + accesorioss.existencias + '</td>' +
+                '<td>' + accesorioss.estatus + '</td>';
+
+            cuerpotblAccesorios += registroAccesorios;
+
+        } else if (filtro === "I" && accesorioss.estatus === 0) {
+            registroAccesorios =
+                '<tr>' +
+                '<td>' + accesorioss.nombreAccesorio + '</td>' +
+                '<td>' + accesorioss.marcaAccesorio + '</td>' +
+                '<td>' + accesorioss.precioCompra + '</td>' +
+                '<td>' + accesorioss.precioVenta + '</td>' +
+                '<td>' + accesorioss.existencias + '</td>' +
+                '<td>' + accesorioss.estatus + '</td>';
+
+            cuerpotblAccesorios += registroAccesorios;
+        } else if (filtro === "Am") {
+            registroAccesorios =
+                '<tr>' +
+                '<td>' + accesorioss.nombreAccesorio + '</td>' +
+                '<td>' + accesorioss.marcaAccesorio + '</td>' +
+                '<td>' + accesorioss.precioCompra + '</td>' +
+                '<td>' + accesorioss.precioVenta + '</td>' +
+                '<td>' + accesorioss.existencias + '</td>' +
+                '<td>' + accesorioss.estatus + '</td>';
+
+            cuerpotblAccesorios += registroAccesorios;
+
+        }
+        });
+    $('#table_id').DataTable();
+    document.getElementById("table_id_filter").style.display = "none";
+    document.getElementById("tblAccesorios").innerHTML = cuerpotblAccesorios;
+}
 
 export function catalogo() {
     fetch("./Modulos/moduloAccesorios/view_catalogoAccesorio.html")
-        .then(function (respuesta) {
+            .then(function (respuesta) {
             return respuesta.text();
-        })
-        .then(function (html) {
+            })
+            .then(function (html) {
             document.getElementById("contenedorGestion").innerHTML = html;
-
-        });
-}
+            import ("./controller_Accesorio.js").then(
+                    function (controller) {
+                    moduloAccesorios = controller;
+                    $(document).ready(function(){
+                            moduloAccesorios.cargarAccesoriostbl();
+                            moduloAccesorios.cargarAccesoriostblC();
+                            $('#table_id').DataTable();
+                            document.getElementById("table_id_filter").style.display = "none";
+                    });
+                    }
+            );
+            });
+    }
 
 export function registrarNuevo() {
     let inputs = document.getElementsByTagName("input");

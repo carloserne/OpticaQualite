@@ -19,7 +19,6 @@ fetch("Modulos/moduloAccesorios/data_Accesorios.json")
        
 export function cargarMaterial() {
      
-    let pos = 0;
     material.forEach(function (material) {
         registroMateriales =
                 '<tr>' +
@@ -39,7 +38,7 @@ export function cargarMaterial() {
 
 export function cargarMaterialestbl() {
      
-    material.forEach(function (material) {
+    materiales.forEach(function (material) {
         registroMateriales =
                 '<tr>' +
                 '<td>' + material.numeroUnicoMaterial + '</td>' +
@@ -140,11 +139,9 @@ export function registrarNuevo() {
 }
 
 export function almacenarDatos() {
-    let nombreAccesorio = document.getElementById("nombreAccesorio").value;
-    let marcaAccesorio = document.getElementById("marcaAccesorio").value;
+    let nombreMaterial = document.getElementById("nombreMaterial").value;
     let precioCompra = document.getElementById("precioCompra").value;
     let precioVenta = document.getElementById("precioVenta").value;
-    let existencia = document.getElementById("existencia").value;
 
     let persona = {
         "IdPersona": idPersona,
@@ -158,17 +155,14 @@ export function almacenarDatos() {
         "Correo": correo,
         "Estatus": 1
     };
-    let accesorio = {
-        "nombreAccesorio": nombreAccesorio,
-        "marcaAcceorio": marcaAccesorio,
+    let material = {
+        "nombreMaterial": nombreMaterial,
         "precioCompra": precioCompra,
         "precioVenta": precioVenta,
-        "existencias": existencia,
         "estatus": 1
     };
 
-    accesorio.push(accesorio);
-    accesorios.push(accesorio);
+    materiales.push(material);
 
-    accesorio();
+    material();
 }

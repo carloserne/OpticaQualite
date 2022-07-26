@@ -1,1 +1,76 @@
-<h1>Registrar armazón</h1>
+<div class="container-fluid d-flex align-items-center justify-content-center col-12 p-0 m-0">
+    <div class="row col-lg-12 p-0 mb-2" >
+        <h1>Gestionar armazones</h1>
+        <div class="col-12 m-0 p-0 text-center" style="background: #F5F5F5; border: 1px solid black;">
+            <div class="col-12 row">                            
+                <div class="col-1 m-0 p-0">
+                    <button type="button" class="btn mt-1" onclick="pantallaArmazones();">
+                        <i class="fa fa-angle-left" aria-hidden="true"></i> <span>Regresar</span>
+                    </button>
+                </div>
+                <div class="col-11 m-0 p-0">
+                    <h2 class="mt-1">Registrar nuevo armazón</h2>
+                </div>
+            </div>
+           
+            <div class="col-12 row align-items-center justify-content-center mt-3">
+                <div class="col-6"><!-- Izquierza -->
+                  
+                    <div class="col-12 row float-left mt-4">
+                        <label for="numeroUnicoEmpleado" class="col-6 p-0 text-end px-2" disabled>Código de barras</label>
+                        <input type="text" class="form-control col-6 p-0"  id="codigoBarras" name="numeroUnicoEmpleado" required disabled value="xx-xx-">
+
+                    </div>
+                    <div class="col-12 row float-left mt-4">
+                        <label for="nombres" class="col-6 p-0  text-end px-2">Nombre</label>
+                        <input type="text" class="form-control col-6 p-0"  id="nombre" name="nombres" required >
+                        <div class="invalid-feedback">
+                            Please choose a name.
+                        </div>
+                    </div>
+                    <div class="col-12 row float-left mt-4">
+                        <label for="apellidoP" class="col-6 p-0  text-end px-2" >Marca</label>
+                        <input type="text" class="form-control col-6 p-0"  id="marca" name="apellidoP" required >
+                    </div>
+                    <div class="col-12 row float-left mt-4">
+                        <label for="apellidoM" class="col-6 p-0  text-end px-2" >Modelo</label>
+                        <input type="text" class="form-control col-6 p-0"  id="modelo" name="apellidoM" required>
+                    </div>
+                    <div class="col-12 row float-left mt-4">
+                        <label for="apellidoM" class="col-6 p-0  text-end px-2" >color</label>
+                        <input type="text" class="form-control col-6 p-0"  id="color" name="apellidoM" required>
+                    </div>
+                </div>
+
+                <div class="col-6"><!-- Derecha -->
+                    <div class="col-12 row float-left">
+                        <label for="rfc" class="col-6 p-0  text-end px-2">Descripción</label>
+                        <input type="text" class="form-control col-6 p-0" id="descripcion" name="rfc" required>
+                    </div>
+                    <div class="col-12 row float-left mt-4">
+                        <label for="telCasa" class="col-6 p-0  text-end px-2" >Dimensiones</label>
+                        <input type="number" class="form-control col-6 p-0"  id="dimenisones" name="telCasa" required>
+                    </div>
+                    <div class="col-12 row float-left mt-4">
+                        <label for="telMovil" class="col-6 p-0  text-end px-2" >Precio de compra</label>
+                        <input type="number" class="form-control col-6 p-0"  id="precioCompra" name="telMovil" required>
+                    </div>
+                    <div class="col-12 row float-left mt-4">
+                        <label for="correo" class="col-6 p-0  text-end px-2" >Precio de venta</label>
+                        <input type="email" class="form-control col-6 p-0"  id="precioVenta" name="correo" required>
+                    </div>
+                    <div class="col-12 row float-left mt-4">
+                        <label for="usuario" class="col-6 p-0  text-end px-2" >Existencias</label>
+                        <input type="text" class="form-control col-6 p-0"  id="existencias" name="usuario" required>
+                    </div>
+                </div>
+
+                <div class="col-8"></div>
+                <div class="col-4 mt-3 mb-3">
+                    <button type="submit" class="btn btn-success" onclick="moduloArmazones.registrarNuevo();"><i class="fa fa-plus" aria-hidden="true"></i>Registrar armazón</button>
+                </div>
+            </div>
+
+
+        </div>
+</div>

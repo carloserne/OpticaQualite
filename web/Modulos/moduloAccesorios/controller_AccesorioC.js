@@ -1,4 +1,4 @@
-
+/*
 let cuerpotblAccesorios = "";
 let registroAccesorios;
 let accesorios = [];
@@ -7,31 +7,31 @@ let countIdEmpleado;
 let posAccesorio;
 
 fetch("Modulos/moduloAccesorios/data_Accesorio.json")
-        .then(response => {
-            return response.json();
-        })
-        .then(function (jsondata) {
+    .then(response => {
+        return response.json();
+    })
+    .then(function (jsondata) {
 
-            accesorios = jsondata;
+        accesorios = jsondata;
 
-            cargarAccesoriostbl();
+        cargarAccesoriostbl();
 
-            accesorios = jsondata;
-        }
-        );
+        accesorios = jsondata;
+    }
+    );
 
 export function cargarAccesorio() {
 
     acceso.forEach(function (accesoriosA) {
         if (accesoriosA.estatus !== 0) {
             registroAccesorios =
-                    '<tr>' +
-                    '<td>' + accesoriosA.nombreAccesorio + '</td>' +
-                    '<td>' + accesoriosA.marcaAccesorio + '</td>' +
-                    '<td>' + accesoriosA.precioCompra + '</td>' +
-                    '<td>' + accesoriosA.precioVenta + '</td>' +
-                    '<td>' + accesoriosA.existencias + '</td>' +
-                    '<td>' + accesoriosA.estatus + '</td>' ;
+                '<tr>' +
+                '<td>' + accesoriosA.nombreAccesorio + '</td>' +
+                '<td>' + accesoriosA.marcaAccesorio + '</td>' +
+                '<td>' + accesoriosA.precioCompra + '</td>' +
+                '<td>' + accesoriosA.precioVenta + '</td>' +
+                '<td>' + accesoriosA.existencias + '</td>' +
+                '<td>' + accesoriosA.estatus + '</td>';
 
 
             cuerpotblAccesorios += registroAccesorios;
@@ -48,13 +48,13 @@ export function cargarAccesoriostbl() {
     accesorios.forEach(function (accesoriosA) {
         if (accesoriosA.estatus !== 0) {
             registroAccesorios =
-                    '<tr>' +
-                    '<td>' + accesoriosA.nombreAccesorio + '</td>' +
-                    '<td>' + accesoriosA.marcaAccesorio + '</td>' +
-                    '<td>' + accesoriosA.precioCompra + '</td>' +
-                    '<td>' + accesoriosA.precioVenta + '</td>' +
-                    '<td>' + accesoriosA.existencias + '</td>' +
-                    '<td>' + accesoriosA.estatus + '</td>' ;
+                '<tr>' +
+                '<td>' + accesoriosA.nombreAccesorio + '</td>' +
+                '<td>' + accesoriosA.marcaAccesorio + '</td>' +
+                '<td>' + accesoriosA.precioCompra + '</td>' +
+                '<td>' + accesoriosA.precioVenta + '</td>' +
+                '<td>' + accesoriosA.existencias + '</td>' +
+                '<td>' + accesoriosA.estatus + '</td>';
 
             cuerpotblAccesorios += registroAccesorios;
         }
@@ -71,15 +71,15 @@ export function cargarAccesoriostblM() {
     accesorios.forEach(function (accesoriosA) {
         if (accesoriosA.estatus !== 0) {
             registroAccesorios =
-                    '<tr>' +
-                    '<td>' + accesoriosA.nombreAccesorio + '</td>' +
-                    '<td>' + accesoriosA.marcaAccesorio + '</td>' +
-                    '<td>' + accesoriosA.precioCompra + '</td>' +
-                    '<td>' + accesoriosA.precioVenta + '</td>' +
-                    '<td>' + accesoriosA.existencias + '</td>' +
-                    '<td>' + accesoriosA.estatus + '</td>' +
-                    '<td>' + '<a onclick="moduloAccesorio.eliminarAccesorio(' + posAccesorio + ');"  class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i><a>' +
-                    '<a onclick="moduloAccesorio.modificar(' + posAccesorio + ');"  class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i><a></td>';
+                '<tr>' +
+                '<td>' + accesoriosA.nombreAccesorio + '</td>' +
+                '<td>' + accesoriosA.marcaAccesorio + '</td>' +
+                '<td>' + accesoriosA.precioCompra + '</td>' +
+                '<td>' + accesoriosA.precioVenta + '</td>' +
+                '<td>' + accesoriosA.existencias + '</td>' +
+                '<td>' + accesoriosA.estatus + '</td>' +
+                '<td>' + '<a onclick="moduloAccesorio.eliminarAccesorio(' + posAccesorio + ');"  class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i><a>' +
+                '<a onclick="moduloAccesorio.modificar(' + posAccesorio + ');"  class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i><a></td>';
             posAccesorio++;
             cuerpotblAccesorios += registroAccesorios;
         }
@@ -89,152 +89,123 @@ export function cargarAccesoriostblM() {
 
 }
 
-export function cargarEmptblC() {
+export function cargarAccesoriostblC() {
     let filtro = document.getElementById("filtro").value;
 
-    emps.forEach(function (empleado) {
-        if (filtro === "A" && empleado.Persona.Estatus !== 0) {
-                registroEmp =
-                        '<tr>' +
-                        '<td>' + empleado.ClaveUnicaEmp + '</td>' +
-                        '<td>' + empleado.Persona.Nombre + '</td>' +
-                        '<td>' + empleado.Persona.ApellidoPaterno + '</td>' +
-                        '<td>' + empleado.Persona.ApellidoMaterno + '</td>' +
-                        '<td>' + empleado.Persona.Genero + '</td>' +
-                        '<td>' + empleado.Persona.RFC + '</td>' +
-                        '<td>' + empleado.Persona.TelCasa + '</td>' +
-                        '<td>' + empleado.Persona.TelMovil + '</td>' +
-                        '<td>' + empleado.Persona.Correo + '</td>' +
-                        '<td>' + empleado.Usuario.usuario + '</td>' +
-                        '<td>' + empleado.Usuario.contasena + '</td>' +
-                        '<td>' + empleado.Persona.Estatus + '</td>';
+    accesorios.forEach(function (accesoriosA) {
+        if (filtro === "A" && accesoriosA.estatus !== 0) {
+            registroAccesorios =
+                '<tr>' +
+                '<td>' + accesoriosA.nombreAccesorio + '</td>' +
+                '<td>' + accesoriosA.marcaAccesorio + '</td>' +
+                '<td>' + accesoriosA.precioCompra + '</td>' +
+                '<td>' + accesoriosA.precioVenta + '</td>' +
+                '<td>' + accesoriosA.existencias + '</td>' +
+                '<td>' + accesoriosA.estatus + '</td>';
 
-                cuerpotblEmp += registroEmp;
-                countIdPersona = parseInt(empleado.Persona.IdPersona);
-                countIdEmpleado = parseInt(empleado.IdEmpleado);
-                
-        }else if(filtro === "I" && empleado.Persona.Estatus === 0){
-            registroEmp =
-                        '<tr>' +
-                        '<td>' + empleado.ClaveUnicaEmp + '</td>' +
-                        '<td>' + empleado.Persona.Nombre + '</td>' +
-                        '<td>' + empleado.Persona.ApellidoPaterno + '</td>' +
-                        '<td>' + empleado.Persona.ApellidoMaterno + '</td>' +
-                        '<td>' + empleado.Persona.Genero + '</td>' +
-                        '<td>' + empleado.Persona.RFC + '</td>' +
-                        '<td>' + empleado.Persona.TelCasa + '</td>' +
-                        '<td>' + empleado.Persona.TelMovil + '</td>' +
-                        '<td>' + empleado.Persona.Correo + '</td>' +
-                        '<td>' + empleado.Usuario.usuario + '</td>' +
-                        '<td>' + empleado.Usuario.contasena + '</td>' +
-                        '<td>' + empleado.Persona.Estatus + '</td>';
+            cuerpotblAccesorios += registroAccesorios;
 
-                cuerpotblEmp += registroEmp;
-                countIdPersona = parseInt(empleado.Persona.IdPersona);
-                countIdEmpleado = parseInt(empleado.IdEmpleado);
-        }else if(filtro === "Am"){
-            registroEmp =
-                        '<tr>' +
-                        '<td>' + empleado.ClaveUnicaEmp + '</td>' +
-                        '<td>' + empleado.Persona.Nombre + '</td>' +
-                        '<td>' + empleado.Persona.ApellidoPaterno + '</td>' +
-                        '<td>' + empleado.Persona.ApellidoMaterno + '</td>' +
-                        '<td>' + empleado.Persona.Genero + '</td>' +
-                        '<td>' + empleado.Persona.RFC + '</td>' +
-                        '<td>' + empleado.Persona.TelCasa + '</td>' +
-                        '<td>' + empleado.Persona.TelMovil + '</td>' +
-                        '<td>' + empleado.Persona.Correo + '</td>' +
-                        '<td>' + empleado.Usuario.usuario + '</td>' +
-                        '<td>' + empleado.Usuario.contasena + '</td>' +
-                        '<td>' + empleado.Persona.Estatus + '</td>';
+        } else if (filtro === "I" && accesoriosA.estatus === 0) {
+            registroAccesorios =
+                '<tr>' +
+                '<td>' + accesoriosA.nombreAccesorio + '</td>' +
+                '<td>' + accesoriosA.marcaAccesorio + '</td>' +
+                '<td>' + accesoriosA.precioCompra + '</td>' +
+                '<td>' + accesoriosA.precioVenta + '</td>' +
+                '<td>' + accesoriosA.existencias + '</td>' +
+                '<td>' + accesoriosA.estatus + '</td>';
 
-                cuerpotblEmp += registroEmp;
-                countIdPersona = parseInt(empleado.Persona.IdPersona);
-                countIdEmpleado = parseInt(empleado.IdEmpleado);
+            cuerpotblAccesorios += registroAccesorios;
+        } else if (filtro === "Am") {
+            registroAccesorios =
+                '<tr>' +
+                '<td>' + accesoriosA.nombreAccesorio + '</td>' +
+                '<td>' + accesoriosA.marcaAccesorio + '</td>' +
+                '<td>' + accesoriosA.precioCompra + '</td>' +
+                '<td>' + accesoriosA.precioVenta + '</td>' +
+                '<td>' + accesoriosA.existencias + '</td>' +
+                '<td>' + accesoriosA.estatus + '</td>';
+
+            cuerpotblAccesorios += registroAccesorios;
+
         }
 
     });
-     $('#table_id').DataTable();
-                            document.getElementById("table_id_filter").style.display = "none";
-    document.getElementById("tblEmpleados").innerHTML = cuerpotblEmp;
-    cuerpotblEmp = "";
+    $('#table_id').DataTable();
+    document.getElementById("table_id_filter").style.display = "none";
+    document.getElementById("tblAccesorios").innerHTML = cuerpotblAccesorios;
+    cuerpotblAccesorios = "";
 
 }
 
 
 export function registrar() {
     fetch("Modulos/moduloAccesorios/view_registrarAccesorio.html")
-            .then(function (respuesta) {
-                return respuesta.text();
-            })
-            .then(function (html) {
-                document.getElementById("contenedorGestion").innerHTML = html;
-            });
+        .then(function (respuesta) {
+            return respuesta.text();
+        })
+        .then(function (html) {
+            document.getElementById("contenedorGestion").innerHTML = html;
+        });
 }
 
 export function eliminar() {
     fetch("Modulos/moduloAccesorios/view_eliminarAccesorio.html")
-            .then(function (respuesta) {
+        .then(function (respuesta) {
             return respuesta.text();
-            })
-            .then(function (html) {
+        })
+        .then(function (html) {
             document.getElementById("contenedorGestion").innerHTML = html;
-            import ("./controller_Accesorio.js").then(
-                    function (controller) {
+            import("./controller_Accesorio.js").then(
+                function (controller) {
                     moduloAccesorios = controller;
                     moduloAccesorios.cargarAccesoriostblM();
-                            $('#table_id').DataTable();
-                            document.getElementById("table_id_filter").style.display = "block";
-                    }
+                    $('#table_id').DataTable();
+                    document.getElementById("table_id_filter").style.display = "block";
+                }
             );
-            });
-    }
-    export function modificar(pos) {
-    fetch("./Modulos/moduloEmp/view_modificarEmpleado.html")
-            .then(function (respuesta) {
-                return respuesta.text();
-            })
-            .then(function (html) {
-                document.getElementById("contenedorGestion").innerHTML = html;
-                let personaM = emps[pos].Persona;
-                let empleadoM = emps[pos];
-                posEmp = pos;
-                document.getElementById("numeroUnicoEmpleado").value = empleadoM.ClaveUnicaEmp;
-                document.getElementById("nombres").value = personaM.Nombre;
-                document.getElementById("apellidoP").value = personaM.ApellidoPaterno;
-                document.getElementById("apellidoM").value = personaM.ApellidoMaterno;
-                document.getElementById("genero").value = personaM.Genero;
-                document.getElementById("rfc").value = personaM.RFC;
-                document.getElementById("telCasa").value = personaM.TelCasa;
-                document.getElementById("telMovil").value = personaM.TelMovil;
-                document.getElementById("correo").value = personaM.Correo;
-                document.getElementById("usuario").value = empleadoM.Usuario.usuario;
-                document.getElementById("contrasena").value = emps[pos].Usuario.contasena;
-            });
+        });
+}
+export function modificar(pos) {
+    fetch("./Modulos/moduloAccesorios/view_modificarAccesorio.html")
+        .then(function (respuesta) {
+            return respuesta.text();
+        })
+        .then(function (html) {
+            document.getElementById("contenedorGestion").innerHTML = html;
+            let accesorioM = accesorios[pos];
+            posAccesorio = pos;
+            document.getElementById("nombreAccesorio").value = accesorioM.nombreAccesorio;
+            document.getElementById("marcaAccesorio").value = accesorioM.marcaAccesorio;
+            document.getElementById("precioCompra").value = accesorioM.precioCompra;
+            document.getElementById("precioVenta").value = accesorioM.precioVenta;
+            document.getElementById("existencias").value = accesorioM.existencias;
+
+        });
 
 
 }
 export function catalogo() {
-    fetch("./Modulos/moduloEmp/view_catalogoEmpleados.html")
-            .then(function (respuesta) {
+    fetch("./Modulos/moduloAccesorios/view_catalogoAccesorios.html")
+        .then(function (respuesta) {
             return respuesta.text();
-            })
-            .then(function (html) {
+        })
+        .then(function (html) {
             document.getElementById("contenedorGestion").innerHTML = html;
-            import ("./controller_Empleados.js").then(
-                    function (controller) {
-                    moduloEmp = controller;
-                    $(document).ready(function(){
-                            moduloEmp.cargarEmptbl();
-                            moduloEmp.cargarEmptblC();
-                            $('#table_id').DataTable();
-                            document.getElementById("table_id_filter").style.display = "none";
+            import("./controller_Accesorio.js").then(
+                function (controller) {
+                    moduloAccesorios = controller;
+                    $(document).ready(function () {
+                        moduloAccesorios.cargarAccesoriostbl();
+                        moduloAccesorios.cargarAccesoriostblC();
+                        $('#table_id').DataTable();
+                        document.getElementById("table_id_filter").style.display = "none";
                     });
-                    }
+                }
             );
-            });
-    }
-    export function registrarNuevo() {
+        });
+}
+export function registrarNuevo() {
     let inputs = document.getElementsByTagName("input");
     let input;
     let vacios = 0;
@@ -305,7 +276,7 @@ export function almacenarDatos() {
 
     accesorio();
 }
-export function modificarEmp() {
+export function modificarAccesorio() {
     let inputs = document.getElementsByTagName("input");
     let input;
     let vacios = 0;
@@ -335,7 +306,7 @@ export function modificarEmp() {
             }).then((result) => {
                 if (result.isConfirmed) {
                     Swal.fire('Empleado modificado con exito!', '', 'success')
-                    moduloEmp.modificarDatos();
+                    moduloAccesorios.modificarDatos();
                 } else if (result.isDenied) {
 
                 }
@@ -377,7 +348,8 @@ export function modificarDatos() {
     let idPersona = ((countIdPersona + 1).toString());
     let idEmpleado = ((countIdEmpleado + 1).toString());
 
-    let persona = {"IdPersona": idPersona,
+    let persona = {
+        "IdPersona": idPersona,
         "Nombre": nombres,
         "ApellidoPaterno": apellidoP,
         "ApellidoMaterno": apellidoM,
@@ -386,14 +358,17 @@ export function modificarDatos() {
         "TelCasa": telCasa,
         "TelMovil": telMovil,
         "Correo": correo,
-        "Estatus": 1};
+        "Estatus": 1
+    };
     let empleado = {
         "Persona": persona,
         "IdEmpleado": idEmpleado,
         "ClaveUnicaEmp": numeroUnicoEmpleado,
         "Administrador": "Sam",
-        "Usuario": {"usuario": usuario,
-            "contasena": contrasena}
+        "Usuario": {
+            "usuario": usuario,
+            "contasena": contrasena
+        }
     };
 
     emp[posEmp] = empleado;
@@ -401,9 +376,9 @@ export function modificarDatos() {
 
     empleados();
 }
-/*Acciones de elimonar o modificar empleado*/
+Acciones de elimonar o modificar empleado
 
-export function eliminarEmp(pos) {
+export function eliminarAccesorio(pos) {
     Swal.fire({
         title: 'Advertencia',
         text: "¿Esta seguro de eliminar a este empleado?",
@@ -418,12 +393,12 @@ export function eliminarEmp(pos) {
         if (result.isConfirmed) {
             emps[pos].Persona.Estatus = 0;
             emp[pos].Persona.Estatus = 0;
-            moduloEmp.eliminar();
+            moduloAccesorios.eliminar();
             Swal.fire(
-                    'Eliminado!',
-                    'El empleado se ha eliminado con exito',
-                    'success'
-                    )
+                'Eliminado!',
+                'El empleado se ha eliminado con exito',
+                'success'
+            )
         }
     })
-}
+}/*
