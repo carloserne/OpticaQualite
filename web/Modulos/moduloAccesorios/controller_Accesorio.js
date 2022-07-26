@@ -66,8 +66,8 @@ export function cargarAccesoriostblM() {
                 '<td>' + accesorioss.precioVenta + '</td>' +
                 '<td>' + accesorioss.existencias + '</td>' +
                 '<td>' + accesorioss.estatus + '</td>'+
-                '<td>' + '<a onclick="moduloAccesorio.eliminarAccesorio(' + posAccesorio + ');"  class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i><a>' +
-                '<a onclick="moduloAccesorio.modificar(' + posAccesorio + ');"  class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i><a></td>';
+                '<td>' + '<a onclick="moduloAccesorios.eliminarAccesorio(' + posAccesorio + ');"  class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i><a>' +
+                '<a onclick="moduloAccesorios.modificar(' + posAccesorio + ');"  class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i><a></td>';
             posAccesorio++;
             cuerpotblAccesorios += registroAccesorios;
         }
