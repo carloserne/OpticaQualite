@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Optica Qualite</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="descripción" content="Sistema de informacion">
+    <meta name="keywords" content="HTML, CSS">
+    <meta name="author" content="Tech Soft">
+    <link rel="stylesheet" type="text/css" href="style/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="style/MyStyles.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    
+    <link rel="stylesheet" href="style/sweetalert2.css" />
+
+    <!-- Datatables -->
+    <script src="js/jQuery.js"></script>
+    <link rel="stylesheet" type="text/css" href="style/datatables.css">
+    <script type="text/javascript" charset="utf8" src="js/datatables.js"></script>
+</head>
+<body>
+    
+    <div class="d-flex flex-column p-3 text-white float-start overflow-scroll" style="width: 245px; height: 100vh; background: #495c83;">
+        <a href="" class="d-flex align-items-center">
+            <img src="recursos/Optical Qualite/ojoBlanco.png" class="col-5 m-auto" alt="alt">
+        </a>
+        <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item" style="cursor: pointer;">
+                <a class="nav-link" id="inicio" onclick="menubody();" style="background-color: white; color: black;">
+                    <span>Inicio</span>
+                </a>
+            </li>
+            <li class="nav-item" style="cursor: pointer;">
+                <a class="nav-link" onclick="menuPrincipal.clientes();">
+                    <span>Clientes</span>
+                </a>
+            </li>
+            <li class="nav-item" style="cursor: pointer;">
+                <a  class="nav-link" id="empleados" onclick="empleados();">
+                    <span>Empleados</span>
+                </a>
+            </li>
+            <li class="nav-item" style="cursor: pointer;">
+                <a  class="nav-link ">
+                    <span>Examen de la vista</span>
+                </a>
+            </li>
+            <li class="nav-item" style="cursor: pointer;">
+                <a  class="nav-link ">
+                    <span>Presupuesto</span>
+                </a>
+            </li>
+            <li class="nav-item" style="cursor: pointer;">
+                <a class="nav-link " data-toggle="collapse" data-target="#collapseProduc"
+                    aria-expanded="true" aria-controls="collapseProduc">
+                    <span>Productos</span>
+                </a>
+                <div class="collapse" id="collapseProduc">
+                    <div>
+                        <a class="nav-link" onclick="accesorio();" style="cursor: pointer;"><span>Accesorios</span></a>
+                        <a class="nav-link" onclick="armazon();" style="cursor: pointer;"><span>Armazón</span></a>
+                        <a class="nav-link" style="cursor: pointer;"><span>Lentes de contacto</span></a>
+                        <a class="nav-link" style="cursor: pointer;"><span>Soluciones</span></a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item" style="cursor: pointer;">
+                <a class="nav-link" onclick="material()">
+                    <span>Materiales</span>
+                </a>
+            </li>
+            <li class="nav-item" style="cursor: pointer;">
+                <a  class="nav-link ">
+                    <span>Tratamientos</span>
+                </a>
+            </li>   
+            <li class="nav-item" style="cursor: pointer;">
+                <a  class="nav-link" onclick="ventas();">
+                    <span>Ventas</span>
+                </a>
+            </li>
+            <li class="nav-item" style="cursor: pointer;">
+                <a  class="nav-link" onclick="pagos()">
+                    <span>Pagos</span>
+                </a>
+            </li>
+            <li class="nav-item" style="cursor: pointer;">
+                <a  class="nav-link ">
+                    <span>Compras</span>
+                </a>
+            </li>
+            <li class="nav-item" style="cursor: pointer;">
+                <a  class="nav-link ">
+                    <span>Graduaciones</span>
+                </a>
+            </li>
+        </ul>      
+    </div>
+
+    <div class="container-fluid p-0 m-0 col-lg-10 float-end" style="height: 100vh;">
+        <div id="contenedorPrincipal" class="d-flex justify-content-center align-content-center"></div>
+    </div>
+    
+    <footer class="container col-12 float-end d-flex justify-content-center p-0" style="border-top: 1px solid black; height: 80px;">
+        <div class="row col-lg-12 p-0">
+            <div class="col-lg-8 d-flex justify-content-start align-items-center">
+                <h4 class="pl-5">Optica Qualite</h4>
+            </div>
+            <div class="col-lg-4 d-flex justify-content-center align-items-center">
+                <p>copyright &copy;2022 <a href="#">TechSoft</a> </p>
+            </div>
+        </div>       
+    </footer>
+
+    <!--Porfin ppude alv-->
+    
+
+    <script src="./style/js/bootstrap.bundle.js"></script>
+    <script src="./js/Main.js"></script>
+    <script src="js/sweetalert2.min.js"></script>
+    <style>
+        #table_id tfoot input {
+            width: 100% !important;
+        }
+
+        #table_id tfoot {
+            display: table-header-group !important;
+        }
+    </style>
+</body>
+</html>

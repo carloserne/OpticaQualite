@@ -9,6 +9,11 @@ fetch("Modulos/moduloEmp/data_Empleados.json")
             return response.json();
         })
         .then(function (jsondata) {
+
+            empleados = jsondata;
+
+            cargarEmptbl();
+
             emps = jsondata;
         }
         );
@@ -69,26 +74,25 @@ export function cargarEmptbl() {
 
 }
 
+
 export function registrar() {
-    fetch("./Modulos/moduloEmp/view_RegistrarEmpleado.html")
+    fetch("Modulos/moduloEmp/view_RegistrarEmpleado.html")
             .then(function (respuesta) {
                 return respuesta.text();
             })
             .then(function (html) {
                 document.getElementById("contenedorGestion").innerHTML = html;
-
             });
 }
 
 export function eliminar() {
-
-    fetch("./Modulos/moduloEmp/view_eliminarEmpleado.html")
+    fetch("Modulos/moduloEmp/view_eliminarEmpleado.html")
             .then(function (respuesta) {
                 return respuesta.text();
             })
             .then(function (html) {
                 document.getElementById("contenedorGestion").innerHTML = html;
-                import ("./controller_Empleados.js").then(
+                import ("controller_Empleados.js").then(
                         function (controller) {
                             moduloEmp = controller;
                             moduloEmp.cargarEmp();
@@ -97,7 +101,6 @@ export function eliminar() {
                         }
                 );
             });
-
 }
 
 export function catalogo() {
@@ -107,7 +110,6 @@ export function catalogo() {
             })
             .then(function (html) {
                 document.getElementById("contenedorGestion").innerHTML = html;
-
             });
 }
 export function registrarNuevo() {
