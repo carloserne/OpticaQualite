@@ -323,6 +323,7 @@ export function almacenarDatos() {
 
     let idPersona = ((countIdPersona + 1).toString());
     let idEmpleado = ((countIdEmpleado + 1).toString());
+    let numeroUnico = apellidoP.slice(0,2)+"-"+apellidoM.slice(0,1)+"-"+Math.floor(Math.random()*10000);
 
     let persona = {"IdPersona": idPersona,
         "Nombre": nombres,
@@ -337,8 +338,8 @@ export function almacenarDatos() {
     let empleado = {
         "Persona": persona,
         "IdEmpleado": idEmpleado,
-        "ClaveUnicaEmp": numeroUnicoEmpleado,
-        "Administrador": "Sam",
+        "ClaveUnicaEmp": numeroUnico,
+        "Administrador": 1,
         "Usuario": {"usuario": usuario,
             "contasena": contrasena}
     };
@@ -419,7 +420,7 @@ export function modificarDatos() {
 
     let idPersona = ((countIdPersona + 1).toString());
     let idEmpleado = ((countIdEmpleado + 1).toString());
-
+    let numeroUnico = apellidoP.slice(0,2)+"-"+apellidoM.slice(0,1)+"-"+Math.floor(Math.random()*10000);
     let persona = {"IdPersona": idPersona,
         "Nombre": nombres,
         "ApellidoPaterno": apellidoP,
@@ -433,7 +434,7 @@ export function modificarDatos() {
     let empleado = {
         "Persona": persona,
         "IdEmpleado": idEmpleado,
-        "ClaveUnicaEmp": numeroUnicoEmpleado,
+        "ClaveUnicaEmp": numeroUnico,
         "Administrador": "Sam",
         "Usuario": {"usuario": usuario,
             "contasena": contrasena}
