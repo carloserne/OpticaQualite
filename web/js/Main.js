@@ -205,5 +205,15 @@ function ventas() {
                 })
                 .then(function (html) {
                         document.getElementById("contenedorPrincipal").innerHTML = html;
+
+                        import("../Modulos/moduloVentas/controller_Ventas.js").then(
+                                function (controller) {
+
+                                        moduloVentas = controller;
+                                        moduloVentas.cargarVentasTbl();
+                                        $('#table_id').DataTable();
+                                        document.getElementById("table_id_filter").style.display = "none";
+                                }
+                        );
                 });
         }

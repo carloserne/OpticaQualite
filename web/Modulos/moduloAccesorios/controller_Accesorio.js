@@ -4,7 +4,7 @@ let registroAccesorios;
 let accesorios = [];
 let posAccesorio;
 
-fetch("Modulos/moduloAccesorios/data_Accesorios.json")
+fetch("Modulos/moduloAccesorios/data_Accesorio.json")
     .then(response => {
         return response.json();
     })
@@ -12,8 +12,6 @@ fetch("Modulos/moduloAccesorios/data_Accesorios.json")
 
         accesorios = jsondata;
         cargarAccesoriostbl();
-        accesorios = jsondata;
-
     }
     );
 
@@ -68,7 +66,7 @@ export function cargarAccesoriotblM() {
                 '<td>' + accesorioss.precioVenta + '</td>' +
                 '<td>' + accesorioss.existencia + '</td>' +
                 '<td>' + accesorioss.estatus + '</td>';
-            '<td>' + '<a onclick="moduloAccesorio.eliminarAccesorio(' + posAccesorio + ');"  class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i><a>' +
+                '<td>' + '<a onclick="moduloAccesorio.eliminarAccesorio(' + posAccesorio + ');"  class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i><a>' +
                 '<a onclick="moduloAccesorio.modificar(' + posAccesorio + ');"  class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i><a></td>';
             posAccesorio++;
             cuerpotblAccesorios += registroAccesorios;
@@ -91,7 +89,7 @@ export function registrar() {
 }
 
 export function eliminar() {
-    fetch("./Modulos/moduloAccesorios/view_eliminarAccesorio.html")
+    fetch("Modulos/moduloAccesorios/view_eliminarAccesorio.html")
         .then(function (respuesta) {
             return respuesta.text();
         })
@@ -103,6 +101,7 @@ export function eliminar() {
                     moduloAccesorios.cargarAccesoriotblM();
                     $('#table_id').DataTable();
                     document.getElementById("table_id_filter").style.display = "block";
+
                 }
         );
         });

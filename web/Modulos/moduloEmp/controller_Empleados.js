@@ -193,7 +193,7 @@ export function registrar() {
 }
 
 export function eliminar() {
-    fetch("Modulos/moduloEmp/view_eliminarEmpleado.html")
+    fetch("./Modulos/moduloEmp/view_eliminarEmpleado.html")
             .then(function (respuesta) {
             return respuesta.text();
             })
