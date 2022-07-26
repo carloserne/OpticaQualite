@@ -1,0 +1,47 @@
+<div class="container-fluid d-flex align-items-center justify-content-center col-12 p-0 m-0">
+    <div class="row col-lg-12 p-0">
+        <h1>Gestionar pagos</h1>
+        <div class="col-12 m-0 p-0 text-center " style="background: #F5F5F5; border: 2px solid black;">
+            <div class="col-12 row">
+                <div class="col-2">
+                    <button type="button" class="btn btn-light mt-1" onclick="moduloPagos.eliminar();">
+                        < Regresar</button>
+                </div>
+                <div class="col-8 ">
+                    <h2 class="mt-1">Modificar pago</h2>
+                </div>
+
+            </div>
+           
+            <div class="col-12 row align-items-center justify-content-center mt-3">
+                <div class="col-8"><!-- Izquierza -->
+                    
+                    <div class="col-12 row float-left mt-4">
+                        <label for="claveVenta" class="col-6 p-0" >Clave de venta</label>
+                        <input type="number" class="form-control col-6 p-0"  id="claveVenta" name="claveVenta" required >
+                    </div>
+
+                    <div class="col-12 row float-left mt-4">
+                        <label for="clavePago" class="col-6 p-0">Clave unica de pago</label>
+                        <input type="number" class="form-control col-6 p-0"  id="clavePago" name="clavePago" disabled value="XX-XX" required>
+                    </div>
+                    
+                    <div class="col-12 row float-left mt-4">
+                        <label for="montoPago" class="col-6 p-0" >Monto del pago</label>
+                        <input type="number" class="form-control col-6 p-0"  id="montoPago" name="montoPago" required >
+                    </div>
+
+                </div>
+
+                <div class="col-8"></div>
+                <div class="col-4 mt-3 mb-3">
+                    <button onclick="moduloPagos.modificarPago();" type="button" class="btn btn-success"><i class="fa fa-credit-card-alt mx-1" aria-hidden="true"></i>Registrar pago</button>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+</div>

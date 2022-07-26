@@ -231,8 +231,6 @@ export function eliminar() {
                 document.getElementById("usuario").value = empleadoM.Usuario.usuario;
                 document.getElementById("contrasena").value = emps[pos].Usuario.contasena;
             });
-
-
 }
 export function catalogo() {
     fetch("./Modulos/moduloEmp/view_catalogoEmpleados.html")
