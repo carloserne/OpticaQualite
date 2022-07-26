@@ -45,7 +45,7 @@ export function cargarAccesoriostbl() {
                 '<td>' + accesorioss.marcaAccesorio + '</td>' +
                 '<td>' + accesorioss.precioCompra + '</td>' +
                 '<td>' + accesorioss.precioVenta + '</td>' +
-                '<td>' + accesorioss.existencia + '</td>' +
+                '<td>' + accesorioss.existencias + '</td>' +
                 '<td>' + accesorioss.estatus + '</td>';
             cuerpotblAccesorios += registroAccesorios;
         }
@@ -84,7 +84,6 @@ export function registrar() {
         })
         .then(function (html) {
             document.getElementById("contenedorGestion").innerHTML = html;
-
         });
 }
 
@@ -127,7 +126,6 @@ export function registrarNuevo() {
         input = inputs[i];
 
         if (input.value === "") {
-
             vacios++;
         }
 
@@ -176,19 +174,7 @@ export function almacenarDatos() {
     let precioVenta = document.getElementById("precioVenta").value;
     let existencia = document.getElementById("existencias").value;
 
-    let persona = {
-        "IdPersona": idPersona,
-        "Nombre": nombres,
-        "ApellidoPaterno": apellidoP,
-        "ApellidoMaterno": apellidoM,
-        "Genero": genero,
-        "RFC": rfc,
-        "TelCasa": telCasa,
-        "TelMovil": telMovil,
-        "Correo": correo,
-        "Estatus": 1
-    };
-    let accesorios = {
+    let accesorio = {
         "nombreAccesorio": nombreAccesorio,
         "marcaAccesorio": marcaAccesorio,
         "precioCompra": precioCompra,
@@ -197,8 +183,9 @@ export function almacenarDatos() {
         "estatus": 1
     };
 
-    acceso.push(accesorioss);
-    accesorios.push(accesorioss);
+    accesorios.push(accesorio);
 
-    accesorio();
+    console.log(accesorios);
+
+    mostrarAccesorios();
 }

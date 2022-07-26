@@ -41,7 +41,7 @@ export function registrar() {
             let fecha_filtrada = fecha.replace("T", " ");
             fecha_filtrada = fecha_filtrada.replace("Z", "");
 
-            document.getElementById("fecha").value = fecha_filtrada;
+            document.getElementById("fechaHora").value = fecha_filtrada;
         });
 }
 
@@ -67,25 +67,115 @@ export function catalogo() {
         });
 }
 
-export function guardarPago() {
+export function registrarNuevo() {
+    let inputs = document.getElementsByTagName("input");
+    let input;
+    let vacios = 0;
+    let comprobarString = true;
+    for (var i = 0; i < inputs.length; i++) {
+        input = inputs[i];
 
-    const fs = require('fs');
+        if (input.value === "") {
 
-    let jason;
-    
-    pagos.forEach(function (pago) {
-        let lineaPago = "{\"idpago\":"+pago.idPago+",\"fechaHora\":"+pago.fechaHora+",\"monto\":"+pago.monto+",\"idVenta\":"+pago.idVenta+",\"nombre\":"+pago.nombre+"},";
-        jason += lineaPago;
-    });
+            vacios++;
+        }
+        if (input.name !== "montoPago") {
+            if (isNaN(input.value) === false) {
+                comprobarString = false;
+            }
 
-    let pagos = {
-        name: 'Mike',
-        age: 23,
-        gender: 'Male',
-        department: 'English',
-        car: 'Honda'
+        }
+    }
+
+    if (vacios === 0) {
+        if (comprobarString === true) {
+            Swal.fire({
+                title: '¿Seguro de registrar el pago?',
+                showDenyButton: true,
+                confirmButtonText: 'Si',
+                denyButtonText: `No`
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire('Pago registrado con exito!', '', 'success')
+                    moduloPagos.almacenarDatos();
+                } else if (result.isDenied) {
+
+                }
+            });
+        } else {
+            Swal.fire({
+                title: 'Algo salio mal',
+                text: "Asegurese de que ningun campo que no requiera numeros no contenga ningun número!",
+                icon: 'warning',
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'Aceptar!'
+            })
+        }
+
+    } else {
+        Swal.fire({
+            title: 'Algo salio mal',
+            text: "Asegurese de llenar todos los campos!",
+            icon: 'warning',
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'Aceptar!'
+        })
+    }
+}
+export function volverPagos(){
+    if (emp.length === 0) {
+            fetch("Modulos/moduloPagos/data_Pagos.json")
+            .then(response => {
+                    return response.json();
+            })
+            .then(function (jsondata) {
+                    pago = jsondata;
+            }
+            );
+
+    }
+
+    fetch("Modulos/moduloPagos/view_Pagos.html")
+
+            .then(function (respuesta) {
+                    return respuesta.text();
+            })
+            .then(function (html) {
+                    document.getElementById("contenedorPrincipal").innerHTML = html;
+
+                    import("controller_Pagos.js").then(
+                            function (controller) {
+
+                                    moduloPagos = controller;
+                                    moduloPagos.cargarPagosTbl();
+                                    $('#table_id').DataTable();
+                                    document.getElementById("table_id_filter").style.display = "none";
+                            }
+                    );
+
+            });
+}
+
+export function almacenarDatos() {
+    let fechaHora = document.getElementById("fechaHora").value;
+    let monto = document.getElementById("montoPago").value;
+    let idVenta = document.getElementById("claveVenta").value;
+    let nombre = "nuevo";
+    let contadorClaves = new Number;
+
+    for(let i = 0; i < pagos.length; i++){
+        contadorClaves += 1;
+    }
+
+    let pago = {
+        "idPago": contadorClaves+1,
+        "fechaHora": fechaHora,
+        "monto": monto,
+        "idVenta": idVenta,
+        "nombre": nombre
     };
 
-    let data = JSON.stringify(student);
-    fs.writeFileSync('student-2.json', data);
+    pagos.push(pago);
+
+    mostrarPagos();
 }

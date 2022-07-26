@@ -14,36 +14,33 @@
             </div>
            
             <div class="col-12 row align-items-center justify-content-center mt-3">
-                <div class="col-6"><!<!-- Izquierza -->
+                <div class="col-6"><!-- Izquierza -->
                   
                     <div class="col-12 row float-left mt-4">
-                        <label for="idAccesorio" class="col-6 p-0" disabled>Clave unica de pago</label>
-                        <input type="text" class="form-control col-6 p-0"  id="idAccesorio" name="idAccesorioa" required disabled value="xx-xx-">
+                        <label for="clavePago" class="col-6 p-0">Clave unica de pago</label>
+                        <input type="text" class="form-control col-6 p-0"  id="clavePago" name="clavePago" disabled value="XX-XX" required>
 
                     </div>
                     <div class="col-12 row float-left mt-4">
-                        <label for="nombreAccesorio" class="col-6 p-0" >Clave de venta</label>
-                        <input type="text" class="form-control col-6 p-0"  id="nombreAccesorio" name="nombreAccesorio" required >
-                        <div class="invalid-feedback">
-                            Please choose a name.
-                        </div>
+                        <label for="claveVenta" class="col-6 p-0" >Clave de venta</label>
+                        <input type="text" class="form-control col-6 p-0"  id="claveVenta" name="claveVenta" required >
                     </div>
                 </div>
 
-                <div class="col-6"><!-- Derecha -->
+                <div class="col-6 text"><!-- Derecha -->
                     <div class="col-12 row float-left mt-4">
-                        <label for="marcaAcceesorio" class="col-6 p-0" >Monto del pago</label>
-                        <input type="text" class="form-control col-6 p-0"  id="marcaAcceesorio" name="marcaAcceesorio" required >
+                        <label for="montoPago" class="col-6 p-0" >Monto del pago</label>
+                        <input type="text" class="form-control col-6 p-0"  id="montoPago" name="montoPago" required >
                     </div>
                     <div class="col-12 row float-left mt-4">
-                        <label for="precioCompra" class="col-6 p-0" >Fecha y hora</label>
-                        <input type="number" class="form-control col-6 p-0"  id="precioCompra" name="precioCompra" required>
+                        <label for="fechaHora" class="col-6 p-0" >Fecha y hora</label>
+                        <input type="text" class="form-control col-6 p-0 text-center" disabled id="fechaHora" name="fechaHora" required>
                     </div>
                 </div>
 
                 <div class="col-8"></div>
                 <div class="col-4 mt-3 mb-3">
-                    <button onclick="moduloPagos.guardarPago();" type="button" class="btn btn-success"><i class="fa fa-credit-card-alt mx-1" aria-hidden="true"></i>Registrar pago</button>
+                    <button onclick="moduloPagos.registrarNuevo();" type="button" class="btn btn-success"><i class="fa fa-credit-card-alt mx-1" aria-hidden="true"></i>Registrar pago</button>
                 </div>
             </div>
 

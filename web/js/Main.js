@@ -1,7 +1,6 @@
 let menuPrincipal;
 let tabla;
 let moduloEmp;
-let moduloAccesorios;
 let moduloLentes;
 let emp = [];
 
@@ -61,7 +60,7 @@ function cambiarFocus() {
         removerEstilo();
 }
 
-function accesorio() {
+function mostrarAccesorios() {
 
         fetch("Modulos/moduloAccesorios/data_Accesorio.json")
                 .then(response => {
@@ -84,7 +83,7 @@ function accesorio() {
                                 function (controller) {
 
                                         moduloAccesorios = controller;
-                                        moduloAccesorios.cargarAccesorio();
+                                        moduloAccesorios.cargarAccesoriostbl();
                                         $('#table_id').DataTable();
                                         document.getElementById("table_id_filter").style.display = "none";
                                 }
@@ -156,9 +155,10 @@ function PantallaArmazones() {
                 });
 }
 
-function pagos(){
-
-        fetch("Modulos/moduloPagos/data_Pagos.json")
+function mostrarPagos(){
+        cambiarFocus();        
+        if (emp.length === 0) {
+                fetch("Modulos/moduloPagos/data_Pagos.json")
                 .then(response => {
                         return response.json();
                 })
@@ -166,6 +166,8 @@ function pagos(){
                         pago = jsondata;
                 }
                 );
+ 
+        }
 
         fetch("./Modulos/moduloPagos/view_Pagos.html")
 
