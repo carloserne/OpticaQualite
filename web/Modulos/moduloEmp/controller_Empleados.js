@@ -97,11 +97,12 @@ export function cargarEmptblM() {
                     '<td>' + empleado.Persona.Estatus + '</td>' +
                     '<td>' + '<a onclick="moduloEmp.eliminarEmp(' + posEmp + ');"  class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i><a>' +
                     '<a onclick="moduloEmp.modificar(' + posEmp + ');"  class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i><a></td>';
-            posEmp++;
+            
             cuerpotblEmp += registroEmp;
             countIdPersona = parseInt(empleado.Persona.IdPersona);
             countIdEmpleado = parseInt(empleado.IdEmpleado);
         }
+        posEmp++;
     });
     document.getElementById("tblEmpleados").innerHTML = cuerpotblEmp;
     cuerpotblEmp = "";
