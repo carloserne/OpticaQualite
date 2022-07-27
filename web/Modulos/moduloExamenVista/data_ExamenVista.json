@@ -1,0 +1,32 @@
+[
+  {
+    "idExamenVista": 1,
+    "FechaHora": "fecha",
+    "Cliente":"Cliente",
+    "Graduacion":"Graduacion"
+  },
+  {
+    "idExamenVista": 2,
+    "FechaHora": "fecha",
+    "Cliente":"Cliente",
+    "Graduacion":"Graduacion"
+  },
+  {
+    "idExamenVista": 3,
+    "FechaHora": "fecha",
+    "Cliente":"Cliente",
+    "Graduacion":"Graduacion"
+  },
+  {
+    "idExamenVista": 4,
+    "FechaHora": "fecha",
+    "Cliente":"Cliente",
+    "Graduacion":"Graduacion"
+  },
+  {
+    "idExamenVista": 5,
+    "FechaHora": "fecha",
+    "Cliente":"Cliente",
+    "Graduacion":"Graduacion"
+  }
+]

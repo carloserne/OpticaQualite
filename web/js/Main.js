@@ -5,6 +5,7 @@ let moduloLentes;
 let emp = [];
 let lentes = [];
 let material = [];
+let examenes = [];
 
 window.onload = menubody();
 
@@ -274,6 +275,36 @@ function abrirModuloLentes() {
                         document.getElementById("contenedorPrincipal").innerHTML = html;
 
                         import("../Modulos/moduloLentesContacto/controller_LentesContacto.js").then(
+                                function (controller) {
+                                        moduloLentes = controller;
+                                        moduloLentes.cargarLentes();
+                                        $('#table_id').DataTable();
+                                        document.getElementById("table_id_filter").style.display = "none";
+                                }
+                        );
+
+                });
+}
+
+function abrirModuloExamen() {
+        if (lentes.length === 0) {
+                fetch("Modulos/moduloExamenVista/data_ExamenVista.json")
+                        .then(response => {
+                                return response.json();
+                        })
+                        .then(function (jsondata) {
+                                examenes = jsondata;                                
+                        }
+                        );
+        }
+        fetch("Modulos/moduloExamenVista/view_ExamenVista.html")
+                .then(function (respuesta) {
+                        return respuesta.text();
+                })
+                .then(function (html) {
+                        document.getElementById("contenedorPrincipal").innerHTML = html;
+
+                        import("../Modulos/moduloExamenVista/controller_ExamenVista.js").then(
                                 function (controller) {
                                         moduloLentes = controller;
                                         moduloLentes.cargarLentes();
