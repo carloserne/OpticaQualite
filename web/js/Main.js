@@ -4,6 +4,7 @@ let moduloEmp;
 let moduloLentes;
 let emp = [];
 let lentes = [];
+let material = [];
 
 window.onload = menubody();
 
@@ -89,7 +90,7 @@ function mostrarAccesorios() {
                 });
 }
 
-function material() {
+function pantallaMaterial() {
 
         fetch("Modulos/moduloMateriales/data_Material.json")
                 .then(response => {

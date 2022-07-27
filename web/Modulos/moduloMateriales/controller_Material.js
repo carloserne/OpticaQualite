@@ -18,7 +18,7 @@ fetch("Modulos/moduloMateriales/data_Material.json")
        
 export function cargarMaterial() {
      
-    materia.forEach(function (materialess) {
+    material.forEach(function (materialess) {
         registroMateriales =
                 '<tr>' +
                 '<td>' + materialess.numeroUnicoMaterial + '</td>' +
