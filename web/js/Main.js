@@ -3,12 +3,11 @@ let tabla;
 let moduloEmp;
 let moduloLentes;
 let emp = [];
+let lentes = [];
 
 window.onload = menubody();
 
-function removerEstilo() {
-        document.getElementById("inicio").removeAttribute("style");
-}
+
 
 function menubody() {
         fetch("Modulos/moduloMenuPrincipal/view_menuPrincipal.html")
@@ -22,7 +21,7 @@ function menubody() {
 
 
 function empleados() {
-        cambiarFocus();        
+               
         if (emp.length === 0) {
                 fetch("Modulos/moduloEmp/data_Empleados.json")
                 .then(response => {
@@ -56,9 +55,7 @@ function empleados() {
                 });
 }
 
-function cambiarFocus() {
-        removerEstilo();
-}
+
 
 function mostrarAccesorios() {
 
@@ -222,15 +219,14 @@ function ventas() {
         
 }
 
-function lentes() {
+function abrirModuloLentes() {
         fetch("Modulos/moduloLentesContacto/data_LentesContacto.json")
         .then(response => {
                 return response.json();
         })
         .then(function (jsondata) {
-
                 lentes = jsondata;
-                console.log(lentes);
+                console.log(lentes)                
         }
         );
         fetch("Modulos/moduloLentesContacto/view_LentesContacto.html")
@@ -239,11 +235,9 @@ function lentes() {
         })
         .then(function (html) {
                 document.getElementById("contenedorPrincipal").innerHTML = html;
-
-
+                
                 import("../Modulos/moduloLentesContacto/controller_LentesContacto.js").then(
                         function (controller) {
-
                                 moduloLentes = controller;
                                 moduloLentes.cargarLentes();
                                 $('#table_id').DataTable();
@@ -252,4 +246,11 @@ function lentes() {
                 );
 
         });
+}
+
+function removerEstilo() {
+        document.getElementById("inicio").removeAttribute("style");
+}
+function cambiarFocus() {
+        removerEstilo();
 }

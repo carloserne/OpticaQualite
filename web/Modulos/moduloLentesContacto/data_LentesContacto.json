@@ -1,14 +1,42 @@
 [
   {
-    "Nombres" : "hola"
+    "idLentesContacto": 1,
+    "Nombre": "Nombre 1",
+    "Marca": "Marca 1",
+    "Color": "Color 1",
+    "Queratometria": "Quera 1",
+    "Fotografia": "Foto 1",
+    "TipoLentes": "Tipo 1",
+    "Estatus": 1
   },
   {
-    "Nombres" : "hola"
+    "idLentesContacto": 2,
+    "Nombre": "Nombre 2",
+    "Marca": "Marca 2",
+    "Color": "Color 2",
+    "Queratometria": "Quera 2",
+    "Fotografia": "Foto 2",
+    "TipoLentes": "Tipo 2",
+    "Estatus": 1
   },
   {
-    "Nombres" : "hola"
+    "idLentesContacto": 3,
+    "Nombre": "Nombre 3",
+    "Marca": "Marca 3",
+    "Color": "Color 3",
+    "Queratometria": "Quera 3",
+    "Fotografia": "Foto 3",
+    "TipoLentes": "Tipo 3",
+    "Estatus": 1
   },
   {
-    "Nombres" : "hola"
+    "idLentesContacto": 4,
+    "Nombre": "Nombre 4",
+    "Marca": "Marca 4",
+    "Color": "Color 4",
+    "Queratometria": "Quera 4",
+    "Fotografia": "Foto 4",
+    "TipoLentes": "Tipo 4",
+    "Estatus": 1
   }
 ]

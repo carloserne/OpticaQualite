@@ -7,17 +7,17 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" onclick="moduloEmp.registrar();">Registrar</a>
+                        <a class="nav-link" onclick="moduloLentes.mostrarPantallaRegistrar();">Registrar</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" onclick="moduloEmp.eliminar();">Eliminar o Modificar</a>
+                        <a class="nav-link" onclick="moduloLentes.mostrarPantallaeliminar();">Eliminar o Modificar</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" onclick="moduloEmp.catalogo();">Catálogo de empleados</a>
+                        <a class="nav-link" onclick="moduloLentes.catalogoLentes();">Catálogo de lentes de contacto</a>
                     </li>
                 </ul>
             </div>
-        </nav>
+        </nav>  
 
     </div>
     <div class="col-12 text-center  mt-2" id="contenedorGestion">
@@ -27,21 +27,16 @@
                 <table id="table_id" class="records_list table table-striped table-bordered table-hover">
                     <thead>
                         <tr>
-                            <th>Número único de empleado</th>
                             <th>Nombre</th>
-                            <th>Apellido paterno</th>
-                            <th>Apellido materno</th>
-                            <th>Género</th>
-                            <th>RFC</th>
-                            <th>Tel. de casa</th>
-                            <th>Tel. movil</th>
-                            <th>Correo eléctronico</th>
-                            <th>Usuario</th>
-                            <th>contraseña</th>
+                            <th>Marca</th>
+                            <th>Color</th>
+                            <th>Queratometría</th>
+                            <th>Fotografía</th>
+                            <th>Tipo de lentes</th>                            
                             <th>Estatus</th>
                         </tr>
                     </thead>
-                    <tbody id="tblEmpleados">
+                    <tbody id="tblLentesC">
                         
                     </tbody>
                 </table>
