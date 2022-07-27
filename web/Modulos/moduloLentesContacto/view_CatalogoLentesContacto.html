@@ -1,44 +1,40 @@
 <div class="container-fluid d-flex align-items-center justify-content-center col-12 p-0 m-0">
     <div class="row col-lg-12 p-0">
 
-        <h1>Gestionar empleados</h1>
+        <h1>Gestionar Lentes de contacto</h1>
         <div class="col-12 m-0 p-0 text-center " style="background: #F5F5F5; border: 2px solid black;">
             <div class="col-12 row">
-                <div class="col-2">
-                    <button type="button" class="btn btn-light mt-1" onclick="empleados();">
-                        < Regresar</button>
+                <div class="col-2 m-0 p-3 d-flex align-items-center">
+                    <a onclick="abrirModuloLentes();" class="m-1 bg" style="cursor: pointer;">
+                        <i class="fa fa-angle-left" aria-hidden="true"></i> <span>Regresar</span>
+                    </a>
                 </div>
-                <div class="col-6 text-right">
-                    <h2 class="mt-1">Catálogo de empleados</h2>
+                <div class="col-6 m-0 p-0">
+                    <h2 class="mt-1">Catálogo de lentes de contacto</h2>
                 </div>
                 <div class="col-4 mt-2">
                     <select class="custom-select mr-sm-2 text-center col-6 p-0" id="filtro" name="filtro">
-                            <option value="I">Inactivos</option>
-                            <option value="A">Activos</option>
-                            <option value="Am">Ambos</option>
+                        <option value="I">Inactivos</option>
+                        <option value="A" selected>Activos</option>
+                        <option value="Am">Ambos</option>
                     </select>
-                    <button type="submit" class="btn btn-success col-3" onclick="moduloEmp.cargarEmptblC();">Aplicar</button>
+                    <button type="submit" class="btn btn-success col-3" onclick="moduloLentes.cargarLentestblC();">Aplicar</button>
                 </div>
                 <div id="tabla" class="mt-1">
             <div class="table-responsive" id="mydatatable-container">
                 <table id="table_id" class="records_list table table-striped table-bordered table-hover">
                     <thead>
                         <tr>
-                            <th>Número único de empleado</th>
                             <th>Nombre</th>
-                            <th>Apellido paterno</th>
-                            <th>Apellido materno</th>
-                            <th>Género</th>
-                            <th>RFC</th>
-                            <th>Tel. de casa</th>
-                            <th>Tel. movil</th>
-                            <th>Correo eléctronico</th>
-                            <th>Usuario</th>
-                            <th>contraseña</th>
+                            <th>Marca</th>
+                            <th>Color</th>
+                            <th>Queratometría</th>
+                            <th>Fotografía</th>
+                            <th>Tipo de lentes</th>                            
                             <th>Estatus</th>
                         </tr>
                     </thead>
-                    <tbody id="tblEmpleados">
+                    <tbody id="tblLentesC">
                         
                     </tbody>
                 </table>

@@ -3,6 +3,7 @@ let tabla;
 let moduloEmp;
 let moduloLentes;
 let emp = [];
+let lentes = [];
 
 window.onload = menubody();
 
@@ -224,9 +225,8 @@ function abrirModuloLentes() {
                 return response.json();
         })
         .then(function (jsondata) {
-
                 lentes = jsondata;
-                console.log(lentes);
+                console.log(lentes)                
         }
         );
         fetch("Modulos/moduloLentesContacto/view_LentesContacto.html")

@@ -1,4 +1,3 @@
-
 let cuerpotblLentes = "";
 let registroLentes;
 let lentesC = [];
@@ -20,7 +19,7 @@ fetch("Modulos/moduloLentesContacto/data_LentesContacto.json")
 
 export function cargarLentes() {
     lentes.forEach(function (lentesR) {
-        if (lentesR.Estatus !== 0) {
+        if (lentesR.Estatus != 0) {
             registroLentes =
                 '<tr>' +
                 '<td>' + lentesR.Nombre + '</td>' +
@@ -67,11 +66,11 @@ export function cargarLentestblM() {
                 '<td>' + lentesR.Queratometria + '</td>' +
                 '<td>' + lentesR.Fotografia + '</td>' +
                 '<td>' + lentesR.TipoLentes + '</td>' +
-                '<td>' + lentesR.Estatus + '</td></tr>' +
+                '<td>' + lentesR.Estatus + '</td>'+
                 '<td>' + '<a onclick="moduloLentes.eliminarLentes(' + lentesC.indexOf(lentesR) + ');"  class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i><a>' +
                 ' <a onclick="moduloLentes.modificarLentes(' + lentesC.indexOf(lentesR) + ');"  class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i><a></td>';
             cuerpotblLentes += registroLentes;
-            countIdLentes = lentesR.idLentesContacto;
+            countIdLentes = lentesR.idLentesContacto;        
         }
     });
     document.getElementById("tblLentesC").innerHTML = cuerpotblLentes;
@@ -155,7 +154,7 @@ export function mostrarPantallaeliminar() {
 }
 
 export function modificarLentes(pos) {
-    fetch("./Modulos/moduloLentesContacto/view_modificarLentesCotacto.html")
+    fetch("./Modulos/moduloLentesContacto/view_modificarLentesContacto.html")
         .then(function (respuesta) {
             return respuesta.text();
         })
@@ -180,7 +179,7 @@ export function catalogoLentes() {
         .then(function (html) {
             document.getElementById("contenedorGestion").innerHTML = html;
 
-            import("./controller_Empleados.js").then(
+            import("./controller_LentesContacto.js").then(
                 function (controller) {
                     moduloLentes = controller;
                     $(document).ready(function () {
@@ -202,7 +201,7 @@ export function almacenarDatos() {
     let foto = document.getElementById("foto").value;
     let tipoLentes = document.getElementById("tipoLentes").value;    
 
-    let idLentes = (countIdPersona + 1);
+    let idLentes = (countIdLentes + 1);
 
     let lentesNuevo = {
         "idLentesContacto": idLentes,
@@ -229,7 +228,7 @@ export function modificarDatos() {
     let foto = document.getElementById("foto").value;
     let tipoLentes = document.getElementById("tipoLentes").value;
 
-    let idLentes = (countIdPersona + 1);
+    let idLentes = (countIdLentes + 1);
 
     let lentesNuevo = {
         "idLentesContacto": idLentes,
@@ -252,6 +251,7 @@ export function modificarDatos() {
 
 export function eliminarLentes(pos) {
     indiceLentesM = pos;
+    
     Swal.fire({
         title: 'Advertencia',
         text: "¿Está seguro de eliminar el registro?",
@@ -264,8 +264,11 @@ export function eliminarLentes(pos) {
 
     }).then((result) => {
         if (result.isConfirmed) {
+            console.log(indiceLentesM);
             lentesC[indiceLentesM].Estatus = 0;
-            lentes[indiceLentesM].Estatus = 0;        
+            lentes[indiceLentesM].Estatus = 0;
+            console.log(lentesC);
+            console.log(lentes);
             Swal.fire(
                 'Eliminado!',
                 'El registro se ha eliminado con éxito',
