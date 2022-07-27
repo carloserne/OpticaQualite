@@ -14,26 +14,6 @@ fetch("Modulos/moduloVentas/data_Ventas.json")
     }
     );
 
-export function cargarVenta() {
-
-    venta.forEach(function (venta) {
-
-        registroVenta =
-            '<tr>' +
-            '<td>' + venta.ClaveUnicaVenta + '</td>' +
-            '<td>' + venta.FechaDeLaVenta + '</td>' +
-            '<td>' + venta.Persona.Nombre + '</td>' +
-            '<td>' + venta.TotalDeLaVenta + '</td>' +
-            '<td>' + venta.TotalAbonado + '</td>' +
-            '<td>' + venta.AdeudoActual + '</td>';
-        cuerpotblVentas += registroVenta;
-    });
-    document.getElementById("tblVentas").innerHTML = cuerpotblVentas;
-    cuerpotblVentas = "";
-
-}
-
-
 export function cargarVentastbl() {
 
     ventas.forEach(function (venta) {
@@ -65,7 +45,7 @@ export function registrar() {
 }
 
 export function eliminar() {
-    fetch("./Modulos/moduloEmp/view_eliminarEmpleado.html")
+    fetch("./Modulos/moduloVentas/view_eliminarVentas.html")
         .then(function (respuesta) {
             return respuesta.text();
         })
@@ -76,7 +56,7 @@ export function eliminar() {
 }
 
 export function catalogo() {
-    fetch("./Modulos/moduloEmp/view_catalogoEmpleados.html")
+    fetch("./Modulos/moduloVentas/view_catalogoVentas.html")
         .then(function (respuesta) {
             return respuesta.text();
         })

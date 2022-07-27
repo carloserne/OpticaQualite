@@ -1,7 +1,7 @@
 <div class="container-fluid d-flex align-items-center justify-content-center col-12 p-0 m-0">
     <div class="row col-lg-12 p-0">
 
-        <h1>Gestionar pagos</h1>
+        <h1>Gestionar ventas</h1>
         <div class="col-12 m-0 p-0 text-center " style="background: #F5F5F5; border: 2px solid black;">
             <div class="col-12 row">
                 <div class="col-2">
@@ -9,7 +9,17 @@
                         < Regresar</button>
                 </div>
                 <div class="col-6 text-right">
-                    <h2 class="mt-1">Catálogo de pagos</h2>
+                    <h2 class="mt-1">Catálogo de ventas</h2>
+                </div>
+
+                <div class="col-4 mt-2">
+                    <select class="custom-select mr-sm-2 text-center col-6 p-0" id="filtro" name="filtro">
+                        <option value="I">Inactivos</option>
+                        <option value="A">Activos</option>
+                        <option value="Am">Ambos</option>
+                    </select>
+                    <button type="submit" class="btn btn-success col-3"
+                        onclick="moduloEmp.cargarEmptblC();">Aplicar</button>
                 </div>
             </div>
 
