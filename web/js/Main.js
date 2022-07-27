@@ -98,6 +98,7 @@ function pantallaMaterial() {
                 })
                 .then(function (jsondata) {
                         material = jsondata;
+                        console.log(material);
                 }
                 );
 

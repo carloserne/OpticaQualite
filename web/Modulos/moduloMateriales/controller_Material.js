@@ -85,7 +85,7 @@ export function registrar(){
 }
 
 export function eliminar() {
-    fetch("Modulos/moduloMateriales/view_eliminarMaterial.html")
+    fetch("./Modulos/moduloMateriales/view_eliminarMaterial.html")
         .then(function (respuesta) {
             return respuesta.text();
         })
