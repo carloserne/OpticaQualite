@@ -6,9 +6,7 @@ let emp = [];
 
 window.onload = menubody();
 
-function removerEstilo() {
-        document.getElementById("inicio").removeAttribute("style");
-}
+
 
 function menubody() {
         fetch("Modulos/moduloMenuPrincipal/view_menuPrincipal.html")
@@ -22,7 +20,7 @@ function menubody() {
 
 
 function empleados() {
-        cambiarFocus();        
+               
         if (emp.length === 0) {
                 fetch("Modulos/moduloEmp/data_Empleados.json")
                 .then(response => {
@@ -56,9 +54,7 @@ function empleados() {
                 });
 }
 
-function cambiarFocus() {
-        removerEstilo();
-}
+
 
 function mostrarAccesorios() {
 
@@ -222,7 +218,7 @@ function ventas() {
         
 }
 
-function lentes() {
+function abrirModuloLentes() {
         fetch("Modulos/moduloLentesContacto/data_LentesContacto.json")
         .then(response => {
                 return response.json();
@@ -239,11 +235,9 @@ function lentes() {
         })
         .then(function (html) {
                 document.getElementById("contenedorPrincipal").innerHTML = html;
-
-
+                
                 import("../Modulos/moduloLentesContacto/controller_LentesContacto.js").then(
                         function (controller) {
-
                                 moduloLentes = controller;
                                 moduloLentes.cargarLentes();
                                 $('#table_id').DataTable();
@@ -252,4 +246,11 @@ function lentes() {
                 );
 
         });
+}
+
+function removerEstilo() {
+        document.getElementById("inicio").removeAttribute("style");
+}
+function cambiarFocus() {
+        removerEstilo();
 }

@@ -48,7 +48,6 @@ export function cargarEmp() {
 
 }
 
-
 export function cargarEmptbl() {
 
     emps.forEach(function (empleado) {
@@ -181,7 +180,6 @@ export function cargarEmptblC() {
 
 }
 
-
 export function registrar() {
     fetch("Modulos/moduloEmp/view_RegistrarEmpleado.html")
             .then(function (respuesta) {
@@ -252,7 +250,7 @@ export function catalogo() {
             );
             });
     }
-    export function registrarNuevo() {
+export function registrarNuevo() {
     let inputs = document.getElementsByTagName("input");
     let input;
     let vacios = 0;
