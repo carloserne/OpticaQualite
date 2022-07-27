@@ -6,7 +6,7 @@
     "Color": "Color 1",
     "Queratometria": "Quera 1",
     "Fotografia": "Foto 1",
-    "TipoLentes": "Tipo 1",
+    "TipoLentes": 1,
     "Estatus": 1
   },
   {
@@ -16,7 +16,7 @@
     "Color": "Color 2",
     "Queratometria": "Quera 2",
     "Fotografia": "Foto 2",
-    "TipoLentes": "Tipo 2",
+    "TipoLentes": 2,
     "Estatus": 1
   },
   {
@@ -26,7 +26,7 @@
     "Color": "Color 3",
     "Queratometria": "Quera 3",
     "Fotografia": "Foto 3",
-    "TipoLentes": "Tipo 3",
+    "TipoLentes": 1,
     "Estatus": 1
   },
   {
@@ -36,7 +36,7 @@
     "Color": "Color 4",
     "Queratometria": "Quera 4",
     "Fotografia": "Foto 4",
-    "TipoLentes": "Tipo 4",
+    "TipoLentes": 2,
     "Estatus": 1
   }
 ]

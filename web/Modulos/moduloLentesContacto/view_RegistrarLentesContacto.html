@@ -35,18 +35,17 @@
                     <div class="col-12 row float-left mt-4">
                         <label for="tipoL" class="col-6 p-0  text-end px-2">Tipo de lentes</label>
                         <select class="custom-select mr-sm-2 text-center col-4 p-0" id="tipoL" name="tipoL" required>
-                            <option value="graduacion">Graduación</option>
-                            <option value="estetico">Estético</option>
+                            <option value="1">Graduación</option>
+                            <option value="2">Estético</option>
                         </select>
                     </div>
                 </div>
                 <div class="col-6 d-flex align-items-center flex-column">
-                    <div style="width: 256px; height: 256px;" class="bg-info">
+                    <div style="width: 256px; height: 256px;" class="overflow-hidden">
                         <img id="imgSelect" class="img-fluid">
-                    </div>
-                    <br>
+                    </div>                    
                     <input type="file" name="foto" id="foto" accept="image/*" class="form-control-file" oninput="moduloLentes.cargarImg();">
-                    <label for="foto" class="btn btn-outline-primary">Subir Foto</label>
+                    <label for="foto" class="btn btn-outline-primary mt-1">Subir Foto</label>
                 </div>
                 <div class="col-8"></div>
                 <div class="col-4 mt-3 mb-3">
