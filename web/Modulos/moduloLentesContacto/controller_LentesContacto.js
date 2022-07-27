@@ -264,11 +264,8 @@ export function eliminarLentes(pos) {
 
     }).then((result) => {
         if (result.isConfirmed) {
-            console.log(indiceLentesM);
             lentesC[indiceLentesM].Estatus = 0;
             lentes[indiceLentesM].Estatus = 0;
-            console.log(lentesC);
-            console.log(lentes);
             Swal.fire(
                 'Eliminado!',
                 'El registro se ha eliminado con éxito',
@@ -337,4 +334,20 @@ export function validarDatos(accion){
             confirmButtonText: 'Aceptar!'
         })
     }
+}
+
+export function cargarImg(){
+        let cargarInput = document.getElementById("foto");
+    let imagenElegida = document.getElementById("imgSelect");
+
+    cargarInput.onchange = () => {
+        let lector = new FileReader();
+        lector.readAsDataURL(cargarInput.files[0]);
+        console.log(cargarInput.files[0]);
+        lector.onload = () => {
+            imagenElegida.setAttribute("src",lector.result);
+        }
+    }
+
+    
 }

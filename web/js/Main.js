@@ -22,19 +22,19 @@ function menubody() {
 
 
 function empleados() {
-               
+
         if (emp.length === 0) {
                 fetch("Modulos/moduloEmp/data_Empleados.json")
-                .then(response => {
-                        return response.json();
-                })
-                .then(function (jsondata) {
-                        emp = jsondata;
-                        console.log(emp);
-                }
-                );   
+                        .then(response => {
+                                return response.json();
+                        })
+                        .then(function (jsondata) {
+                                emp = jsondata;
+                                console.log(emp);
+                        }
+                        );
         }
-        
+
         fetch("Modulos/moduloEmp/view_Empleados.html")
 
                 .then(function (respuesta) {
@@ -154,18 +154,18 @@ function PantallaArmazones() {
                 });
 }
 
-function mostrarPagos(){
-        cambiarFocus();        
+function mostrarPagos() {
+        cambiarFocus();
         if (emp.length === 0) {
                 fetch("Modulos/moduloPagos/data_Pagos.json")
-                .then(response => {
-                        return response.json();
-                })
-                .then(function (jsondata) {
-                        pago = jsondata;
-                }
-                );
- 
+                        .then(response => {
+                                return response.json();
+                        })
+                        .then(function (jsondata) {
+                                pago = jsondata;
+                        }
+                        );
+
         }
 
         fetch("./Modulos/moduloPagos/view_Pagos.html")
@@ -196,7 +196,7 @@ function ventas() {
                 .then(response => {
                         return response.json();
                 })
-                .then(function (jsondata) {                
+                .then(function (jsondata) {
                         venta = jsondata;
                 }
                 );
@@ -218,36 +218,37 @@ function ventas() {
                                 }
                         );
                 });
-        
+
 }
 
 function abrirModuloLentes() {
-        fetch("Modulos/moduloLentesContacto/data_LentesContacto.json")
-        .then(response => {
-                return response.json();
-        })
-        .then(function (jsondata) {
-                lentes = jsondata;
-                console.log(lentes)                
-        }
-        );
-        fetch("Modulos/moduloLentesContacto/view_LentesContacto.html")
-        .then(function (respuesta) {
-                return respuesta.text();
-        })
-        .then(function (html) {
-                document.getElementById("contenedorPrincipal").innerHTML = html;
-                
-                import("../Modulos/moduloLentesContacto/controller_LentesContacto.js").then(
-                        function (controller) {
-                                moduloLentes = controller;
-                                moduloLentes.cargarLentes();
-                                $('#table_id').DataTable();
-                                document.getElementById("table_id_filter").style.display = "none";
+        if (lentes.length === 0) {
+                fetch("Modulos/moduloLentesContacto/data_LentesContacto.json")
+                        .then(response => {
+                                return response.json();
+                        })
+                        .then(function (jsondata) {
+                                lentes = jsondata;                                
                         }
-                );
+                        );
+        }
+        fetch("Modulos/moduloLentesContacto/view_LentesContacto.html")
+                .then(function (respuesta) {
+                        return respuesta.text();
+                })
+                .then(function (html) {
+                        document.getElementById("contenedorPrincipal").innerHTML = html;
 
-        });
+                        import("../Modulos/moduloLentesContacto/controller_LentesContacto.js").then(
+                                function (controller) {
+                                        moduloLentes = controller;
+                                        moduloLentes.cargarLentes();
+                                        $('#table_id').DataTable();
+                                        document.getElementById("table_id_filter").style.display = "none";
+                                }
+                        );
+
+                });
 }
 
 function removerEstilo() {
