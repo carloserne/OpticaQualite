@@ -13,33 +13,44 @@ fetch("Modulos/moduloExamenVista/data_ExamenVista.json")
         examen = jsondata;
 
         cargarLentestbl();
+        cambiarFecha();
 
     }
     );
+    
+function cambiarFecha(){
+    let date = new Date();
+
+    let dia = date.getDate();
+    let mes = (date.getMonth() + 1);
+    let ano = date.getFullYear();
+    let hora = date.getHours();
+    let min = date.getMinutes();
+
+    let fecha = dia+"/0"+mes+"/"+ano;;
+    let horaActual = hora+":"+min;
+
+    console.log(fecha);
+    console.log(horaActual);
+}
 
 export function cargarLentes() {
-    let tipo; 
-    examenes.forEach(function (lentesR) { 
-        if (lentesR.TipoLentes === 1) {
-            tipo = "Graduación";
-        } else {
-            tipo = "Estéticos";
-        }   
+    examenes.forEach(function (ex) {    
         if (lentesR.Estatus != 0) {
             registroExamen =
                 '<tr>' +
-                '<td>' + lentesR.Nombre + '</td>' +
-                '<td>' + lentesR.Marca + '</td>' +
-                '<td>' + lentesR.Color + '</td>' +
-                '<td>' + lentesR.Queratometria + '</td>' +
+                '<td>' + ex.FechaHora + '</td>' +
+                '<td>' + ex.Cliente + '</td>' +
+                '<td>' + ex.Color + '</td>' +
+                '<td>' + ex.Queratometria + '</td>' +
                 '<td> <img src="" class="img-fluid"> </td>' +
                 '<td>' + tipo + '</td>' +
-                '<td>' + lentesR.Estatus + '</td></tr>';
+                '<td>' + ex.Estatus + '</td></tr>';
             cuerpotblExamen += registroExamen;
-            countIdLexamen = lentesR.idLentesContacto;
+            countIdLexamen = ex.idLentesContacto;
         }
     });
-    document.getElementById("tblLentesC").innerHTML = cuerpotblExamen;
+    document.getElementById("tblExamen").innerHTML = cuerpotblExamen;
     cuerpotblExamen = "";
 
     cargarInput = document.getElementById("imgLentes");
@@ -67,7 +78,7 @@ export function cargarLentestbl() {
             countIdLexamen = lentesR.idLentesContacto;
         }
     });
-    document.getElementById("tblLentesC").innerHTML = cuerpotblExamen;
+    document.getElementById("tblExamen").innerHTML = cuerpotblExamen;
     cuerpotblExamen = "";
 }
 

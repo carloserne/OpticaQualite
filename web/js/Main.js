@@ -287,16 +287,16 @@ function abrirModuloLentes() {
 }
 
 function abrirModuloExamen() {
-        if (lentes.length === 0) {
-                fetch("Modulos/moduloExamenVista/data_ExamenVista.json")
-                        .then(response => {
-                                return response.json();
-                        })
-                        .then(function (jsondata) {
-                                examenes = jsondata;                                
-                        }
-                        );
-        }
+        // if (lentes.length === 0) {
+        //         fetch("Modulos/moduloExamenVista/data_ExamenVista.json")
+        //                 .then(response => {
+        //                         return response.json();
+        //                 })
+        //                 .then(function (jsondata) {
+        //                         examenes = jsondata;                                
+        //                 }
+        //                 );
+        // }
         fetch("Modulos/moduloExamenVista/view_ExamenVista.html")
                 .then(function (respuesta) {
                         return respuesta.text();
