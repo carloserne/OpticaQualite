@@ -70,3 +70,7 @@
 .nav-link:hover > span{
     color: black;
 }
+
+input[type="file"] {
+    display: none;
+}
