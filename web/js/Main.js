@@ -19,6 +19,40 @@ function menubody() {
                         document.getElementById("contenedorPrincipal").innerHTML = html;
                 });
 }
+function clientes() {
+        cambiarFocus();        
+        if (emp.length === 0) {
+                fetch("Modulos/moduloClientes/data_Clientes.json")
+                .then(response => {
+                        return response.json();
+                })
+                .then(function (jsondata) {
+                        clients = jsondata;
+                        console.log(clients);
+                }
+                );   
+        }
+        
+        fetch("Modulos/moduloClientes/view_Clientes.html")
+
+                .then(function (respuesta) {
+                        return respuesta.text();
+                })
+                .then(function (html) {
+                        document.getElementById("contenedorPrincipal").innerHTML = html;
+
+                        import("../Modulos/moduloClientes/controller_Clientes.js").then(
+                                function (controller) {
+
+                                        moduloCliente = controller;
+                                        moduloCliente.cargarClient();
+                                        $('#table_id').DataTable();
+                                        document.getElementById("table_id_filter").style.display = "none";
+                                }
+                        );
+
+                });
+}
 
 
 function empleados() {
