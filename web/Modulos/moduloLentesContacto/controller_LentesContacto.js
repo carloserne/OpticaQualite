@@ -29,7 +29,6 @@ export function cargarLentes() {
                 '<td>' + lentesR.Queratometria + '</td>' +
                 '<td>' + lentesR.Fotografia + '</td>' +
                 '<td>' + lentesR.TipoLentes + '</td>' +
-                '<td>' + lentesR.Graduacion + '</td>' +
                 '<td>' + lentesR.Estatus + '</td></tr>';
             cuerpotblLentes += registroLentes;
             countIdLentes = lentesR.idLentesContacto;
