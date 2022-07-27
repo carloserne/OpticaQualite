@@ -4,7 +4,7 @@
         <div class="col-12 m-0 p-0 text-center" style="background: #F5F5F5; border: 1px solid black;">
             <div class="col-12 row">                            
                 <div class="col-1 m-0 p-0">
-                    <button type="button" class="btn mt-1" onclick="pantallaArmazones();">
+                    <button type="button" class="btn mt-1" onclick="PantallaArmazones();">
                         <i class="fa fa-angle-left" aria-hidden="true"></i> <span>Regresar</span>
                     </button>
                 </div>
@@ -18,7 +18,7 @@
                   
                     <div class="col-12 row float-left mt-4">
                         <label for="numeroUnicoEmpleado" class="col-6 p-0 text-end px-2" disabled>Código de barras</label>
-                        <input type="text" class="form-control col-6 p-0"  id="codigoBarras" name="numeroUnicoEmpleado" required disabled value="xx-xx-">
+                        <input type="text" class="form-control col-6 p-0"  id="codigoBarras" name="numeroUnicoEmpleado" required disabled value="OQ-XXXX">
 
                     </div>
                     <div class="col-12 row float-left mt-4">
@@ -49,7 +49,7 @@
                     </div>
                     <div class="col-12 row float-left mt-4">
                         <label for="telCasa" class="col-6 p-0  text-end px-2" >Dimensiones</label>
-                        <input type="number" class="form-control col-6 p-0"  id="dimenisones" name="telCasa" required>
+                        <input type="text" class="form-control col-4 p-0"  id="dimenisones" name="telCasa" required>
                     </div>
                     <div class="col-12 row float-left mt-4">
                         <label for="telMovil" class="col-6 p-0  text-end px-2" >Precio de compra</label>
@@ -61,11 +61,16 @@
                     </div>
                     <div class="col-12 row float-left mt-4">
                         <label for="usuario" class="col-6 p-0  text-end px-2" >Existencias</label>
-                        <input type="text" class="form-control col-6 p-0"  id="existencias" name="usuario" required>
+                        <input type="text" class="form-control col-2 p-0"  id="existencias" name="usuario" required>
+                    </div>
+                    <div class="col-12 row float-left mt-4">
+                        <label for="usuario" class="col-6 p-0  text-end px-2" >Subir imagen</label>
+                        <input type="file" class="form-control col-4 p-0"  id="subirImagen" name="usuario" accept=".jpg, .jpeg, .png" required>
                     </div>
                 </div>
 
-                <div class="col-8"></div>
+
+                <div class="col-10"></div>
                 <div class="col-4 mt-3 mb-3">
                     <button type="submit" class="btn btn-success" onclick="moduloArmazones.registrarNuevo();"><i class="fa fa-plus" aria-hidden="true"></i>Registrar armazón</button>
                 </div>
