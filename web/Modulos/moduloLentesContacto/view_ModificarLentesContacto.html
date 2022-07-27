@@ -4,79 +4,22 @@
         <h1>Gestionar empleados</h1>
         <div class="col-12 m-0 p-0 text-center " style="background: #F5F5F5; border: 2px solid black;">
             <div class="col-12 row">
-                <div class="col-2">
-                    <button type="button" class="btn btn-light mt-1" onclick="empleados();">
-                        < Regresar</button>
+                <div class="col-2 m-0 p-3 d-flex align-items-center">
+                    <a onclick="abrirModuloLentes();" class="m-1 bg" style="cursor: pointer;">
+                        <i class="fa fa-angle-left" aria-hidden="true"></i> <span>Regresar</span>
+                    </a>
                 </div>
-                <div class="col-8 ">
-                    <h2 class="mt-1">Modificar empleado</h2>
+                <div class="col-10 m-0 p-0">
+                    <h2 class="mt-1">Modificar lentes de contacto</h2>
                 </div>
 
             </div>
            
             <div class="col-12 row align-items-center justify-content-center mt-3">
-                <div class="col-6"><!<!-- Izquierza -->
-                  
-                    <div class="col-12 row float-left mt-4">
-                        <label for="numeroUnicoEmpleado" class="col-6 p-0" disabled>Número único de empleado</label>
-                        <input type="text" class="form-control col-6 p-0"  id="numeroUnicoEmpleado" name="numeroUnicoEmpleado" required disabled value="xx-xx-">
-
-                    </div>
-                    <div class="col-12 row float-left mt-4">
-                        <label for="nombres" class="col-6 p-0" >Nombre(s)</label>
-                        <input type="text" class="form-control col-6 p-0"  id="nombres" name="nombres" required >
-                        <div class="invalid-feedback">
-                            Please choose a name.
-                        </div>
-                    </div>
-                    <div class="col-12 row float-left mt-4">
-                        <label for="apellidoP" class="col-6 p-0" >Apellido paterno</label>
-                        <input type="text" class="form-control col-6 p-0"  id="apellidoP" name="apellidoP" required >
-                    </div>
-                    <div class="col-12 row float-left mt-4">
-                        <label for="apellidoM" class="col-6 p-0" >Apellido materno</label>
-                        <input type="text" class="form-control col-6 p-0"  id="apellidoM" name="apellidoM" required>
-                    </div>
-                    <div class="col-12 row float-left mt-4">
-                        <label for="genero" class="col-6 p-0">Género</label>
-                        <select class="custom-select mr-sm-2 text-center col-4 p-0" id="genero" name="genero">
-                            <option value="Masculino">Masculino</option>
-                            <option value="Femenino">Femenino</option>
-                            <option value="Otro">Otro</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="col-6"><!<!-- Derecha -->
-                    <div class="col-12 row float-left">
-                        <label for="rfc" class="col-6 p-0">RFC</label>
-                        <input type="text" class="form-control col-6 p-0" id="rfc" name="rfc" required>
-                    </div>
-                    <div class="col-12 row float-left mt-4">
-                        <label for="telCasa" class="col-6 p-0" >Tel. Casa</label>
-                        <input type="number" class="form-control col-6 p-0"  id="telCasa" name="telCasa" required>
-                    </div>
-                    <div class="col-12 row float-left mt-4">
-                        <label for="telMovil" class="col-6 p-0" >Tel. Movil</label>
-                        <input type="number" class="form-control col-6 p-0"  id="telMovil" name="telMovil" required>
-                    </div>
-                    <div class="col-12 row float-left mt-4">
-                        <label for="correo" class="col-6 p-0" >Correo Electronico</label>
-                        <input type="email" class="form-control col-6 p-0"  id="correo" name="correo" required>
-                    </div>
-                    <div class="col-12 row float-left mt-4">
-                        <label for="usuario" class="col-6 p-0" >Usuario</label>
-                        <input type="text" class="form-control col-6 p-0"  id="usuario" name="usuario" required>
-                    </div>
-                    <div class="col-12 row float-left mt-4">
-                        <label for="contrasena" class="col-6 p-0" >Contraseña</label>
-                        <input type="password" class="form-control col-6 p-0"  id="contrasena" name="contrasena" required>
-                    </div>
-                </div>
 
                 <div class="col-8"></div>
                 <div class="col-4 mt-3 mb-3">
-                    <button type="submit" class="btn btn-warning" onclick="moduloEmp.modificarEmp();"><i class="fa fa-pencil" aria-hidden="true"></i>Modificar empleado</button>
+                    <button type="submit" class="btn btn-warning" onclick="moduloLentes.modificarLentes();"><i class="fa fa-pencil" aria-hidden="true"></i>Modificar empleado</button>
                 </div>
             </div>
 
