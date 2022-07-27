@@ -306,7 +306,7 @@ export function almacenarDatos() {
         "estatus": 1
     };
 
-    armazon.push(armazon);
+    armazones.push(armazon);
 
     console.log(armazones);
 
