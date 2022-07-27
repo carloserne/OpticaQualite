@@ -224,7 +224,7 @@ function mostrarPagos() {
 }
 
 
-function ventas() {
+function mostrarVentas() {
 
         fetch("Modulos/moduloVentas/data_Ventas.json")
                 .then(response => {
@@ -246,7 +246,7 @@ function ventas() {
                                 function (controller) {
 
                                         moduloVentas = controller;
-                                        moduloVentas.cargarVentasTbl();
+                                        moduloVentas.cargarVentastbl();
                                         $('#table_id').DataTable();
                                         document.getElementById("table_id_filter").style.display = "none";
                                 }

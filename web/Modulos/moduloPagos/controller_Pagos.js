@@ -12,6 +12,7 @@ fetch("Modulos/moduloPagos/data_Pagos.json")
     .then(function (jsondata) {
         pagos = jsondata;
         cargarPagosTbl();
+        pagos = jsondata;
     }
     );
 
