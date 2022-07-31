@@ -15,85 +15,90 @@
     <!-- Datatables -->
     <script src="js/jQuery.js"></script>
     <link rel="stylesheet" type="text/css" href="style/datatables.css">
-    <script type="text/javascript" charset="utf8" src="js/datatables.js"></script>
+    
 </head>
 <body>
     
-    <div class="d-flex flex-column p-3 text-white float-start overflow-scroll col-2" style="width: 230px; height: 103vh; background: #495c83;">
-        <a href="" class="d-flex align-items-center mb-3">
-            <img src="recursos/Optical Qualite/ojoBlanco.png" class="col-5 m-auto" alt="alt">
-        </a>
-        <ul class="nav nav-pills flex-column mb-auto">
-            <li class="nav-item " style="cursor: pointer;">
-                <a class="nav-link" id="inicio" onclick="menubody();" style="background-color: white; color: black;">
-                    <span>Inicio</span> 
+    <div class="p-2 text-white overflow-auto col-2" id="navMain">
+        <nav class="navbar d-flex flex-colum" id="menuMain">
+            <div class="d-flex justify-content-between">
+                <div class="cerrar"><i class="fa-solid fa-xmark"></i></div>
+                <a class="d-flex align-items-center mb-3" onclick="menubody();">
+                    <img src="recursos/Optical Qualite/ojoBlanco.png" class="col-5 m-auto" alt="alt">
                 </a>
-            </li>
-            <li class="nav-item" style="cursor: pointer;">
-                <a class="nav-link" onclick="clientes();">
-                    <span>Clientes</span>
-                </a>
-            </li>
-            <li class="nav-item" style="cursor: pointer;">
-                <a  class="nav-link" onclick="empleados();">
-                    <span>Empleados</span>
-                </a>
-            </li>
-            <li class="nav-item" style="cursor: pointer;" onclick="abrirModuloExamen();">
-                <a  class="nav-link " >
-                    <span>Examen de la vista</span>
-                </a>
-            </li>
-            <li class="nav-item" style="cursor: pointer;">
-                <a  class="nav-link ">
-                    <span>Presupuesto</span>
-                </a>
-            </li>
-            <li class="nav-item" style="cursor: pointer;">
-                <a class="nav-link " data-toggle="collapse" data-target="#collapseProduc"
-                    aria-expanded="true" aria-controls="collapseProduc">
-                    <span>Productos</span>
-                </a>
-                <div class="collapse" id="collapseProduc">
-                    <div>
-                        <a class="nav-link" onclick="mostrarAccesorios();" style="cursor: pointer;"><span>Accesorios</span></a>
-                        <a class="nav-link" onclick="PantallaArmazones();" style="cursor: pointer;"><span>Armazón</span></a>
-                        <a class="nav-link" onclick="abrirModuloLentes();" style="cursor: pointer;"><span>Lentes de contacto</span></a>
-                        <a class="nav-link" style="cursor: pointer;"><span>Soluciones</span></a>
+            </div>
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item " style="cursor: pointer;">
+                    <a class="nav-link" id="inicio" onclick="menubody();" style="background-color: white; color: black;">
+                        <span>Inicio</span> 
+                    </a>
+                </li>
+                <li class="nav-item" style="cursor: pointer;">
+                    <a class="nav-link" onclick="clientes();">
+                        <span>Clientes</span>
+                    </a>
+                </li>
+                <li class="nav-item" style="cursor: pointer;">
+                    <a  class="nav-link" onclick="empleados();">
+                        <span>Empleados</span>
+                    </a>
+                </li>
+                <li class="nav-item" style="cursor: pointer;" onclick="abrirModuloExamen();">
+                    <a  class="nav-link " >
+                        <span>Examen de la vista</span>
+                    </a>
+                </li>
+                <li class="nav-item" style="cursor: pointer;">
+                    <a  class="nav-link ">
+                        <span>Presupuesto</span>
+                    </a>
+                </li>
+                <li class="nav-item" style="cursor: pointer;">
+                    <a class="nav-link " data-toggle="collapse" data-target="#collapseProduc"
+                        aria-expanded="true" aria-controls="collapseProduc">
+                        <span>Productos</span>
+                    </a>
+                    <div class="collapse" id="collapseProduc">
+                        <div>
+                            <a class="nav-link" onclick="mostrarAccesorios();" style="cursor: pointer;"><span>Accesorios</span></a>
+                            <a class="nav-link" onclick="PantallaArmazones();" style="cursor: pointer;"><span>Armazón</span></a>
+                            <a class="nav-link" onclick="abrirModuloLentes();" style="cursor: pointer;"><span>Lentes de contacto</span></a>
+                            <a class="nav-link" style="cursor: pointer;"><span>Soluciones</span></a>
+                        </div>
                     </div>
-                </div>
-            </li>
-            <li class="nav-item" style="cursor: pointer;">
-                <a class="nav-link" onclick="pantallaMaterial();">
-                    <span>Materiales</span>
-                </a>
-            </li>
-            <li class="nav-item" style="cursor: pointer;">
-                <a  class="nav-link ">
-                    <span>Tratamientos</span>
-                </a>
-            </li>   
-            <li class="nav-item" style="cursor: pointer;">
-                <a  class="nav-link" onclick="mostrarVentas();">
-                    <span>Ventas</span>
-                </a>
-            </li>
-            <li class="nav-item" style="cursor: pointer;">
-                <a  class="nav-link" onclick="mostrarPagos();">
-                    <span>Pagos</span>
-                </a>
-            </li>
-            <li class="nav-item" style="cursor: pointer;">
-                <a  class="nav-link ">
-                    <span>Compras</span>
-                </a>
-            </li>
-            <li class="nav-item" style="cursor: pointer;">
-                <a  class="nav-link ">
-                    <span>Graduaciones</span>
-                </a>
-            </li>
-        </ul>      
+                </li>
+                <li class="nav-item" style="cursor: pointer;">
+                    <a class="nav-link" onclick="pantallaMaterial();">
+                        <span>Materiales</span>
+                    </a>
+                </li>
+                <li class="nav-item" style="cursor: pointer;">
+                    <a  class="nav-link ">
+                        <span>Tratamientos</span>
+                    </a>
+                </li>   
+                <li class="nav-item" style="cursor: pointer;">
+                    <a  class="nav-link" onclick="mostrarVentas();">
+                        <span>Ventas</span>
+                    </a>
+                </li>
+                <li class="nav-item" style="cursor: pointer;">
+                    <a  class="nav-link" onclick="mostrarPagos();">
+                        <span>Pagos</span>
+                    </a>
+                </li>
+                <li class="nav-item" style="cursor: pointer;">
+                    <a  class="nav-link ">
+                        <span>Compras</span>
+                    </a>
+                </li>
+                <li class="nav-item" style="cursor: pointer;">
+                    <a  class="nav-link ">
+                        <span>Graduaciones</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </div>
 
     <div class="container-fluid p-0 m-0 col-lg-10 float-end" style="height: 100vh;">
@@ -117,6 +122,9 @@
     <script src="style/js/bootstrap.bundle.js"></script>
     <script src="js/Main.js"></script>
     <script src="js/sweetalert2.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="js/datatables.js"></script>
+    <script src="https://kit.fontawesome.com/df18d6cab7.js" crossorigin="anonymous"></script>
+
     <style>
         #table_id tfoot input {
             width: 100% !important;
@@ -126,5 +134,20 @@
             display: table-header-group !important;
         }
     </style>
+    <script>
+        $('#menuMain ul li').on('click', function(){
+          $("#menuMain ul li.activo").removeClass('activo');
+          $(this).addClass('activo');
+        });
+    
+        $('.menuIcon').on('click', function(){
+          $('#navMain').addClass('menuActivo');
+        })
+    
+        $('.cerrar').on('click', function(){
+          $('#navMain').removeClass('menuActivo');
+        })
+        
+      </script>
 </body>
 </html>

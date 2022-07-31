@@ -1,75 +1,91 @@
-
-.menu{
-    position: absolute;
-    background: #495c83;
-    color: white;
-    width: 205px;
-}
-#barras{
-    display: none;
-}
-#logo{
+#logo {
     margin-left: 25%;
 }
-#imagenLogin{
+
+#imagenLogin {
     background: #495c83;
     border-radius: 10px;
 }
-#contentLogin{
+
+#contentLogin {
     margin-top: 10%;
     border: 2px solid black;
     border-radius: 10px;
 }
 
-#contentRegistro{
+#contentRegistro {
     margin-top: 10%;
     border: 1px solid black;
     border-radius: 10px;
 }
 
-#tabla{
+#tabla {
     height: 400px;
-    overflow-y: scroll;
-}
-#table_id_length{
-    text-align: initial;
-}
-#contenedor2{
-    height: 540px;
-}
-@media(max-width: 900px ){
-    .menu{
-    position: absolute;
-    background: #495c83;
-    color: white;
-    width: 90px;
-    }
-    .menu #links{
-        display: none;
-    }
-    #barras{
-        display: block;
-        margin-top: 10%;
-        margin-bottom: 10%;
-    }
-    
+    overflow-y: auto;
 }
 
-#collapseProduc{
+#table_id_length {
+    text-align: initial;
+}
+
+
+
+#collapseProduc {
     margin-left: 45px;
 }
 
-#collapseProduc a{
+#collapseProduc a {
     padding-left: 5px;
 }
 
-.nav-link:hover{
+.nav-link:hover {
     background-color: white;
 }
-.nav-link:hover > span{
+
+.nav-link:hover>span {
     color: black;
 }
 
 input[type="file"] {
     display: none;
+}
+
+
+.activo {
+    background-color: white;
+    color: black;
+}
+
+#navMain {
+    position: absolute;
+    height: 100vh;    
+    background-color: #495c83;
+    transition: all 0.5s;
+}
+
+#menuMain{
+    height: 100%;
+}
+
+.menuIcon,
+.cerrar {
+    display: none;
+}
+
+@media(max-width: 900px) {
+    #navMain {
+        margin-left: -230px;
+        position: fixed;
+        min-height: 100vh;
+        z-index: 1;
+    }
+
+    #navMain.menuActivo {
+        margin-left: 0;
+    }
+
+    .menuIcon,
+    .cerrar {
+        display: block;
+    }
 }
