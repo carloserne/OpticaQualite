@@ -17,8 +17,7 @@
     <link rel="stylesheet" type="text/css" href="style/datatables.css">
     
 </head>
-<body>
-    
+<body>    
     <div class="p-2 text-white overflow-auto col-2" id="navMain">
         <nav class="navbar d-flex flex-colum" id="menuMain">
             <div class="d-flex justify-content-between">
@@ -98,10 +97,10 @@
                     </a>
                 </li>
             </ul>
-        </nav>
-        <button class="btn p-0 menuIcon"><i class="fa-solid fa-bars"></i></button>
+        </nav>        
     </div>
-
+    <button class="btn p-0 menuIcon"><i class="fa-solid fa-bars"></i></button>
+    
     <div class="container-fluid p-0 m-0 col-lg-10 float-end" style="height: 100vh;">
         <div id="contenedorPrincipal" class="d-flex justify-content-center align-content-center"></div>
     </div>
@@ -139,6 +138,7 @@
         $('#menuMain ul li').on('click', function(){
           $("#menuMain ul li.activo").removeClass('activo');
           $(this).addClass('activo');
+          $('#navMain').removeClass('menuActivo');
         });
     
         $('.menuIcon').on('click', function(){

@@ -78,6 +78,7 @@ input[type="file"] {
         position: fixed;
         min-height: 100vh;
         z-index: 1;
+        width: 100%;
     }
 
     #navMain.menuActivo {
