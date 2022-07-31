@@ -11,8 +11,6 @@ fetch("Modulos/moduloExamenVista/data_ExamenVista.json")
     .then(function (jsondata) {
         examen = jsondata;        
         cargarExamentbl();       
-        $('#table_id').DataTable();
-        document.getElementById("table_id_filter").style.display = "none";
     }
     );
 fetch("Modulos/moduloClientes/data_Clientes.json")
@@ -33,9 +31,8 @@ function obtenerFecha(){
     let hora = date.getHours();
     let min = date.getMinutes();
 
-    let fecha = dia+"-0"+mes+"-"+ano;;
+    let fecha = dia+"/0"+mes+"/"+ano;;
     let horaActual = hora+":"+min;
-    console.log(horaActual);
 
     return fecha+" "+horaActual;
 }
@@ -120,10 +117,11 @@ export function cargarExamentblC() {
                 '<td>' + ex.Cliente + '</td>' +
                 '<td>' + ex.Graduacion + '</td></tr>';
             cuerpotblExamen += registroExamen;
+            
         }
+        
     });
-    $('#table_id').DataTable();
-    document.getElementById("table_id_filter").style.display = "none";
+    $('#table_id').DataTable();    
     document.getElementById("tblExamen").innerHTML = cuerpotblExamen;
     cuerpotblExamen = "";
 
@@ -183,10 +181,8 @@ export function modificarExamen(pos) {
             indiceExamenM = pos;
             let ExamenM = examen[indiceExamenM]; 
             let fecha = ExamenM.FechaHora.slice(0,10);
-            let hora = ExamenM.FechaHora.slice(10);   
-            console.log(fecha);    
-            console.log(hora);
-            console.log();
+            let hora = ExamenM.FechaHora.slice(10); 
+
             document.getElementById("fecha").value = fecha;
             document.getElementById("hora").value = hora;
             document.getElementById("cliente").value = ExamenM.Cliente;
@@ -227,8 +223,6 @@ export function almacenarDatos() {
 
     let idExamen = examen[examen.length-1].idExamenVista;
 
-    console.log(idExamen);
-
     let examenNuevo = {
         "idExamenVista": (idExamen+1),
         "FechaHora": fechaHoy,
@@ -248,8 +242,8 @@ export function modificarDatos() {
     let hora = document.getElementById("hora").value;
     let cliente = document.getElementById("cliente").value;
     let graduacion = document.getElementById("graduacion").value;
-    
-    let fechaHora = fecha+hora;
+    let hola = "";
+    let fechaHora = fecha.replace("-","/")+hora;
 
     examen[indiceExamenM].FechaHora = fechaHora;
     examen[indiceExamenM].Cliente = cliente;
