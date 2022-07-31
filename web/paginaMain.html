@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Optica Qualite</title>
     <meta charset="UTF-8">
@@ -7,105 +8,120 @@
     <meta name="descripción" content="Sistema de informacion">
     <meta name="keywords" content="HTML, CSS">
     <meta name="author" content="Tech Soft">
-    <link rel="stylesheet" type="text/css" href="style/css/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="style/MyStyles.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    
+    <link rel="stylesheet" type="text/css" href="style/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="style/MyStyles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style/sweetalert2.css" />
 
     <!-- Datatables -->
     <script src="js/jQuery.js"></script>
     <link rel="stylesheet" type="text/css" href="style/datatables.css">
-    
+
 </head>
-<body>    
+
+<body>
     <div class="p-2 text-white overflow-auto col-2" id="navMain">
         <nav class="navbar d-flex flex-colum" id="menuMain">
-            <div class="d-flex justify-content-between">
-                <div class="cerrar"><i class="fa-solid fa-xmark"></i></div>
-                <a class="d-flex align-items-center mb-3" onclick="menubody();">
-                    <img src="recursos/Optical Qualite/ojoBlanco.png" class="col-5 m-auto" alt="alt">
+            <div class="d-flex justify-content-between col-12">
+                <div class="cerrar col-2"><i class="fa-solid fa-xmark"></i></div>
+                <a class="d-flex align-items-center mb-3 col-10" onclick="menubody();">
+                    <img src="recursos/Optical Qualite/ojoBlanco.png" class="img-fluid" alt="alt">
                 </a>
             </div>
-            <ul class="nav nav-pills flex-column mb-auto">
-                <li class="nav-item " style="cursor: pointer;">
-                    <a class="nav-link" id="inicio" onclick="menubody();" style="background-color: white; color: black;">
-                        <span>Inicio</span> 
+            <ul class="nav nav-pills flex-column mb-auto col-12">
+                <li class="nav-item" style="cursor: pointer;" id="inicio" onclick="menubody();">
+                    <a class="nav-link activo">
+                        <span>Inicio</span>
                     </a>
                 </li>
-                <li class="nav-item" style="cursor: pointer;">
-                    <a class="nav-link" onclick="clientes();">
+                <li class="nav-item" style="cursor: pointer;" onclick="clientes();">
+                    <a class="nav-link">
                         <span>Clientes</span>
                     </a>
                 </li>
-                <li class="nav-item" style="cursor: pointer;">
-                    <a  class="nav-link" onclick="empleados();">
+                <li class="nav-item" style="cursor: pointer;" onclick="empleados();">
+                    <a class="nav-link">
                         <span>Empleados</span>
                     </a>
                 </li>
                 <li class="nav-item" style="cursor: pointer;" onclick="abrirModuloExamen();">
-                    <a  class="nav-link " >
+                    <a class="nav-link ">
                         <span>Examen de la vista</span>
                     </a>
                 </li>
                 <li class="nav-item" style="cursor: pointer;">
-                    <a  class="nav-link ">
+                    <a class="nav-link ">
                         <span>Presupuesto</span>
                     </a>
                 </li>
-                <li class="nav-item" style="cursor: pointer;">
-                    <a class="nav-link " data-toggle="collapse" data-target="#collapseProduc"
-                        aria-expanded="true" aria-controls="collapseProduc">
+                <li class="nav-item" style="cursor: pointer;" id="productos">
+                    <a class="nav-link " data-toggle="collapse" data-target="#collapseProduc" aria-expanded="true" aria-controls="collapseProduc">
                         <span>Productos</span>
                     </a>
                     <div class="collapse" id="collapseProduc">
                         <div>
-                            <a class="nav-link" onclick="mostrarAccesorios();" style="cursor: pointer;"><span>Accesorios</span></a>
-                            <a class="nav-link" onclick="PantallaArmazones();" style="cursor: pointer;"><span>Armazón</span></a>
-                            <a class="nav-link" onclick="abrirModuloLentes();" style="cursor: pointer;"><span>Lentes de contacto</span></a>
-                            <a class="nav-link" style="cursor: pointer;"><span>Soluciones</span></a>
+                            <a class="nav-link" onclick="mostrarAccesorios();" style="cursor: pointer;">
+                                <span>Accesorios</span>
+                            </a>
+                            <a class="nav-link" onclick="PantallaArmazones();" style="cursor: pointer;">
+                                <span>Armazón</span>
+                            </a>
+                            <a class="nav-link" onclick="abrirModuloLentes();" style="cursor: pointer;">
+                                <span>Lentes de contacto</span>
+                            </a>
+                            <a class="nav-link" style="cursor: pointer;">
+                                <span>Soluciones</span>
+                            </a>
                         </div>
                     </div>
                 </li>
-                <li class="nav-item" style="cursor: pointer;">
-                    <a class="nav-link" onclick="pantallaMaterial();">
+                <li class="nav-item" style="cursor: pointer;" onclick="pantallaMaterial();">
+                    <a class="nav-link">
                         <span>Materiales</span>
                     </a>
                 </li>
                 <li class="nav-item" style="cursor: pointer;">
-                    <a  class="nav-link ">
+                    <a class="nav-link ">
                         <span>Tratamientos</span>
                     </a>
-                </li>   
-                <li class="nav-item" style="cursor: pointer;">
-                    <a  class="nav-link" onclick="mostrarVentas();">
+                </li>
+                <li class="nav-item" style="cursor: pointer;" onclick="mostrarVentas();">
+                    <a class="nav-link">
                         <span>Ventas</span>
                     </a>
                 </li>
-                <li class="nav-item" style="cursor: pointer;">
-                    <a  class="nav-link" onclick="mostrarPagos();">
+                <li class="nav-item" style="cursor: pointer;" onclick="mostrarPagos();">
+                    <a class="nav-link">
                         <span>Pagos</span>
                     </a>
                 </li>
                 <li class="nav-item" style="cursor: pointer;">
-                    <a  class="nav-link ">
+                    <a class="nav-link ">
                         <span>Compras</span>
                     </a>
                 </li>
                 <li class="nav-item" style="cursor: pointer;">
-                    <a  class="nav-link ">
+                    <a class="nav-link ">
                         <span>Graduaciones</span>
                     </a>
                 </li>
             </ul>
-        </nav>        
+        </nav>
     </div>
-    <button class="btn p-0 menuIcon"><i class="fa-solid fa-bars"></i></button>
-    
+
+    <nav class="navbar navbar-light bg-light menuOpen" id="menuSecundario">
+        <div class="d-flex justify-content-between">
+            <button class="btn px-1 py-0 menuIconS"><i class="fa-solid fa-bars"></i></button>
+            <a class="navbar-brand fs-4" onclick="menubody();">Óptica Qualite</a>
+        </div>
+    </nav>
+
     <div class="container-fluid p-0 m-0 col-lg-10 float-end" style="height: 100vh;">
         <div id="contenedorPrincipal" class="d-flex justify-content-center align-content-center"></div>
     </div>
-    
-    <footer class="container col-12 float-end d-flex justify-content-center p-0" style="border-top: 1px solid black; height: 80px;">
+
+    <footer class="container col-12 float-end d-flex justify-content-center p-0"
+        style="border-top: 1px solid black; height: 80px;">
         <div class="row col-lg-12 p-0">
             <div class="col-lg-8 d-flex justify-content-start align-items-center">
                 <h4 class="pl-5">Optica Qualite</h4>
@@ -113,11 +129,11 @@
             <div class="col-lg-4 d-flex justify-content-center align-items-center">
                 <p>copyright &copy;2022 <a href="#">TechSoft</a> </p>
             </div>
-        </div>       
+        </div>
     </footer>
 
     <!--Porfin ppude alv-->
-    
+
 
     <script src="style/js/bootstrap.bundle.js"></script>
     <script src="js/Main.js"></script>
@@ -135,20 +151,36 @@
         }
     </style>
     <script>
-        $('#menuMain ul li').on('click', function(){
-          $("#menuMain ul li.activo").removeClass('activo');
-          $(this).addClass('activo');
-          $('#navMain').removeClass('menuActivo');
+        $('#menuMain ul li').not('li#productos').on('click', function () {
+            $("#menuMain ul li.activo").removeClass('activo');
+            $(this).addClass('activo');
+            $('#navMain').removeClass('menuActivo');
+        })
+
+        $('#menuMain ul li #collapseProduc div a').on('click', function () {
+            $("#menuMain ul li.activo").removeClass('activo');
+            $(this).addClass('activo');
+            $('#navMain').removeClass('menuActivo');
+            console.log(this);
+        })
+
+        $('#menuMain ul li').not('li#inicio').on('click', function () {
+            $("#menuSecundario").addClass('d-none');
         });
-    
-        $('.menuIcon').on('click', function(){
-          $('#navMain').addClass('menuActivo');
+
+        $('.menuIconS').on('click', function () {
+            $('#navMain').addClass('menuActivo');
         })
-    
-        $('.cerrar').on('click', function(){
-          $('#navMain').removeClass('menuActivo');
+
+        $('.menuIcon').on('click', function () {
+            $('#navMain').addClass('menuActivo');
         })
-        
-      </script>
+
+        $('.cerrar').on('click', function () {
+            $('#navMain').removeClass('menuActivo');
+        })
+
+    </script>
 </body>
+
 </html>

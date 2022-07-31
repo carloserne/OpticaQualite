@@ -9,16 +9,12 @@ fetch("Modulos/moduloExamenVista/data_ExamenVista.json")
         return response.json();
     })
     .then(function (jsondata) {
-
-        examen = jsondata;
-
-        cargarLentestbl();
-        cambiarFecha();
-
+        examen = jsondata;        
+        cargarExamentbl();       
     }
     );
     
-function cambiarFecha(){
+function obtenerFecha(){
     let date = new Date();
 
     let dia = date.getDate();
@@ -30,13 +26,12 @@ function cambiarFecha(){
     let fecha = dia+"/0"+mes+"/"+ano;;
     let horaActual = hora+":"+min;
 
-    console.log(fecha);
-    console.log(horaActual);
+    return fechaActual = fecha+" "+horaActual;
 }
 
-export function cargarLentes() {
+export function cargarExamen() {
     examenes.forEach(function (ex) {    
-        if (lentesR.Estatus != 0) {
+        if (ex.Estatus != 0) {
             registroExamen =
                 '<tr>' +
                 '<td>' + ex.FechaHora + '</td>' +
@@ -57,102 +52,75 @@ export function cargarLentes() {
     
 }
 
-export function cargarLentestbl() {
-    let tipo;
-    examen.forEach(function (lentesR) {
-        if (lentesR.TipoLentes === 1) {
-            tipo = "Graduación";
-        } else {
-            tipo = "Estéticos";
-        }
-        if (lentesR.Estatus !== 0) {
-            registroExamen =
-                '<tr><td>' + lentesR.Nombre + '</td>' +
-                '<td>' + lentesR.Marca + '</td>' +
-                '<td>' + lentesR.Color + '</td>' +
-                '<td>' + lentesR.Queratometria + '</td>' +
-                '<td> <img src="" class="img-fluid"> </td>' +
-                '<td>' + tipo + '</td>' +
-                '<td>' + lentesR.Estatus + '</td>';
+export function cargarExamentbl() {
+    examen.forEach(function (ex) {     
+        if (ex.Estatus != 0) {
+            let fecha = ex.FechaHora.slice(0,10);
+            let hora = ex.FechaHora.slice(10);
+            registroExamen =        
+                '<tr><td>' + fecha + '</td>' +
+                '<td>' + hora + '</td>' +
+                '<td>' + ex.Cliente + '</td>' +
+                '<td>' + ex.Graduacion + '</td></tr>';
             cuerpotblExamen += registroExamen;
-            countIdLexamen = lentesR.idLentesContacto;
+            countIdLexamen = ex.idExamenVista;
         }
     });
     document.getElementById("tblExamen").innerHTML = cuerpotblExamen;
     cuerpotblExamen = "";
 }
 
-export function cargarLentestblM() {
-    let tipo;
-    examen.forEach(function (lentesR) {
-        if (lentesR.TipoLentes === 1) {
-            tipo = "Graduación";
-        } else {
-            tipo = "Estéticos";
-        }
-          
-        if (lentesR.Estatus !== 0) {
+export function cargarExamentblM() {
+    examen.forEach(function (ex) {  
+        if (ex.Estatus !== 0) {
+            let fecha = ex.FechaHora.slice(0,10);
+            let hora = ex.FechaHora.slice(10);
             registroExamen =
-                '<tr><td>' + lentesR.Nombre + '</td>' +
-                '<td>' + lentesR.Marca + '</td>' +
-                '<td>' + lentesR.Color + '</td>' +
-                '<td>' + lentesR.Queratometria + '</td>' +
-                '<td> <img src="" class="img-fluid"> </td>' +
-                '<td>' + tipo + '</td>' +
-                '<td>' + lentesR.Estatus + '</td>'+
-                '<td>' + '<a onclick="moduloLentes.eliminarLentes(' + examen.indexOf(lentesR) + ');"  class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i><a>' +
-                ' <a onclick="moduloLentes.modificarLentes(' + examen.indexOf(lentesR) + ');"  class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i><a></td>';
+                '<tr><td>' + fecha + '</td>' +
+                '<td>' + hora + '</td>' +
+                '<td>' + ex.Cliente + '</td>' +
+                '<td>' + ex.Graduacion + '</td>' +
+                '<td>' + '<a onclick="moduloExamen.eliminarExamen(' + examen.indexOf(ex) + ');"  class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i><a>' +
+                ' <a onclick="moduloExamen.modificarExamen(' + examen.indexOf(ex) + ');"  class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i><a></td>';
             cuerpotblExamen += registroExamen;
-            countIdLexamen = lentesR.idLentesContacto;        
+            countIdLexamen = ex.idExamenVista;        
         }
     });
-    document.getElementById("tblLentesC").innerHTML = cuerpotblExamen;
+    document.getElementById("tblExamen").innerHTML = cuerpotblExamen;
     cuerpotblExamen = "";
 }
 
-export function cargarLentestblC() {
+export function cargarExamentblC() {
     let filtro = document.getElementById("filtro").value;
-    let tipo;
-    examen.forEach(function (lentesR) {
-        if (lentesR.TipoLentes === 1) {
-            tipo = "Graduación";
-        } else {
-            tipo = "Estéticos";
-        }
-        if (filtro === "A" && lentesR.Estatus !== 0) {
-            registroExamen =
-                '<tr><td>' + lentesR.Nombre + '</td>' +
-                '<td>' + lentesR.Marca + '</td>' +
-                '<td>' + lentesR.Color + '</td>' +
-                '<td>' + lentesR.Queratometria + '</td>' +
-                '<td> <img src="" class="img-fluid"> </td>' +
-                '<td>' + tipo + '</td>' +
-                '<td>' + lentesR.Estatus + '</td></tr>';
-            cuerpotblExamen += registroExamen;
-            countIdLexamen = lentesR.idLentesContacto;
 
-        } else if (filtro === "I" && lentesR.Estatus === 0) {
+    examen.forEach(function (ex) {
+        let fecha = ex.FechaHora.slice(0,10);
+        let hora = ex.FechaHora.slice(10);
+        if (filtro === "A" && ex.Estatus !== 0) {
             registroExamen =
-                '<tr><td>' + lentesR.Nombre + '</td>' +
-                '<td>' + lentesR.Marca + '</td>' +
-                '<td>' + lentesR.Color + '</td>' +
-                '<td>' + lentesR.Queratometria + '</td>' +
-                '<td> <img src="" class="img-fluid"> </td>' +
-                '<td>' + tipo + '</td>' +
-                '<td>' + lentesR.Estatus + '</td></tr>';
+                '<tr><td>' + fecha + '</td>' +
+                '<td>' + hora + '</td>' +
+                '<td>' + ex.Cliente + '</td>' +
+                '<td>' + ex.Graduacion + '</td></tr>';
             cuerpotblExamen += registroExamen;
-            countIdLexamen = lentesR.idLentesContacto;
+            countIdLexamen = ex.idLentesContacto;
+
+        } else if (filtro === "I" && ex.Estatus === 0) {
+            registroExamen =
+                '<tr><td>' + fecha + '</td>' +
+                '<td>' + hora + '</td>' +
+                '<td>' + ex.Cliente + '</td>' +
+                '<td>' + ex.Graduacion + '</td></tr>';
+            cuerpotblExamen += registroExamen;
+            countIdLexamen = ex.idLentesContacto;
         } else if (filtro === "Am") {
             registroExamen =
-                '<tr><td>' + lentesR.Nombre + '</td>' +
-                '<td>' + lentesR.Marca + '</td>' +
-                '<td>' + lentesR.Color + '</td>' +
-                '<td> <img src="" class="img-fluid"> </td>' +
-                '<td>' + lentesR.Fotografia + '</td>' +
-                '<td>' + tipo + '</td>' +
-                '<td>' + lentesR.Estatus + '</td></tr>';
+                '<tr><td>' + fecha + '</td>' +
+                '<td>' + hora + '</td>' +
+                '<td>' + ex.Cliente + '</td>' +
+                '<td>' + ex.Graduacion + '</td></tr>';
             cuerpotblExamen += registroExamen;
-            countIdLexamen = lentesR.idLentesContacto;
+            countIdLexamen = ex.idLentesContacto;
         }
 
     });
@@ -182,8 +150,8 @@ export function mostrarPantallaeliminar() {
             document.getElementById("contenedorGestion").innerHTML = html;
             import("./controller_ExamenVista.js").then(
                 function (controller) {
-                    moduloLentes = controller;
-                    moduloLentes.cargarLentestblM();
+                    moduloExamen = controller;
+                    moduloExamen.cargarExamentblM();
                     $('#table_id').DataTable();
                     document.getElementById("table_id_filter").style.display = "block";
                 }
@@ -191,7 +159,7 @@ export function mostrarPantallaeliminar() {
         });
 }
 
-export function modificarLentes(pos) {
+export function modificarExamen(pos) {
     fetch("./Modulos/moduloExamenVista/view_modificarExamenVista.html")
         .then(function (respuesta) {
             return respuesta.text();
@@ -199,13 +167,13 @@ export function modificarLentes(pos) {
         .then(function (html) {
             document.getElementById("contenedorGestion").innerHTML = html;
             indiceExamenM = pos;
-            let lentesM = examen[indiceExamenM];        
-            document.getElementById("nombre").value = lentesM.Nombre;
-            document.getElementById("marca").value = lentesM.Marca;
-            document.getElementById("color").value = lentesM.Color;
-            document.getElementById("queratometria").value = lentesM.Queratometria;
-            //document.getElementById("foto").value = lentesM.Fotografia;
-            document.getElementById("tipoL").value = lentesM.TipoLentes;
+            let ExamenM = examen[indiceExamenM];        
+            document.getElementById("").value = ExamenM.Nombre;
+            document.getElementById("").value = ExamenM.Marca;
+            document.getElementById("").value = ExamenM.Color;
+            document.getElementById("queratometria").value = ExamenM.Queratometria;
+            //document.getElementById("foto").value = ExamenM.Fotografia;
+            document.getElementById("tipoL").value = ExamenM.TipoLentes;
         });
 }
 
@@ -372,19 +340,4 @@ export function validarDatos(accion){
             confirmButtonText: 'Aceptar!'
         })
     }
-}
-let cargarInput;
-let imagenElegida;
-export function cargarImg(){
-    cargarInput = document.getElementById("foto");
-    imagenElegida = document.getElementById("imgSelect");
-
-    cargarInput.onchange = () => {
-        let lector = new FileReader();
-        lector.readAsDataURL(cargarInput.files[0]);
-        lector.onload = () => {
-            imagenElegida.setAttribute("src",lector.result);            
-        }
-    }
-    
 }

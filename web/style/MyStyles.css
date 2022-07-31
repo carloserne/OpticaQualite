@@ -63,30 +63,28 @@ input[type="file"] {
     transition: all 0.5s;
 }
 
-#menuMain{
-    height: 100%;
-}
-
 .menuIcon,
-.cerrar {
+.cerrar,
+#menuSecundario {
     display: none;
 }
 
 @media(max-width: 900px) {
     #navMain {
         margin-left: -230px;
-        position: fixed;
+        position: fixed;        
         min-height: 100vh;
-        z-index: 1;
-        width: 100%;
+        z-index: 2;        
     }
 
     #navMain.menuActivo {
         margin-left: 0;
+        max-width: 100vw;
     }
 
     .menuIcon,
-    .cerrar {
+    .cerrar,
+    #menuSecundario {
         display: block;
     }
 }

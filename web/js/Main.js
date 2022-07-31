@@ -2,6 +2,7 @@ let menuPrincipal;
 let tabla;
 let moduloEmp;
 let moduloLentes;
+let moduloExamen;
 let emp = [];
 let lentes = [];
 let material = [];
@@ -19,9 +20,9 @@ function menubody() {
                 .then(function (html) {
                         document.getElementById("contenedorPrincipal").innerHTML = html;
                 });
+        document.getElementById('menuSecundario').classList.remove('d-none');
 }
-function clientes() {
-        cambiarFocus();        
+function clientes() {      
         if (emp.length === 0) {
                 fetch("Modulos/moduloClientes/data_Clientes.json")
                 .then(response => {
@@ -190,7 +191,6 @@ function PantallaArmazones() {
 }
 
 function mostrarPagos() {
-        cambiarFocus();
         if (emp.length === 0) {
                 fetch("Modulos/moduloPagos/data_Pagos.json")
                         .then(response => {
@@ -284,19 +284,22 @@ function abrirModuloLentes() {
                         );
 
                 });
+                $('.menuIcon').on('click', function(){
+                        $('#navMain').addClass('menuActivo');
+                    })
 }
 
 function abrirModuloExamen() {
-        // if (lentes.length === 0) {
-        //         fetch("Modulos/moduloExamenVista/data_ExamenVista.json")
-        //                 .then(response => {
-        //                         return response.json();
-        //                 })
-        //                 .then(function (jsondata) {
-        //                         examenes = jsondata;                                
-        //                 }
-        //                 );
-        // }
+        if (lentes.length === 0) {
+                fetch("Modulos/moduloExamenVista/data_ExamenVista.json")
+                        .then(response => {
+                                return response.json();
+                        })
+                        .then(function (jsondata) {
+                                examenes = jsondata;                                
+                        }
+                        );
+        }
         fetch("Modulos/moduloExamenVista/view_ExamenVista.html")
                 .then(function (respuesta) {
                         return respuesta.text();
@@ -306,8 +309,8 @@ function abrirModuloExamen() {
 
                         import("../Modulos/moduloExamenVista/controller_ExamenVista.js").then(
                                 function (controller) {
-                                        moduloLentes = controller;
-                                        moduloLentes.cargarLentes();
+                                        moduloExamen = controller;
+                                        moduloExamen.cargarExamen();;
                                         $('#table_id').DataTable();
                                         document.getElementById("table_id_filter").style.display = "none";
                                 }
@@ -316,9 +319,3 @@ function abrirModuloExamen() {
                 });
 }
 
-function removerEstilo() {
-        document.getElementById("inicio").removeAttribute("style");
-}
-function cambiarFocus() {
-        removerEstilo();
-}

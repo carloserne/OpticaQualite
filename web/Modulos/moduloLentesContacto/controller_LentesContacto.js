@@ -17,14 +17,20 @@ fetch("Modulos/moduloLentesContacto/data_LentesContacto.json")
     }
     );
 
+
+$('.menuIcon').on('click', function () {
+    $('#navMain').addClass('menuActivo');
+})
+
+
 export function cargarLentes() {
-    let tipo; 
-    lentes.forEach(function (lentesR) { 
+    let tipo;
+    lentes.forEach(function (lentesR) {
         if (lentesR.TipoLentes === 1) {
             tipo = "Graduación";
         } else {
             tipo = "Estéticos";
-        }   
+        }
         if (lentesR.Estatus != 0) {
             registroLentes =
                 '<tr>' +
@@ -43,7 +49,7 @@ export function cargarLentes() {
     cuerpotblLentes = "";
 
     cargarInput = document.getElementById("imgLentes");
-    
+
 }
 
 export function cargarLentestbl() {
@@ -79,7 +85,7 @@ export function cargarLentestblM() {
         } else {
             tipo = "Estéticos";
         }
-          
+
         if (lentesR.Estatus !== 0) {
             registroLentes =
                 '<tr><td>' + lentesR.Nombre + '</td>' +
@@ -88,11 +94,11 @@ export function cargarLentestblM() {
                 '<td>' + lentesR.Queratometria + '</td>' +
                 '<td> <img src="" class="img-fluid"> </td>' +
                 '<td>' + tipo + '</td>' +
-                '<td>' + lentesR.Estatus + '</td>'+
+                '<td>' + lentesR.Estatus + '</td>' +
                 '<td>' + '<a onclick="moduloLentes.eliminarLentes(' + lentesC.indexOf(lentesR) + ');"  class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i><a>' +
                 ' <a onclick="moduloLentes.modificarLentes(' + lentesC.indexOf(lentesR) + ');"  class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i><a></td>';
             cuerpotblLentes += registroLentes;
-            countIdLentes = lentesR.idLentesContacto;        
+            countIdLentes = lentesR.idLentesContacto;
         }
     });
     document.getElementById("tblLentesC").innerHTML = cuerpotblLentes;
@@ -188,7 +194,7 @@ export function modificarLentes(pos) {
         .then(function (html) {
             document.getElementById("contenedorGestion").innerHTML = html;
             indiceLentesM = pos;
-            let lentesM = lentesC[indiceLentesM];        
+            let lentesM = lentesC[indiceLentesM];
             document.getElementById("nombre").value = lentesM.Nombre;
             document.getElementById("marca").value = lentesM.Marca;
             document.getElementById("color").value = lentesM.Color;
@@ -226,7 +232,7 @@ export function almacenarDatos() {
     let color = document.getElementById("color").value;
     let queratometria = document.getElementById("queratometria").value;
     let foto = document.getElementById("foto").value;
-    let tipoLentes = document.getElementById("tipoL").value;    
+    let tipoLentes = document.getElementById("tipoL").value;
 
     let idLentes = (countIdLentes + 1);
 
@@ -278,7 +284,7 @@ export function modificarDatos() {
 
 export function eliminarLentes(pos) {
     indiceLentesM = pos;
-    
+
     Swal.fire({
         title: 'Advertencia',
         text: "¿Está seguro de eliminar el registro?",
@@ -303,7 +309,7 @@ export function eliminarLentes(pos) {
     })
 }
 
-export function validarDatos(accion){
+export function validarDatos(accion) {
     let inputs = document.getElementsByTagName("input");
     let input;
     let vacios = 0;
@@ -332,7 +338,7 @@ export function validarDatos(accion){
             }).then((result) => {
                 if (result.isConfirmed) {
                     if (accion === "guardar") {
-                        Swal.fire('Lentes de contacto registrados con éxito!','', 'success')
+                        Swal.fire('Lentes de contacto registrados con éxito!', '', 'success')
                         moduloLentes.almacenarDatos();
                     } else {
                         Swal.fire('Lentes de contacto modificados con éxito!', '', 'success')
@@ -364,7 +370,7 @@ export function validarDatos(accion){
 }
 let cargarInput;
 let imagenElegida;
-export function cargarImg(){
+export function cargarImg() {
     cargarInput = document.getElementById("foto");
     imagenElegida = document.getElementById("imgSelect");
 
@@ -372,8 +378,8 @@ export function cargarImg(){
         let lector = new FileReader();
         lector.readAsDataURL(cargarInput.files[0]);
         lector.onload = () => {
-            imagenElegida.setAttribute("src",lector.result);            
+            imagenElegida.setAttribute("src", lector.result);
         }
     }
-    
+
 }
