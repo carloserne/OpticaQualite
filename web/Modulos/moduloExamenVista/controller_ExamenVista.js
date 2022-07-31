@@ -1,7 +1,7 @@
 let cuerpotblExamen = "";
 let registroExamen;
 let examen = [];
-let countIdLexamen;
+let clientes = [];
 let indiceExamenM;
 
 fetch("Modulos/moduloExamenVista/data_ExamenVista.json")
@@ -11,6 +11,16 @@ fetch("Modulos/moduloExamenVista/data_ExamenVista.json")
     .then(function (jsondata) {
         examen = jsondata;        
         cargarExamentbl();       
+        $('#table_id').DataTable();
+        document.getElementById("table_id_filter").style.display = "none";
+    }
+    );
+fetch("Modulos/moduloClientes/data_Clientes.json")
+    .then(response => {
+        return response.json();
+    })
+    .then(function (jsondata) {
+        clientes = jsondata;
     }
     );
     
@@ -23,33 +33,28 @@ function obtenerFecha(){
     let hora = date.getHours();
     let min = date.getMinutes();
 
-    let fecha = dia+"/0"+mes+"/"+ano;;
+    let fecha = dia+"-0"+mes+"-"+ano;;
     let horaActual = hora+":"+min;
+    console.log(horaActual);
 
-    return fechaActual = fecha+" "+horaActual;
+    return fecha+" "+horaActual;
 }
 
-export function cargarExamen() {
+export function cargarExamen() {    
     examenes.forEach(function (ex) {    
         if (ex.Estatus != 0) {
-            registroExamen =
-                '<tr>' +
-                '<td>' + ex.FechaHora + '</td>' +
+            let fecha = ex.FechaHora.slice(0,10);
+            let hora = ex.FechaHora.slice(10);
+            registroExamen =                
+                '<tr><td>' + fecha + '</td>' +
+                '<td>' + hora + '</td>' +
                 '<td>' + ex.Cliente + '</td>' +
-                '<td>' + ex.Color + '</td>' +
-                '<td>' + ex.Queratometria + '</td>' +
-                '<td> <img src="" class="img-fluid"> </td>' +
-                '<td>' + tipo + '</td>' +
-                '<td>' + ex.Estatus + '</td></tr>';
+                '<td>' + ex.Graduacion + '</td>';
             cuerpotblExamen += registroExamen;
-            countIdLexamen = ex.idLentesContacto;
         }
     });
     document.getElementById("tblExamen").innerHTML = cuerpotblExamen;
-    cuerpotblExamen = "";
-
-    cargarInput = document.getElementById("imgLentes");
-    
+    cuerpotblExamen = "";    
 }
 
 export function cargarExamentbl() {
@@ -63,7 +68,6 @@ export function cargarExamentbl() {
                 '<td>' + ex.Cliente + '</td>' +
                 '<td>' + ex.Graduacion + '</td></tr>';
             cuerpotblExamen += registroExamen;
-            countIdLexamen = ex.idExamenVista;
         }
     });
     document.getElementById("tblExamen").innerHTML = cuerpotblExamen;
@@ -82,8 +86,7 @@ export function cargarExamentblM() {
                 '<td>' + ex.Graduacion + '</td>' +
                 '<td>' + '<a onclick="moduloExamen.eliminarExamen(' + examen.indexOf(ex) + ');"  class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i><a>' +
                 ' <a onclick="moduloExamen.modificarExamen(' + examen.indexOf(ex) + ');"  class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i><a></td>';
-            cuerpotblExamen += registroExamen;
-            countIdLexamen = ex.idExamenVista;        
+            cuerpotblExamen += registroExamen;      
         }
     });
     document.getElementById("tblExamen").innerHTML = cuerpotblExamen;
@@ -103,8 +106,6 @@ export function cargarExamentblC() {
                 '<td>' + ex.Cliente + '</td>' +
                 '<td>' + ex.Graduacion + '</td></tr>';
             cuerpotblExamen += registroExamen;
-            countIdLexamen = ex.idLentesContacto;
-
         } else if (filtro === "I" && ex.Estatus === 0) {
             registroExamen =
                 '<tr><td>' + fecha + '</td>' +
@@ -112,7 +113,6 @@ export function cargarExamentblC() {
                 '<td>' + ex.Cliente + '</td>' +
                 '<td>' + ex.Graduacion + '</td></tr>';
             cuerpotblExamen += registroExamen;
-            countIdLexamen = ex.idLentesContacto;
         } else if (filtro === "Am") {
             registroExamen =
                 '<tr><td>' + fecha + '</td>' +
@@ -120,13 +120,11 @@ export function cargarExamentblC() {
                 '<td>' + ex.Cliente + '</td>' +
                 '<td>' + ex.Graduacion + '</td></tr>';
             cuerpotblExamen += registroExamen;
-            countIdLexamen = ex.idLentesContacto;
         }
-
     });
     $('#table_id').DataTable();
     document.getElementById("table_id_filter").style.display = "none";
-    document.getElementById("tblLentesC").innerHTML = cuerpotblExamen;
+    document.getElementById("tblExamen").innerHTML = cuerpotblExamen;
     cuerpotblExamen = "";
 
 }
@@ -138,7 +136,21 @@ export function mostrarPantallaRegistrar() {
         })
         .then(function (html) {
             document.getElementById("contenedorGestion").innerHTML = html;
+            cargarClientes();
         });
+    
+}
+function cargarClientes(){
+    let sel = document.getElementById('cliente');
+    clientes.forEach(function (cl) {        
+        const option = document.createElement('option');
+        const valor = cl.ClaveUnicaCliente;
+        
+        option.value = valor;
+        option.text = cl.ClaveUnicaCliente;
+        sel.appendChild(option);        
+    })
+    
 }
 
 export function mostrarPantallaeliminar() {
@@ -156,6 +168,7 @@ export function mostrarPantallaeliminar() {
                     document.getElementById("table_id_filter").style.display = "block";
                 }
             );
+            
         });
 }
 
@@ -164,20 +177,25 @@ export function modificarExamen(pos) {
         .then(function (respuesta) {
             return respuesta.text();
         })
-        .then(function (html) {
+        .then(function (html) {            
             document.getElementById("contenedorGestion").innerHTML = html;
+            cargarClientes();
             indiceExamenM = pos;
-            let ExamenM = examen[indiceExamenM];        
-            document.getElementById("").value = ExamenM.Nombre;
-            document.getElementById("").value = ExamenM.Marca;
-            document.getElementById("").value = ExamenM.Color;
-            document.getElementById("queratometria").value = ExamenM.Queratometria;
-            //document.getElementById("foto").value = ExamenM.Fotografia;
-            document.getElementById("tipoL").value = ExamenM.TipoLentes;
+            let ExamenM = examen[indiceExamenM]; 
+            let fecha = ExamenM.FechaHora.slice(0,10);
+            let hora = ExamenM.FechaHora.slice(10);   
+            console.log(fecha);    
+            console.log(hora);
+            console.log();
+            document.getElementById("fecha").value = fecha;
+            document.getElementById("hora").value = hora;
+            document.getElementById("cliente").value = ExamenM.Cliente;
+            document.getElementById("graduacion").value = ExamenM.Graduacion;
+            
         });
 }
 
-export function catalogoLentes() {
+export function catalogoExamen() {
     fetch("./Modulos/moduloExamenVista/view_catalogoExamenVista.html")
         .then(function (respuesta) {
             return respuesta.text();
@@ -187,10 +205,10 @@ export function catalogoLentes() {
 
             import("./controller_ExamenVista.js").then(
                 function (controller) {
-                    moduloLentes = controller;
+                    moduloExamen = controller;
                     $(document).ready(function () {
-                        moduloLentes.cargarLentestbl();
-                        moduloLentes.cargarLentestblC();
+                        moduloExamen.cargarExamentbl();
+                        moduloExamen.cargarExamentblC();
                         $('#table_id').DataTable();
                         document.getElementById("table_id_filter").style.display = "none";
                     });
@@ -200,62 +218,53 @@ export function catalogoLentes() {
 }
 
 export function almacenarDatos() {
-    let nombre = document.getElementById("nombre").value;
-    let marca = document.getElementById("marca").value;
-    let color = document.getElementById("color").value;
-    let queratometria = document.getElementById("queratometria").value;
-    let foto = document.getElementById("foto").value;
-    let tipoLentes = document.getElementById("tipoL").value;    
+    //let fecha = document.getElementById("fecha").value;
+    //let hora = document.getElementById("hora").value;
+    let cliente = document.getElementById("cliente").value;
+    let graduacion = document.getElementById("graduacion").value;
 
-    let idLentes = (countIdLexamen + 1);
+    let fechaHoy = obtenerFecha();
 
-    let lentesNuevo = {
-        "idLentesContacto": idLentes,
-        "Nombre": nombre,
-        "Marca": marca,
-        "Color": color,
-        "Queratometria": queratometria,
-        "Fotografia": foto,
-        "TipoLentes": tipoLentes,
-        "Estatus": 1
+    let idExamen = examen[examen.length-1].idExamenVista;
+
+    console.log(idExamen);
+
+    let examenNuevo = {
+        "idExamenVista": (idExamen+1),
+        "FechaHora": fechaHoy,
+        "Cliente": cliente,
+        "Graduacion": graduacion,
+        "Estatus": 1    
     };
 
-    examen.push(lentesNuevo);
-    lentes.push(lentesNuevo);
+    examen.push(examenNuevo);
+    examenes.push(examenNuevo);
 
-    abrirModuloLentes();
+    abrirModuloExamen();
 }
 
 export function modificarDatos() {
-    let nombre = document.getElementById("nombre").value;
-    let marca = document.getElementById("marca").value;
-    let color = document.getElementById("color").value;
-    let queratometria = document.getElementById("queratometria").value;
-    let foto = document.getElementById("foto").value;
-    let tipoLentes = document.getElementById("tipoL").value;
+    let fecha = document.getElementById("fecha").value;
+    let hora = document.getElementById("hora").value;
+    let cliente = document.getElementById("cliente").value;
+    let graduacion = document.getElementById("graduacion").value;
+    
+    let fechaHora = fecha+hora;
 
-    let idLentes = (countIdLexamen + 1);
+    examen[indiceExamenM].FechaHora = fechaHora;
+    examen[indiceExamenM].Cliente = cliente;
+    examen[indiceExamenM].Graduacion = graduacion; 
+    
+    examenes[indiceExamenM].FechaHora = fechaHora;
+    examenes[indiceExamenM].Cliente = cliente;
+    examenes[indiceExamenM].Graduacion = graduacion; 
 
-    let lentesNuevo = {
-        "idexamenontacto": idLentes,
-        "Nombre": nombre,
-        "Marca": marca,
-        "Color": color,
-        "Queratometria": queratometria,
-        "Fotografia": foto,
-        "TipoLentes": tipoLentes,
-        "Estatus": 1
-    };
-
-    lentes[indiceExamenM] = lentesNuevo;
-    examen[indiceExamenM] = lentesNuevo;
-
-    abrirModuloLentes();
+    abrirModuloExamen();
 }
 
 /*Acciones de eliminar o modificar empleado*/
 
-export function eliminarLentes(pos) {
+export function eliminarExamen(pos) {
     indiceExamenM = pos;
     
     Swal.fire({
@@ -271,13 +280,13 @@ export function eliminarLentes(pos) {
     }).then((result) => {
         if (result.isConfirmed) {
             examen[indiceExamenM].Estatus = 0;
-            lentes[indiceExamenM].Estatus = 0;
+            examenes[indiceExamenM].Estatus = 0;
             Swal.fire(
                 'Eliminado!',
                 'El registro se ha eliminado con éxito',
                 'success'
             )
-            moduloLentes.mostrarPantallaeliminar();
+            moduloExamen.mostrarPantallaeliminar();
         }
     })
 }
@@ -293,7 +302,7 @@ export function validarDatos(accion){
         if (input.value === "") {
             vacios++;
         }
-        if (input.name !== "queratometria" && input.name !== "foto" && input.name !== "tipoL") {
+        if (input.name !== "fecha" && input.name !== "hora") {
             if (isNaN(input.value) === false) {
                 comprobarString = false;
             }
@@ -311,11 +320,11 @@ export function validarDatos(accion){
             }).then((result) => {
                 if (result.isConfirmed) {
                     if (accion === "guardar") {
-                        Swal.fire('Lentes de contacto registrados con éxito!','', 'success')
-                        moduloLentes.almacenarDatos();
+                        Swal.fire('Examen de la vista registrado con éxito!','', 'success')
+                        moduloExamen.almacenarDatos();
                     } else {
-                        Swal.fire('Lentes de contacto modificados con éxito!', '', 'success')
-                        moduloLentes.modificarDatos();
+                        Swal.fire('Examen de la vista modificado con éxito!', '', 'success')
+                        moduloExamen.modificarDatos();
                     }
                 } else if (result.isDenied) {
 

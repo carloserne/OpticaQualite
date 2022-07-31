@@ -1,15 +1,15 @@
 <div class="container-fluid d-flex align-items-center justify-content-center col-12 p-0 m-0">
     <div class="row col-lg-12 p-0 mb-2" >
-        <h1>Gestionar Lentes de contacto</h1>
+        <h1>Gestionar Examen de la vista</h1>
         <div class="col-12 m-0 p-0 text-center" style="background: #F5F5F5; border: 1px solid black;">
             <div class="col-12 row">                            
                 <div class="col-2 m-0 p-3 d-flex align-items-center">
-                    <a onclick="abrirModuloLentes();" class="m-1 bg" style="cursor: pointer;">
+                    <a onclick="abrirModuloExamen();" class="m-1 bg" style="cursor: pointer;">
                         <i class="fa fa-angle-left" aria-hidden="true"></i> <span>Regresar</span>
                     </a>
                 </div>
                 <div class="col-10 m-0 p-0">
-                    <h2 class="mt-1">Registrar lentes de contacto</h2>
+                    <h2 class="mt-1">Registrar Examen de la vista</h2>
                 </div>
             </div>
            
@@ -17,39 +17,29 @@
                 <div class="col-6">
                   
                     <div class="col-12 row float-left mt-4">
-                        <label for="nombre" class="col-6 p-0 text-end px-2" disabled>Nombre</label>
-                        <input type="text" class="form-control col-6 p-0"  id="nombre" name="nombre" required>
+                        <label for="fecha" class="col-6 p-0 text-end px-2" disabled>Fecha</label>
+                        <input type="date" class="form-control col-6 p-0"  id="fecha" name="fecha" required>
                     </div>
                     <div class="col-12 row float-left mt-4">
-                        <label for="marca" class="col-6 p-0  text-end px-2">Marca</label>
-                        <input type="text" class="form-control col-6 p-0"  id="marca" name="marca" required >
+                        <label for="hora" class="col-6 p-0 text-end px-2">Hora</label>
+                        <input type="time" class="form-control col-6 p-0"  id="hora" name="hora" requireds>
                     </div>
                     <div class="col-12 row float-left mt-4">
-                        <label for="color" class="col-6 p-0  text-end px-2" >Color</label>
-                        <input type="text" class="form-control col-6 p-0"  id="color" name="color" required >
+                        <label for="cliente" class="col-6 p-0 text-end px-2">Cliente</label>
+                        <select class="custom-select mr-sm-2 text-center col-4 p-0" id="cliente" name="clientes" required>
+                            <option>Seleccione un cliente...</option>
+                        </select>
                     </div>
                     <div class="col-12 row float-left mt-4">
-                        <label for="queratometria" class="col-6 p-0  text-end px-2">Queratometría</label>
-                        <input type="text" class="form-control col-6 p-0"  id="queratometria" name="queratometria" required>
-                    </div>
-                    <div class="col-12 row float-left mt-4">
-                        <label for="tipoL" class="col-6 p-0  text-end px-2">Tipo de lentes</label>
-                        <select class="custom-select mr-sm-2 text-center col-4 p-0" id="tipoL" name="tipoL" required>
-                            <option value="1">Graduación</option>
-                            <option value="2">Estético</option>
+                        <label for="graduacion" class="col-6 p-0 text-end px-2">Graduación</label>
+                        <select class="custom-select mr-sm-2 text-center col-4 p-0" id="graduacion" name="graduacion" required>
+                            <option>Seleccione la graduación...</option>
                         </select>
                     </div>
                 </div>
-                <div class="col-6 d-flex align-items-center flex-column">
-                    <div style="width: 256px; height: 256px;" class="overflow-hidden">
-                        <img id="imgSelect" class="img-fluid">
-                    </div>                    
-                    <input type="file" name="foto" id="foto" accept="image/*" class="form-control-file" oninput="moduloLentes.cargarImg();">
-                    <label for="foto" class="btn btn-outline-primary mt-1">Subir Foto</label>
-                </div>
                 <div class="col-8"></div>
                 <div class="col-4 mt-3 mb-3">
-                    <button type="submit" class="btn btn-success" onclick="moduloLentes.validarDatos('guardar');"><i class="fa fa-user-plus" aria-hidden="true"></i><span>Registrar Lentes</span></button>
+                    <button type="submit" class="btn btn-success" onclick="moduloExamen.validarDatos('guardar');"><i class="fa fa-user-plus" aria-hidden="true"></i><span>Registrar servicio</span></button>
                 </div>
             </div>
 

@@ -16,7 +16,7 @@ fetch("Modulos/moduloClientes/data_Clientes.json")
             cargarClientbl();
             console.log(Date());
             $('#table_id').DataTable();
-                                        document.getElementById("table_id_filter").style.display = "none";
+            document.getElementById("table_id_filter").style.display = "none";
         }
         );
 
@@ -403,9 +403,10 @@ export function modificarDatos() {
     let telCasa = document.getElementById("telCasa").value;
     let telMovil = document.getElementById("telMovil").value;
     let correo = document.getElementById("correo").value;
-
+    
     let idPersona = ((countIdPersona + 1).toString());
     let IdCliente = ((countIdCliente + 1).toString());
+    console.log(idPersona);
     let numeroUnico = apellidoP.slice(0,2)+"-"+apellidoM.slice(0,1)+"-"+Math.floor(Math.random()*10000);
     let persona = {"IdPersona": idPersona,
         "Nombre": nombres,

@@ -296,7 +296,7 @@ function abrirModuloExamen() {
                                 return response.json();
                         })
                         .then(function (jsondata) {
-                                examenes = jsondata;                                
+                                examenes = jsondata;                              
                         }
                         );
         }
@@ -310,7 +310,7 @@ function abrirModuloExamen() {
                         import("../Modulos/moduloExamenVista/controller_ExamenVista.js").then(
                                 function (controller) {
                                         moduloExamen = controller;
-                                        moduloExamen.cargarExamen();;
+                                        moduloExamen.cargarExamen();
                                         $('#table_id').DataTable();
                                         document.getElementById("table_id_filter").style.display = "none";
                                 }
