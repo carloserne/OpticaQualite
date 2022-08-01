@@ -16,171 +16,279 @@
     <!-- Datatables -->
     <script src="js/jQuery.js"></script>
     <link rel="stylesheet" type="text/css" href="style/datatables.css">
+    <link rel="stylesheet" type="text/css" href="js/DataTables/css/dataTables.bootstrap5.min.css">
 
 </head>
 
 <body>
-    <div class="p-2 text-white overflow-auto col-2" id="navMain">
-        <nav class="navbar d-flex flex-colum" id="menuMain">
-            <div class="d-flex justify-content-between col-12">
-                <div class="cerrar col-2"><i class="fa-solid fa-xmark"></i></div>
-                <a class="d-flex align-items-center mb-3 col-10" onclick="menubody();">
-                    <img src="recursos/Optical Qualite/ojoBlanco.png" class="img-fluid" alt="alt">
-                </a>
+    <div class="container-fluid p-0">
+        <div class="p-2 text-white overflow-auto col-2" id="navMain">
+            <nav class="navbar d-flex flex-colum" id="menuMain">
+                <div class="d-flex justify-content-between col-12">
+                    <div class="cerrar col-2"><i class="fa-solid fa-xmark"></i></div>
+                    <a class="d-flex align-items-center mb-3 col-10" onclick="menubody();">
+                        <img src="recursos/Optical Qualite/ojoBlanco.png" class="img-fluid" alt="alt">
+                    </a>
+                </div>
+                <ul class="nav nav-pills flex-column mb-auto col-12">
+                    <li class="nav-item" style="cursor: pointer;" id="inicio" onclick="menubody();">
+                        <a class="nav-link activo">
+                            <span>Inicio</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" style="cursor: pointer;" onclick="clientes();">
+                        <a class="nav-link">
+                            <span>Clientes</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" style="cursor: pointer;" onclick="empleados();">
+                        <a class="nav-link">
+                            <span>Empleados</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" style="cursor: pointer;" onclick="abrirModuloExamen();">
+                        <a class="nav-link ">
+                            <span>Examen de la vista</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" style="cursor: pointer;">
+                        <a class="nav-link ">
+                            <span>Presupuesto</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" style="cursor: pointer;" id="productos">
+                        <a class="nav-link " data-toggle="collapse" data-target="#collapseProduc" aria-expanded="true"
+                            aria-controls="collapseProduc">
+                            <span>Productos</span>
+                        </a>
+                        <div class="collapse" id="collapseProduc">
+                            <div>
+                                <a class="nav-link" onclick="mostrarAccesorios();" style="cursor: pointer;">
+                                    <span>Accesorios</span>
+                                </a>
+                                <a class="nav-link" onclick="PantallaArmazones();" style="cursor: pointer;">
+                                    <span>Armazón</span>
+                                </a>
+                                <a class="nav-link" onclick="abrirModuloLentes();" style="cursor: pointer;">
+                                    <span>Lentes de contacto</span>
+                                </a>
+                                <a class="nav-link" style="cursor: pointer;">
+                                    <span>Soluciones</span>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item" style="cursor: pointer;" onclick="pantallaMaterial();">
+                        <a class="nav-link">
+                            <span>Materiales</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" style="cursor: pointer;">
+                        <a class="nav-link ">
+                            <span>Tratamientos</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" style="cursor: pointer;" onclick="mostrarVentas();">
+                        <a class="nav-link">
+                            <span>Ventas</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" style="cursor: pointer;" onclick="mostrarPagos();">
+                        <a class="nav-link">
+                            <span>Pagos</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" style="cursor: pointer;">
+                        <a class="nav-link ">
+                            <span>Compras</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" style="cursor: pointer;">
+                        <a class="nav-link ">
+                            <span>Graduaciones</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <nav class="navbar navbar-light bg-light menuOpen" id="menuSecundario">
+            <div class="d-flex justify-content-between">
+                <button class="btn px-1 py-0 menuIconS"><i class="fa-solid fa-bars"></i></button>
+                <a class="navbar-brand fs-4" onclick="menubody();">Óptica Qualite</a>
             </div>
-            <ul class="nav nav-pills flex-column mb-auto col-12">
-                <li class="nav-item" style="cursor: pointer;" id="inicio" onclick="menubody();">
-                    <a class="nav-link activo">
-                        <span>Inicio</span>
+        </nav>
+
+        <div class="container-fluid p-0 m-0 col-lg-10 float-end" style="height: 100vh;" id="contenedorPrincipal">
+            <!-- <div class="col-12 p-0" style="height: 100%;">
+                <div class="col-12 d-flex shadow p-0" style="border-bottom: 1px solid black;">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light col-lg-10">
+                        <div class="d-flex justify-content-between d-lg-none">
+                            <button class="btn px-1 py-0 menuIcon"><i class="fa-solid fa-bars"></i></button>
+                            <a class="navbar-brand fs-4" onclick="menubody();">Óptica Qualite</a>
+                        </div>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" onclick="moduloExamen.mostrarPantallaRegistrar();">Registrar</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" onclick="moduloExamen.mostrarPantallaeliminar();">Eliminar o
+                                        Modificar</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" onclick="moduloExamen.catalogoExamen();">Catálogo de examen de
+                                        la vista</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <a class="navbar-brand col-lg-2 d-flex justify-content-center align-items-center">
+                        <span class="p-2">Administrador</span>
+                        <img src="" width="30" height="30" class="d-inline-block align-top" alt="">
                     </a>
-                </li>
-                <li class="nav-item" style="cursor: pointer;" onclick="clientes();">
-                    <a class="nav-link">
-                        <span>Clientes</span>
-                    </a>
-                </li>
-                <li class="nav-item" style="cursor: pointer;" onclick="empleados();">
-                    <a class="nav-link">
-                        <span>Empleados</span>
-                    </a>
-                </li>
-                <li class="nav-item" style="cursor: pointer;" onclick="abrirModuloExamen();">
-                    <a class="nav-link ">
-                        <span>Examen de la vista</span>
-                    </a>
-                </li>
-                <li class="nav-item" style="cursor: pointer;">
-                    <a class="nav-link ">
-                        <span>Presupuesto</span>
-                    </a>
-                </li>
-                <li class="nav-item" style="cursor: pointer;" id="productos">
-                    <a class="nav-link " data-toggle="collapse" data-target="#collapseProduc" aria-expanded="true" aria-controls="collapseProduc">
-                        <span>Productos</span>
-                    </a>
-                    <div class="collapse" id="collapseProduc">
-                        <div>
-                            <a class="nav-link" onclick="mostrarAccesorios();" style="cursor: pointer;">
-                                <span>Accesorios</span>
-                            </a>
-                            <a class="nav-link" onclick="PantallaArmazones();" style="cursor: pointer;">
-                                <span>Armazón</span>
-                            </a>
-                            <a class="nav-link" onclick="abrirModuloLentes();" style="cursor: pointer;">
-                                <span>Lentes de contacto</span>
-                            </a>
-                            <a class="nav-link" style="cursor: pointer;">
-                                <span>Soluciones</span>
-                            </a>
+                </div>
+                <div class="col-12 mt-2 p-0" id="contenedorGestion" style="height: 90%;">
+                    <div class="container-fluid p-0" style="height: 100%;">
+                        <div style="height: 100%;">
+                            <h1 class="text-uppercase text-center">Gestionar Examen de la vista</h1>
+                            <div class="m-4 p-0" style="background: #F5F5F5; border: 0.5px solid black; height: 85%;">
+                                <div class="col-12 p-0 d-flex">
+                                    <a onclick="abrirModuloExamen();" class="d-flex align-items-center position-absolute p-2" style="cursor: pointer;">
+                                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                                        <span style="padding-left: 5px;">Regresar</span>
+                                    </a>
+                                    <h2 class="text-uppercase d-flex justify-content-center" style="width: 100%;">Registrar Examen de la vista</h2>
+                                </div>
+                                <div class="col-12 p-1" style="height: 90%;">
+                                    <div class="col-12 d-flex justify-content-center align-items-center" style="height: 70%;">
+                                        <div class="col-6 p-0" style="height: 70%;">
+                                            <div class="col-12 row mt-4">
+                                                <label for="fecha" class="col-4 p-0 text-end px-2">Fecha</label>                                                
+                                                <input type="date" class="col-7 form-control p-0" id="fecha" name="fecha" required>                                                
+                                            </div>
+                                            <div class="col-12 row mt-4">
+                                                <label for="hora" class="col-4 p-0 text-end px-2">Hora</label>
+                                                <input type="time" class="col-7 form-control p-0" id="hora" name="hora" required>                                                
+                                            </div>
+                                            <div class="col-12 row mt-4">
+                                                <label for="cliente" class="col-4 p-0 text-end px-2">Cliente</label>
+                                                <select class="col-7 custom-select text-center p-0" id="cliente" name="clientes" required>                                                
+                                                    <option>Seleccione un cliente...</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-12 row mt-4">
+                                                <label for="graduacion" class="col-4 p-0 text-end px-2">Graduación</label>                                                
+                                                <select class="col-7 custom-select p-0" id="graduacion" name="graduacion" required>                                                
+                                                    <option>Seleccione la graduación...</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="col-12 d-flex justify-content-center">
+                                        <button type="submit" class="btn btn-success" onclick="moduloExamen.validarDatos('guardar');"><i class="fa fa-user-plus" aria-hidden="true"></i><span style="margin-left: 5px;">Registrar servicio</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                
+                </div>
+            </div> -->
+
+                
+        </div>
+        <footer class="col-12 d-flex justify-content-center p-0 bg-light"
+                    style="border-top: 1px solid black; height: 80px; z-index: 1;">
+                    <div class="row col-lg-12 p-0">
+                        <div class="col-lg-8 d-flex justify-content-start align-items-center">
+                            <h4 class="pl-5">Optica Qualite</h4>
+                        </div>
+                        <div class="col-lg-4 d-flex justify-content-center align-items-center ">
+                            <p>copyright &copy;2022 <a href="#">TechSoft</a> </p>
                         </div>
                     </div>
-                </li>
-                <li class="nav-item" style="cursor: pointer;" onclick="pantallaMaterial();">
-                    <a class="nav-link">
-                        <span>Materiales</span>
-                    </a>
-                </li>
-                <li class="nav-item" style="cursor: pointer;">
-                    <a class="nav-link ">
-                        <span>Tratamientos</span>
-                    </a>
-                </li>
-                <li class="nav-item" style="cursor: pointer;" onclick="mostrarVentas();">
-                    <a class="nav-link">
-                        <span>Ventas</span>
-                    </a>
-                </li>
-                <li class="nav-item" style="cursor: pointer;" onclick="mostrarPagos();">
-                    <a class="nav-link">
-                        <span>Pagos</span>
-                    </a>
-                </li>
-                <li class="nav-item" style="cursor: pointer;">
-                    <a class="nav-link ">
-                        <span>Compras</span>
-                    </a>
-                </li>
-                <li class="nav-item" style="cursor: pointer;">
-                    <a class="nav-link ">
-                        <span>Graduaciones</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </div>
+                </footer>
 
-    <nav class="navbar navbar-light bg-light menuOpen" id="menuSecundario">
-        <div class="d-flex justify-content-between">
-            <button class="btn px-1 py-0 menuIconS"><i class="fa-solid fa-bars"></i></button>
-            <a class="navbar-brand fs-4" onclick="menubody();">Óptica Qualite</a>
-        </div>
-    </nav>
+            <!--Porfin ppude alv-->
 
-    <div class="container-fluid p-0 m-0 col-lg-10 float-end" style="height: 100vh;">
-        <div id="contenedorPrincipal" class="d-flex justify-content-center align-content-center"></div>
-    </div>
+            <script type="text/javascript" charset="utf8" src="js/DataTables/datatables.min.js"></script>
+            <script type="text/javascript" charset="utf8" src="js/DataTables/js/dataTables.bootstrap5.min.js"></script>
 
-    <footer class="container col-12 float-end d-flex justify-content-center p-0"
-        style="border-top: 1px solid black; height: 80px;">
-        <div class="row col-lg-12 p-0">
-            <div class="col-lg-8 d-flex justify-content-start align-items-center">
-                <h4 class="pl-5">Optica Qualite</h4>
-            </div>
-            <div class="col-lg-4 d-flex justify-content-center align-items-center">
-                <p>copyright &copy;2022 <a href="#">TechSoft</a> </p>
-            </div>
-        </div>
-    </footer>
+            <script src="style/js/bootstrap.bundle.js"></script>
+            <script src="js/Main.js"></script>
+            <script src="js/sweetalert2.min.js"></script>
 
-    <!--Porfin ppude alv-->
+            <script src="https://kit.fontawesome.com/df18d6cab7.js" crossorigin="anonymous"></script>
 
+            <script>
+                $('#menuMain ul li').not('li#productos').on('click', function () {
+                    $("#menuMain ul li.activo").removeClass('activo');
+                    $(this).addClass('activo');
+                    $('#navMain').removeClass('menuActivo');
+                })
+                $('#navbarNav ul li').on('click', function () {
+                    $("#navbarNav ul li.activos").removeClass('activos');
+                    $(this).addClass('activos');
+                })
 
-    <script src="style/js/bootstrap.bundle.js"></script>
-    <script src="js/Main.js"></script>
-    <script src="js/sweetalert2.min.js"></script>
-    <script type="text/javascript" charset="utf8" src="js/datatables.js"></script>
-    <script src="https://kit.fontawesome.com/df18d6cab7.js" crossorigin="anonymous"></script>
+                $('#menuMain ul li #collapseProduc div a').on('click', function () {
+                    $("#menuMain ul li.activo").removeClass('activo');
+                    $(this).addClass('activo');
+                    $('#navMain').removeClass('menuActivo');
+                })
 
-    <style>
-        #table_id tfoot input {
-            width: 100% !important;
-        }
+                $('#menuMain ul li').not('li#inicio').on('click', function () {
+                    $("#menuSecundario").addClass('d-none');
+                });
 
-        #table_id tfoot {
-            display: table-header-group !important;
-        }
-    </style>
-    <script>
-        $('#menuMain ul li').not('li#productos').on('click', function () {
-            $("#menuMain ul li.activo").removeClass('activo');
-            $(this).addClass('activo');
-            $('#navMain').removeClass('menuActivo');
-        })
+                $('.menuIconS').on('click', function () {
+                    $('#navMain').addClass('menuActivo');
+                })
 
-        $('#menuMain ul li #collapseProduc div a').on('click', function () {
-            $("#menuMain ul li.activo").removeClass('activo');
-            $(this).addClass('activo');
-            $('#navMain').removeClass('menuActivo');
-            console.log(this);
-        })
+                $('.menuIcon').on('click', function () {
+                    $('#navMain').addClass('menuActivo');
+                })
 
-        $('#menuMain ul li').not('li#inicio').on('click', function () {
-            $("#menuSecundario").addClass('d-none');
-        });
+                $('.cerrar').on('click', function () {
+                    $('#navMain').removeClass('menuActivo');
+                })
 
-        $('.menuIconS').on('click', function () {
-            $('#navMain').addClass('menuActivo');
-        })
-
-        $('.menuIcon').on('click', function () {
-            $('#navMain').addClass('menuActivo');
-        })
-
-        $('.cerrar').on('click', function () {
-            $('#navMain').removeClass('menuActivo');
-        })
-
-    </script>
+                $('#table_id').DataTable({
+                    "language": {
+                        "decimal": ",",
+                        "thousands": ".",
+                        "info": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                        "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                        "infoFiltered": "(filtrado de un total de _MAX_ registros)",
+                        "loadingRecords": "Cargando...",
+                        "lengthMenu": "Mostrar _MENU_ registros",
+                        "paginate": {
+                            "next": "Siguiente",
+                            "previous": "Anterior"
+                        },
+                        "processing": "Procesando...",
+                        "search": "Buscar:",
+                        "zeroRecords": "No se encontraron resultados",
+                        "emptyTable": "Ningún dato disponible en esta tabla",
+                        "aria": {
+                            "sortAscending": ": Activar para ordenar la columna de manera ascendente",
+                            "sortDescending": ": Activar para ordenar la columna de manera descendente"
+                        }
+                    },
+                    scrollY: '55vh',
+                    scrollCollapse: true,
+                    "searching": false,
+                    "drawCallback": function (settings) {
+                        $('ul.pagination').addClass("pagination-sm");
+                    }
+                });
+            </script>
 </body>
 
 </html>

@@ -233,7 +233,7 @@ export function almacenarDatos() {
 
     examen.push(examenNuevo);
     examenes.push(examenNuevo);
-
+    guardarJSON();
     abrirModuloExamen();
 }
 
@@ -344,3 +344,19 @@ export function validarDatos(accion){
         })
     }
 }
+
+// function guardarJSON() {
+
+//     const fs = require('fs');
+
+//     let actua = JSON.stringify(examen);
+//     console.log(actua);
+
+//     fs.writeFile('Modulos/moduloExamenVista/data_ExamenVista.json',actua,(error)=>{
+//         if(error){
+//             console.log('Error:'+error);
+//         } else {
+//             console.log("Correcto");
+//         }
+//     });
+// }

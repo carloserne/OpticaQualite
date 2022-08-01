@@ -56,6 +56,11 @@ input[type="file"] {
     color: black;
 }
 
+.activos {
+    background-color: rgb(21, 42, 232);
+    color: white;
+}
+
 #navMain {
     position: absolute;
     height: 100vh;    

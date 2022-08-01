@@ -22,19 +22,18 @@ function menubody() {
                 });
         document.getElementById('menuSecundario').classList.remove('d-none');
 }
-function clientes() {      
+function clientes() {
         if (emp.length === 0) {
                 fetch("Modulos/moduloClientes/data_Clientes.json")
-                .then(response => {
-                        return response.json();
-                })
-                .then(function (jsondata) {
-                        clients = jsondata;
-                        console.log(clients);
-                }
-                );   
+                        .then(response => {
+                                return response.json();
+                        })
+                        .then(function (jsondata) {
+                                clients = jsondata;                                
+                        }
+                        );
         }
-        
+
         fetch("Modulos/moduloClientes/view_Clientes.html")
 
                 .then(function (respuesta) {
@@ -66,7 +65,6 @@ function empleados() {
                         })
                         .then(function (jsondata) {
                                 emp = jsondata;
-                                console.log(emp);
                         }
                         );
         }
@@ -134,7 +132,6 @@ function pantallaMaterial() {
                 })
                 .then(function (jsondata) {
                         material = jsondata;
-                        console.log(material);
                 }
                 );
 
@@ -263,7 +260,7 @@ function abrirModuloLentes() {
                                 return response.json();
                         })
                         .then(function (jsondata) {
-                                lentes = jsondata;                                
+                                lentes = jsondata;
                         }
                         );
         }
@@ -284,9 +281,9 @@ function abrirModuloLentes() {
                         );
 
                 });
-                $('.menuIcon').on('click', function(){
-                        $('#navMain').addClass('menuActivo');
-                    })
+        $('.menuIcon').on('click', function () {
+                $('#navMain').addClass('menuActivo');
+        })
 }
 
 function abrirModuloExamen() {
@@ -296,8 +293,7 @@ function abrirModuloExamen() {
                                 return response.json();
                         })
                         .then(function (jsondata) {
-                                examenes = jsondata;   
-                                console.log(examenes);                           
+                                examenes = jsondata;
                         }
                         );
         }
@@ -312,11 +308,41 @@ function abrirModuloExamen() {
                                 function (controller) {
                                         moduloExamen = controller;
                                         moduloExamen.cargarExamen();
-                                        $('#table_id').DataTable();
-                                        document.getElementById("table_id_filter").style.display = "none";
+                                        crearTabla();                                        
                                 }
                         );
 
                 });
 }
 
+function crearTabla(){
+        $('#table_id').DataTable({
+                "language": {
+                        "decimal": ",",
+                        "thousands": ".",
+                        "info": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                        "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",                    
+                        "infoFiltered": "(filtrado de un total de _MAX_ registros)",
+                        "loadingRecords": "Cargando...",
+                        "lengthMenu": "Mostrar _MENU_ registros",
+                        "paginate": {
+                            "next": "Siguiente",
+                            "previous": "Anterior"
+                        },
+                        "processing": "Procesando...",
+                        "search": "Buscar:",
+                        "zeroRecords": "No se encontraron resultados",
+                        "emptyTable": "Ningún dato disponible en esta tabla",
+                        "aria": {
+                            "sortAscending":  ": Activar para ordenar la columna de manera ascendente",
+                            "sortDescending": ": Activar para ordenar la columna de manera descendente"
+                        }
+                },
+                scrollY: '55vh',
+                scrollCollapse: true,
+                "searching": false,
+                "drawCallback": function( settings ) {
+                    $('ul.pagination').addClass("pagination-sm");
+                }
+            });
+}
