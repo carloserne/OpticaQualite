@@ -237,18 +237,18 @@ export function almacenarDatos() {
     let precioCompra = document.getElementById("precioCompra").value;
     let precioVenta = document.getElementById("precioVenta").value;
 
-    let materia = {
+    let material = {
         "nombreMaterial": nombreMaterial,
         "precioCompra": precioCompra,
         "precioVenta": precioVenta,
         "estatus": 1
     };
 
-    materiales.push(materia);
+    materiales.push(material);
 
     console.log(materiales);
 
-    material();
+    pantallaMaterial();
 }
 
 /*Modificar datos*/
@@ -313,18 +313,18 @@ export function modificarDatos() {
         "estatus": 1
     };
 
-    materiales[posMaterial]= materia;
+    materiales[posMaterial]= material;
 
-    console.log(materia);
+    console.log(materiales);
 
-    material();
+    pantallaMaterial();
 }
 
-/*Eliminar accesorio */
+/*Eliminar material */
 export function eliminarMaterial(posMaterial) {
     Swal.fire({
         title: 'Advertencia',
-        text: "¿Esta seguro de eliminar a este accesorio?",
+        text: "¿Esta seguro de eliminar a este material?",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
@@ -338,7 +338,7 @@ export function eliminarMaterial(posMaterial) {
             moduloMateriales.eliminar();
             Swal.fire(
                     'Eliminado!',
-                    'El accesorio se ha eliminado con exito',
+                    'El material se ha eliminado con exito',
                     'success'
                     )
         }
