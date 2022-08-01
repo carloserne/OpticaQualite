@@ -5,7 +5,7 @@
         <div class="col-12 m-0 p-0 text-center " style="background: #F5F5F5; border: 2px solid black;">
             <div class="col-12 row">
                 <div class="col-2">
-                    <button type="button" class="btn btn-light mt-1" onclick="material();">
+                    <button type="button" class="btn btn-light mt-1" onclick="moduloMateriales.eliminar();">
                         < Regresar</button>
                 </div>
                 <div class="col-8 ">
@@ -23,25 +23,25 @@
 
                     </div>
                     <div class="col-12 row float-left mt-4">
-                        <label for="nombreAccesorio" class="col-6 p-0" >Nombre</label>
-                        <input type="text" class="form-control col-6 p-0"  id="nombreAccesorio" name="nombreAccesorio" required >
+                        <label for="nombreMaterial" class="col-6 p-0" >Nombre</label>
+                        <input type="text" class="form-control col-6 p-0"  id="nombreMaterial" name="nombreMaterial" required >
                         <div class="invalid-feedback">
                             Please choose a name.
                         </div>
                     </div>
                     <div class="col-12 row float-left mt-4">
                         <label for="marcaAcceesorio" class="col-6 p-0" >Precio de compra</label>
-                        <input type="number" class="form-control col-2 p-0"  id="marcaAcceesorio" name="marcaAcceesorio" required >
+                        <input type="number" class="form-control col-2 p-0"  id="precioCompra" name="precioCompra" required >
                     </div>
                     <div class="col-12 row float-left mt-4">
-                        <label for="precioCompra" class="col-6 p-0" >Precio de venta</label>
-                        <input type="number" class="form-control col-2 p-0"  id="precioCompra" name="precioCompra" required>
+                        <label for="precioVenta" class="col-6 p-0" >Precio de venta</label>
+                        <input type="number" class="form-control col-2 p-0"  id="precioVenta" name="precioVenta" required>
                     </div>
                 </div>
 
                 <div class="col-8"></div>
                 <div class="col-6 mt-3 mb-3">
-                    <button type="submit" class="btn btn-warning" onclick="moduloMateriales.modificarMaterial();"><i class="fa fa-pencil" aria-hidden="true"></i> Registrar material</button>
+                    <button type="submit" class="btn btn-warning" onclick="moduloMateriales.modificarMaterial();"><i class="fa fa-pencil" aria-hidden="true"></i> Modificar material</button>
                 </div>
             </div>
         </div>

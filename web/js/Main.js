@@ -166,14 +166,16 @@ function mostrarAccesorios() {
 
 function pantallaMaterial() {
 
-        fetch("Modulos/moduloMateriales/data_Material.json")
-                .then(response => {
-                        return response.json();
-                })
-                .then(function (jsondata) {
-                        material = jsondata;
-                }
-                );
+        if (material.length === 0) {
+                fetch("Modulos/moduloMateriales/data_Material.json")
+                        .then(response => {
+                                return response.json();
+                        })
+                        .then(function (jsondata) {
+                                material = jsondata;
+                        }
+                        );
+        }
 
         fetch("Modulos/moduloMateriales/view_Materiales.html")
 
