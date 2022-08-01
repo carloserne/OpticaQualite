@@ -13,6 +13,10 @@
     border-radius: 10px;
 }
 
+#contenedorPrincipal{
+    animation:opac 1s;
+}
+
 #contentRegistro {
     margin-top: 10%;
     border: 1px solid black;
@@ -28,6 +32,16 @@
     text-align: initial;
 }
 
+#aparecer{
+    animation:opac 1s;
+}
+@keyframes opac{from{opacity:0} to{opacity:1}}
+
+#hover{
+    animation:animatezoom 1s;
+}
+
+@keyframes animatezoom{from{transform:scale(0)} to{transform:scale(1)}}
 
 
 #collapseProduc {
