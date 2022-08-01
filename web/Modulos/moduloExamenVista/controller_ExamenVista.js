@@ -345,6 +345,21 @@ export function validarDatos(accion){
     }
 }
 
+function calcularDIP(ojo) {
+    if (ojo==="AO") {
+        
+    } else {
+        let esferaIz = parseFloat(document.getElementById("esferaIz").value);
+        let cilindroIz = parseInt(document.getElementById("cilindroIz").value);
+        let ejeIz = parseInt(document.getElementById("ejeIz").value);
+        let esferaDe = parseFloat(document.getElementById("esferaDe").value);
+        let cilindroDe = parseInt(document.getElementById("cilindroDe").value);
+        let ejeDe = parseInt(document.getElementById("ejeDe").value);
+    }
+    
+    
+}
+
 
 function crearTabla(){
     $('#table_id').DataTable({
