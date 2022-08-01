@@ -81,7 +81,7 @@ export function cargarArmazonestblM() {
                 '<td>' + armazon.existencias + '</td>' +
                 '<td>' + armazon.estatus + '</td>' +
                 '<td>' + '<a onclick="moduloArmazones.eliminarArmazon(' + posArmazon + ');"  class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i><a>' +
-                '<a onclick="moduloArmazon.modificar(' + posArmazon + ');"  class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i><a></td>';
+                '<a onclick="moduloArmazones.modificar(' + posArmazon + ');"  class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i><a></td>';
             posArmazon++;
             cuerpotblArmazones += registroArmazones;
         }
@@ -135,7 +135,7 @@ export function modificar(pos) {
             document.getElementById("color").value = armazonSelec.color;
             document.getElementById("nombre").value = armazonSelec.nombre;
             document.getElementById("descripcion").value = armazonSelec.descripcion;
-            document.getElementById("fotografia").value = armazonSelec.fotografia;
+            //document.getElementById("fotografia").value = armazonSelec.fotografia;
             document.getElementById("nombre").value = armazonSelec.nombre;
             document.getElementById("dimensiones").value = armazonSelec.dimensiones;
             document.getElementById("nombre").value = armazonSelec.nombre;
@@ -286,7 +286,7 @@ export function almacenarDatos() {
     let modelo = document.getElementById("modelo").value;
     let color = document.getElementById("color").value;
     let descripcion = document.getElementById("descripcion").value;
-    let fotografia = document.getElementById("fotografia").value;
+    //let fotografia = document.getElementById("fotografia").value;
     let dimensiones = document.getElementById("dimensiones").value;
     let precioCompra = document.getElementById("precioCompra").value;
     let precioVenta = document.getElementById("precioVenta").value;
@@ -298,7 +298,7 @@ export function almacenarDatos() {
         "modelo": modelo,
         "color": color,
         "descripcion": descripcion,
-        "fotografia": fotografia,
+        "fotografia": "foto",
         "dimensiones": dimensiones,
         "precioCompra": precioCompra,
         "precioVenta": precioVenta,
@@ -369,7 +369,7 @@ export function modificarDatos() {
     let modelo = document.getElementById("modelo").value;
     let color = document.getElementById("color").value;
     let descripcion = document.getElementById("descripcion").value;
-    let fotografia = document.getElementById("fotografia").value;
+    //let fotografia = document.getElementById("fotografia").value;
     let dimensiones = document.getElementById("dimensiones").value;
     let precioCompra = document.getElementById("precioCompra").value;
     let precioVenta = document.getElementById("precioVenta").value;
@@ -381,7 +381,7 @@ export function modificarDatos() {
         "modelo": modelo,
         "color": color,
         "descripcion": descripcion,
-        "fotografia": fotografia,
+        "fotografia": "Fotografía",
         "dimensiones": dimensiones,
         "precioCompra": precioCompra,
         "precioVenta": precioVenta,
