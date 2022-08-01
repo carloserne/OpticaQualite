@@ -1,0 +1,70 @@
+<div class="container-fluid d-flex align-items-center justify-content-center col-12 p-0 m-0">
+    <div class="row col-lg-12 p-0">
+        <h1>Gestionar compras</h1>
+        <div class="col-12 m-0 p-0 text-center " style="background: #F5F5F5; border: 2px solid black;">
+            <div class="col-12 row">
+                <div class="col-2">
+                    <button type="button" class="btn btn-light mt-1" onclick="mostrarCompras();">
+                        < Regresar</button>
+                </div>
+                <div class="col-8 ">
+                    <h2 class="mt-1">Registrar nueva compra</h2>
+                </div>
+
+            </div>
+           
+            <div class="col-12 row align-items-center justify-content-center mt-3">
+                <div class="col-6"><!-- Izquierza -->
+                  
+                    <div class="col-12 row float-left mt-4">
+                        <label for="claveCompra" class="col-6 p-0">Clave unica de compra</label>
+                        <input type="text" class="form-control col-6 p-0"  id="claveCompra" name="claveCompra" disabled value="OQBC-X" required>
+
+                    </div>
+                    <div class="col-12 row float-left mt-4">
+                        <label for="claveAdministrador" class="col-6 p-0" >Clave unica de Administrador</label>
+                        <input type="text" class="form-control col-6 p-0"  id="claveAdministrador" name="claveAdministrador" value="XXXXXX" required disabled >
+                    </div>
+
+                    <div class="col-12 row float-left mt-4">
+                        <label for="precioCompra" class="col-6 p-0" >Precio compra</label>
+                        <input type="text" class="form-control col-6 p-0"  id="precioCompra" name="precioCompra" required >
+                    </div>
+
+                    
+                </div>
+
+                <div class="col-6 text"><!-- Derecha -->
+                    <div class="col-12 row float-left mt-4">
+                        <label for="fechaHora" class="col-6 p-0" >Fecha y hora</label>
+                        <input type="text" class="form-control col-6 p-0 text-center" disabled id="fechaHora" name="fechaHora" required>
+                    </div>
+
+                    <div class="col-12 row float-left mt-4">
+                        <label for="producto">Producto</label>
+                        <select class="custom-select mr-sm-2 text-center" id="seleccionProducto">
+                            <option value="0">Elige...</option>
+                            <option value="1">Armazon</option>
+                            <option value="2">Solucion</option>
+                            <option value="3">Accesorio</option>
+                        </select>
+                    </div>
+
+                    <div class="col-12 row float-left mt-4">
+                        <label for="cantidad" class="col-6 p-0" >Cantidad</label>
+                        <input type="text" class="form-control col-6 p-0"  id="cantidad" name="cantidad" required >
+                    </div>
+                </div>
+
+                <div class="col-8"></div>
+                <div class="col-4 mt-3 mb-3">
+                    <button onclick="moduloPagos.registrarNuevo();" type="button" class="btn btn-success"><i class="fa fa-credit-card-alt mx-1" aria-hidden="true"></i>Registrar pago</button>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+</div>

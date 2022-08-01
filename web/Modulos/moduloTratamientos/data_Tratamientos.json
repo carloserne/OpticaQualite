@@ -1,0 +1,32 @@
+[
+  {
+    "nombre": "Pulir",
+    "precioCompra": 10, 
+    "precioVenta": 20,
+    "estatus": 1
+  },
+  {
+    "nombre": "Encerar",
+    "precioCompra": 30, 
+    "precioVenta": 40,
+    "estatus": 1
+  },
+  {
+    "nombre": "Limpiar",
+    "precioCompra": 50, 
+    "precioVenta": 60,
+    "estatus": 1
+  },
+  {
+    "nombre": "Tratar",
+    "precioCompra": 70, 
+    "precioVenta": 80,
+    "estatus": 1
+  },
+  {
+    "nombre": "Retirar",
+    "precioCompra": 90, 
+    "precioVenta": 100,
+    "estatus": 1
+  }
+]

@@ -55,6 +55,46 @@ function clientes() {
                 });
 }
 
+function mostrarTratamientos() {
+        fetch("./Modulos/moduloTratamientos/view_Tratamientos.html")
+                .then(function (respuesta) {
+                        return respuesta.text();
+                })
+                .then(function (html) {
+                        document.getElementById("contenedorPrincipal").innerHTML = html;
+
+                        import("../Modulos/moduloTratamientos/controller_Tratamientos.js").then(
+                                function (controller) {
+                                        moduloTratamientos = controller;
+                                        moduloTratamientos.cargarTratamientosTbl();
+
+                                        $('#table_id').DataTable();
+                                        document.getElementById("table_id_filter").style.display = "none";
+                                }
+                        );
+                });
+}
+
+function mostrarCompras() {
+        fetch("./Modulos/moduloCompras/view_Compras.html")
+                .then(function (respuesta) {
+                        return respuesta.text();
+                })
+                .then(function (html) {
+                        document.getElementById("contenedorPrincipal").innerHTML = html;
+
+                        import("../Modulos/moduloCompras/controller_Compras.js").then(
+                                function (controller) {
+                                        moduloCompras = controller;
+                                        moduloCompras.cargarComprasTbl();
+
+                                        $('#table_id').DataTable();
+                                        document.getElementById("table_id_filter").style.display = "none";
+                                }
+                        );
+                });
+}
+
 
 function empleados() {
 

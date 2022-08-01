@@ -1,0 +1,48 @@
+<div class="container-fluid d-flex align-items-center justify-content-center col-12 p-0 m-0">
+    <div class="row col-lg-12 p-0">
+        <h1>Gestionar Tratamientos</h1>
+        <div class="col-12 m-0 p-0 text-center " style="background: #F5F5F5; border: 2px solid black;">
+            <div class="col-12 row">
+                <div class="col-2">
+                    <button type="button" class="btn btn-light mt-1" onclick="mostrarTratamientos();">
+                        < Regresar</button>
+                </div>
+                <div class="col-8 ">
+                    <h2 class="mt-1">Registrar nuevo Tratamiento</h2>
+                </div>
+
+            </div>
+           
+            <div class="col-12 row align-items-center justify-content-center mt-3">
+                <div class="col-6"><!-- Izquierza -->
+                  
+                    <div class="col-12 row float-left mt-4">
+                        <label for="nombre" class="col-6 p-0">Nombre</label>
+                        <input type="text" class="form-control col-6 p-0"  id="nombre" name="nombre" required>
+
+                    </div>
+                    <div class="col-12 row float-left mt-4">
+                        <label for="precioCompra" class="col-6 p-0" >Precio compra</label>
+                        <input type="text" class="form-control col-6 p-0"  id="precioCompra" name="precioCompra" required >
+                    </div>
+                </div>
+
+                <div class="col-6 text"><!-- Derecha -->
+                    <div class="col-12 row float-left mt-4">
+                        <label for="precioVenta" class="col-6 p-0" >Precio venta</label>
+                        <input type="text" class="form-control col-6 p-0"  id="precioVenta" name="precioVenta" required >
+                    </div>
+                </div>
+
+                <div class="col-8"></div>
+                <div class="col-4 mt-3 mb-3">
+                    <button onclick="moduloTratamientos.registrarNuevo();" type="button" class="btn btn-success"><i class="fa fa-book mx-1" aria-hidden="true"></i>Registrar tratamiento</button>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+</div>

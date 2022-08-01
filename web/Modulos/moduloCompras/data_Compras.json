@@ -1,0 +1,37 @@
+[
+  {
+    "claveUnica": 1,
+    "fechaHora": "2022-07-25 05:25:28.706",
+    "administrador": "Carlos",
+    "precio": 10,
+    "cantidad": 1
+  },
+  {
+    "claveUnica": 2,
+    "fechaHora": "2022-07-25 05:25:28.706",
+    "administrador": "Samuel",
+    "precio": 1000,
+    "cantidad": 2
+  },
+  {
+    "claveUnica": 3,
+    "fechaHora": "2022-07-25 11:41:30.706",
+    "administrador": "Diego",
+    "precio": 300,
+    "cantidad": 3
+  },
+  {
+    "claveUnica": 4,
+    "fechaHora": "2022-07-25 3:30:08.706",
+    "precio": 130,
+    "cantidad": 4,
+    "administrador": "Marco"
+  },
+  {
+    "claveUnica": 5,
+    "fechaHora": "2022-07-25 07:20:01.706",
+    "precio": 250,
+    "cantidad": 5,
+    "administrador": "Jesus"
+  }
+]
