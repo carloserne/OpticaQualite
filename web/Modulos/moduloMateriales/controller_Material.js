@@ -12,7 +12,7 @@ fetch("Modulos/moduloMateriales/data_Material.json")
 
             materiales = jsondata;
             cargarMaterialestbl();
-
+            material = materiales;
         }
         );
        
@@ -63,7 +63,7 @@ export function cargarMaterialestblM() {
             '<td>' + materialess.precioVenta + '</td>' +
             '<td>' + materialess.estatus + '</td>' +
             '<td>' + '<a onclick="moduloMateriales.eliminarMaterial(' + posMaterial + ');"  class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i><a>' +
-            '<a onclick="moduloMateriales.modificarMaterial(' + posMaterial + ');"  class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i><a></td>';
+            '<a onclick="moduloMateriales.modificar(' + posMaterial + ');"  class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i><a></td>';
             posMaterial++;
             cuerpotblMateriales += registroMateriales;
         }
@@ -111,6 +111,7 @@ export function modificar(pos) {
                 document.getElementById("contenedorGestion").innerHTML = html;
                 let materialSelec = materiales[pos];
                 posMaterial = pos;
+            
                 document.getElementById("nombreMaterial").value = materialSelec.nombreMaterial;
                 document.getElementById("precioCompra").value = materialSelec.precioCompra;
                 document.getElementById("precioVenta").value = materialSelec.precioVenta;
@@ -306,7 +307,9 @@ export function modificarDatos() {
     let precioCompra = document.getElementById("precioCompra").value;
     let precioVenta = document.getElementById("precioVenta").value;
 
+
     let material = {
+        "numeroUnicoMaterial": (posMaterial),
         "nombreMaterial": nombreMaterial,
         "precioCompra": precioCompra,
         "precioVenta": precioVenta,
@@ -315,7 +318,7 @@ export function modificarDatos() {
 
     materiales[posMaterial]= material;
 
-    console.log(materiales);
+    material[posMaterial]= material;
 
     pantallaMaterial();
 }
