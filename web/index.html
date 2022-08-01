@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>Optica Qualite</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="descripción" content="Sistema de informacion" />
     <meta name="keywords" content="HTML, CSS" />
     <meta name="author" content="TechSoft" />
-    <link rel="stylesheet" type="text/css" href="style/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="style/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="style/MyStyles.css" />
     <link rel="stylesheet" href="style/login.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-    
-    <link rel="stylesheet" href="./style/sweetalert2.css"/>
-  </head>
-  <body id="boxLogin">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+
+    <link rel="stylesheet" href="./style/sweetalert2.css" />
+</head>
+
+<body id="boxLogin">
     <div class="container-fluid p-0 d-flex justify-content-center align-items-center" style="height: 100vh">
-        <div class="card border-0 shadow-lg" style="width: 60%; height: 70%;">
-            <div class="row p-0 m-0 d-flex" style="height: 100%;">                    
+        <div class="card border-0 shadow-lg row" style="width: 60%; height: 45%;">
+            <div class="row p-0 m-0 d-flex" style="height: 100%;">
                 <div class="col-lg-6 ">
                     <div class="p-5">
                         <div class="text-center">
@@ -26,25 +29,31 @@
                         <div>
                             <div class="form-group">
                                 <!-- <label for="usuario" class="text-uppercase">Usuario</label> -->
-                                <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuario" required>                                
+                                <input type="text" class="form-control" id="usuario" name="usuario"
+                                    placeholder="Usuario" required>
                             </div>
                             <div class="form-group mt-4">
                                 <!--<label for="contrasena" class="text-uppercase mt-2">Contraseña</label>-->
-                                <input type="password" class="form-control mb-3" id="contrasena" name="contrasena" placeholder="Contraseña" required>
+                                <input type="password" class="form-control mb-3" id="contrasena" name="contrasena"
+                                    placeholder="Contraseña" required>
                             </div>
                             <button type="submit" class="btn" onclick="ingresar();" id="btnIngresar">Ingresar</button>
-                        </div>                          
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-6 fondologin d-flex justify-content-center align-items-center">
-                    <img class="col-8 mt-5" src="recursos/Optical Qualite/1.1RBG.png" alt="logo-Qualite" style="height: 80%; width: 90%;"/>
+
+                <div class="col-lg-6 fondologin d-flex justify-content-center align-items-center" style="height: 100%;">
+                    <img class="col-8 mt-5" src="recursos/Optical Qualite/1.1RBG.png" alt="logo-Qualite"
+                        style="height: 100%; width: 90%;" />
 
                 </div>
+
             </div>
-        </div>    
+        </div>
     </div>
     <script src="js/sweetalert2.min.js"></script>
     <script src="js/controller_Login.js"></script>
 
-  </body>
+</body>
+
 </html>
