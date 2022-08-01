@@ -233,7 +233,7 @@ export function almacenarDatos() {
 
     examen.push(examenNuevo);
     examenes.push(examenNuevo);
-    guardarJSON();
+    // guardarJSON();
     abrirModuloExamen();
 }
 
