@@ -1,53 +1,45 @@
-<div class="container-fluid d-flex align-items-center justify-content-center col-12 p-0 m-0">
-    <div class="row col-lg-12 p-0 mb-2" >
-
-        <h1>Gestionar Examen de la vista</h1>
-        <div class="col-12 m-0 p-0 text-center " style="background: #F5F5F5; border: 2px solid black;">
-            <div class="col-12 row">
-                <div class="col-2 m-0 p-3 d-flex align-items-center">
-                    <a onclick="abrirModuloExamen();" class="m-1 bg" style="cursor: pointer;">
-                        <i class="fa fa-angle-left" aria-hidden="true"></i> <span>Regresar</span>
-                    </a>
-                </div>
-                <div class="col-10 m-0 p-0">
-                    <h2 class="mt-1">Modificar Examen de la vista</h2>
-                </div>
-
+<div class="container-fluid p-0" style="height: 100%;">
+    <div style="height: 100%;">
+        <h1 class="text-uppercase text-center">Gestionar Examen de la vista</h1>
+        <div class="m-4 p-0" style="background: #F5F5F5; border: 0.5px solid black; height: 85%;">
+            <div class="col-12 p-0 d-flex">
+                <a onclick="abrirModuloExamen();" class="d-flex align-items-center position-absolute p-2" style="cursor: pointer;">
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span style="padding-left: 5px;">Regresar</span>
+                </a>
+                <h2 class="text-uppercase d-flex justify-content-center" style="width: 100%;">Modificar Examen de la vista</h2>
             </div>
-           
-            <div class="col-12 row align-items-center justify-content-center mt-3">
-                <div class="col-6">
-                  
-                    <div class="col-12 row float-left mt-4">
-                        <label for="fecha" class="col-6 p-0 text-end px-2" disabled>Fecha</label>
-                        <input type="date" class="form-control col-6 p-0"  id="fecha" name="fecha" required>
+            <div class="col-12 p-1" style="height: 90%;">
+                <div class="col-12 d-flex justify-content-center align-items-center" style="height: 70%;">
+                    <div class="col-6 p-0" style="height: 70%;">
+                        <div class="col-12 row mt-4">
+                            <label for="fecha" class="col-4 p-0 text-end px-2">Fecha</label>                                                
+                            <input type="date" class="col-7 form-control p-0" id="fecha" name="fecha" required>                                                
+                        </div>
+                        <div class="col-12 row mt-4">
+                            <label for="hora" class="col-4 p-0 text-end px-2">Hora</label>
+                            <input type="time" class="col-7 form-control p-0" id="hora" name="hora" required>                                                
+                        </div>
+                        <div class="col-12 row mt-4">
+                            <label for="cliente" class="col-4 p-0 text-end px-2">Cliente</label>
+                            <select class="col-7 custom-select text-center p-0" id="cliente" name="clientes" required>                                                
+                                <option>Seleccione un cliente...</option>
+                            </select>
+                        </div>
+                        <div class="col-12 row mt-4">
+                            <label for="graduacion" class="col-4 p-0 text-end px-2">Graduación</label>                                                
+                            <select class="col-7 custom-select p-0" id="graduacion" name="graduacion" required>                                                
+                                <option>Seleccione la graduación...</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="col-12 row float-left mt-4">
-                        <label for="hora" class="col-6 p-0 text-end px-2">Hora</label>
-                        <input type="time" class="form-control col-6 p-0"  id="hora" name="hora" requireds>
-                    </div>
-                    <div class="col-12 row float-left mt-4">
-                        <label for="cliente" class="col-6 p-0 text-end px-2">Cliente</label>
-                        <select class="custom-select mr-sm-2 text-center col-4 p-0" id="cliente" name="clientes" required>
-                            <option>Seleccione un cliente...</option>
-                        </select>
-                    </div>
-                    <div class="col-12 row float-left mt-4">
-                        <label for="graduacion" class="col-6 p-0 text-end px-2">Graduación</label>
-                        <select class="custom-select mr-sm-2 text-center col-4 p-0" id="graduacion" name="graduacion" required>
-                            <option>Seleccione la graduación...</option>
-                        </select>
-                    </div>
+                    
                 </div>
-                <div class="col-8"></div>
-                <div class="col-4 mt-3 mb-3">
+                <div class="col-12 d-flex justify-content-center">
                     <button type="submit" class="btn btn-warning" onclick="moduloExamen.validarDatos('modificar');"><i class="fa fa-pencil" aria-hidden="true"></i>Modificar examen</button>
                 </div>
             </div>
-
-
         </div>
-
-
     </div>
-</div>
+</div> 
+
