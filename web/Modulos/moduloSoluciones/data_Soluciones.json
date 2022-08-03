@@ -1,0 +1,41 @@
+[
+    {
+      "nombre": "Correa para lentes",
+      "marca": "Coca-Cola",
+      "precioCompra": 300,
+      "precioVenta": 350,
+      "descripcion":"Descripcion",
+      "existencias": 55, 
+      "estatus": 1 
+    },
+    {
+      "nombre": "Linterna",
+      "marca": "Pepsi",
+      "precioCompra": 700,
+      "precioVenta": 750,
+      "descripcion":"Descripcion",
+      "existencias": 20, 
+      "estatus": 1 
+    },
+    {
+      "nombre": "Polarizador",
+      "marca": "Bimbo",
+      "precioCompra": 500,
+      "precioVenta": 550,
+      "descripcion":"Descripcion",
+      "existencias": 35, 
+      "estatus": 1
+    },
+    {
+      "nombre": "Polarizador",
+      "marca": "Bimbo",
+      "precioCompra": 500,
+      "precioVenta": 550,
+      "descripcion":"Descripcion",
+      "existencias": 35, 
+      "estatus": 1
+    }
+    
+
+]
+  

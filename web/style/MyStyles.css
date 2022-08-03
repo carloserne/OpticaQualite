@@ -1,12 +1,3 @@
-#logo {
-    margin-left: 25%;
-}
-
-#imagenLogin {
-    background: #495c83;
-    border-radius: 10px;
-}
-
 #contentLogin {
     margin-top: 10%;
     border: 2px solid black;
@@ -78,7 +69,7 @@ input[type="file"] {
 #navMain {
     position: absolute;
     height: 100vh;    
-    background-color: #495c83;
+    background-color: var(--color3);
     transition: all 0.5s;
 }
 
@@ -107,3 +98,47 @@ input[type="file"] {
         display: block;
     }
 }
+
+:root{
+    --color1: #101c23;
+    --color2: #152e3b;
+    --color3: #12495a;
+    --color4: #1a7179;
+    --color5: #20939e;
+}
+
+table thead{
+    background-color: var(--color5);
+    color: white;
+}
+
+/* :root{
+    --color6: #113a2d;
+    --color7: #0f5a3a;
+    --color8: #288544;
+    --color9: #72b94d;
+    --color10: #d8fa5d;
+}
+.color1 {color: #000021;}
+.color2 {color: #00334f;}
+.color3 {color: #5d7687;}
+.color4 {color: #b6bfc4;}
+.color5 {color: #ffffff;}
+
+.color1 {color: #123255;}
+.color2 {color: #2e5e7c;}
+.color3 {color: #7aa1b1;}
+.color4 {color: #cae6e8;}
+.color5 {color: #f3f3f3;}
+
+.color1 {color: #1a4a7b;}
+.color2 {color: #1d6a95;}
+.color3 {color: #789fbe;}
+.color4 {color: #bdd1e1;}
+.color5 {color: #f3f3f3;}
+  
+.color1 {color: #004870;}
+.color2 {color: #3f7391;}
+.color3 {color: #86a8ba;}
+.color4 {color: #cedfe6;}
+.color5 {color: #ffffff;} */

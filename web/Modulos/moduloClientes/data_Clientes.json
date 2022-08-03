@@ -13,7 +13,7 @@
       "Estatus": 1
     },
     "IdCliente": "1",
-    "ClaveUnicaCliente": "MR-R-321"
+    "ClaveUnicaCliente": "MRR321"
   },
   {
     "Persona": {
@@ -29,7 +29,7 @@
       "Estatus": 1
     },
     "IdCliente": "2",
-    "ClaveUnicaCliente": "CA-I-321"
+    "ClaveUnicaCliente": "CAI321"
   },
   {
     "Persona": {
@@ -45,7 +45,7 @@
       "Estatus": 1
     },
     "IdCliente": "3",
-    "ClaveUnicaCliente": "AL-L-321"
+    "ClaveUnicaCliente": "ALL321"
   },
   {
     "Persona": {
@@ -61,6 +61,6 @@
       "Estatus": 1
     },
     "IdCliente": "4",
-    "ClaveUnicaCliente": "LU-L-422"
+    "ClaveUnicaCliente": "LUL422"
   }
 ]
