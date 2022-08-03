@@ -20,7 +20,7 @@ fetch("Modulos/moduloClientes/data_Clientes.json")
     .then(function (jsondata) {
         clientes = jsondata;
     }
-    );
+);
     
 function obtenerFecha(){
     let date = new Date();

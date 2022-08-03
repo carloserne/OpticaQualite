@@ -57,8 +57,8 @@
                         </a>
                     </li>
                     <li class="nav-item" style="cursor: pointer;" id="productos">
-                        <a class="nav-link " data-bs-toggle="collapse" data-bs-target="#collapseProduc" aria-expanded="true"
-                            aria-controls="collapseProduc">
+                        <a class="nav-link " data-bs-toggle="collapse" data-bs-target="#collapseProduc"
+                            aria-expanded="true" aria-controls="collapseProduc">
                             <span>Productos</span>
                         </a>
                         <div class="collapse" id="collapseProduc">
@@ -120,7 +120,7 @@
         </nav>
 
         <div class="container-fluid p-0 m-0 col-lg-10 float-end" style="height: 100vh;" id="contenedorPrincipal">
-            <!-- <div class="col-12 p-0" style="height: 100%;">
+            <div class="col-12 p-0" style="height: 100%;">
                 <div class="col-12 d-flex shadow p-0" style="border-bottom: 1px solid black;">
                     <nav class="navbar navbar-expand-lg navbar-light bg-light col-lg-10">
                         <div class="d-flex justify-content-between d-lg-none">
@@ -153,142 +153,186 @@
                         <img src="" width="30" height="30" class="d-inline-block align-top" alt="">
                     </a>
                 </div>
-                <div class="col-12 mt-2 p-0" id="contenedorGestion" style="height: 90%;">
-                    <div class="container-fluid p-0" style="height: 100%;">
-                        <div style="height: 100%;">
-                            <h1 class="text-uppercase text-center">Gestionar Examen de la vista</h1>
-                            <div class="m-4 p-0" style="background: #F5F5F5; border: 0.5px solid black; height: 85%;">
-                                <div class="col-12 p-0 d-flex">
-                                    <a onclick="abrirModuloExamen();" class="d-flex align-items-center position-absolute p-2" style="cursor: pointer;">
-                                        <i class="fa fa-angle-left" aria-hidden="true"></i>
-                                        <span style="padding-left: 5px;">Regresar</span>
-                                    </a>
-                                    <h2 class="text-uppercase d-flex justify-content-center" style="width: 100%;">Registrar Examen de la vista</h2>
+                <div class="col-12 mt-2 p-0" id="contenedorGestion" style="height: 90.5%;">
+                    <div class="container-fluid p-0" style="height: 100%; background-color: aqua;">
+                        <div class="p-0" style="height: 100%;">
+                            <h1 class="text-uppercase text-center bg-danger">Gestionar Examen de la vista</h1>
+                            <div class="p-4" style="height: 100%; border: 1px solid #000; margin: 0 20px 0 20px;">
+                                <div class="container bg-info p-0"> 
+                                    <div class="col-2 m-0 p-3 d-flex align-items-center">
+                                        <a onclick="abrirModuloExamen();" class="m-1 bg" style="cursor: pointer;">
+                                            <i class="fa fa-angle-left" aria-hidden="true"></i> <span>Regresar</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-10 m-0 p-0">
+                                        <h2 class="mt-1">Eliminar o modificar Examen de la vista</h2>
+                                    </div>
                                 </div>
-                                <div class="col-12 p-1" style="height: 90%;">
-                                    <div class="col-12 d-flex justify-content-center align-items-center" style="height: 70%;">
-                                        <div class="col-6 p-0" style="height: 70%;">
-                                            <div class="col-12 row mt-4">
-                                                <label for="fecha" class="col-4 p-0 text-end px-2">Fecha</label>                                                
-                                                <input type="date" class="col-7 form-control p-0" id="fecha" name="fecha" required>                                                
-                                            </div>
-                                            <div class="col-12 row mt-4">
-                                                <label for="hora" class="col-4 p-0 text-end px-2">Hora</label>
-                                                <input type="time" class="col-7 form-control p-0" id="hora" name="hora" required>                                                
-                                            </div>
-                                            <div class="col-12 row mt-4">
-                                                <label for="cliente" class="col-4 p-0 text-end px-2">Cliente</label>
-                                                <select class="col-7 custom-select text-center p-0" id="cliente" name="clientes" required>                                                
-                                                    <option>Seleccione un cliente...</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-12 row mt-4">
-                                                <label for="graduacion" class="col-4 p-0 text-end px-2">Graduación</label>                                                
-                                                <select class="col-7 custom-select p-0" id="graduacion" name="graduacion" required>                                                
-                                                    <option>Seleccione la graduación...</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                    <div class="col-12 d-flex justify-content-center">
-                                        <button type="submit" class="btn btn-success" onclick="moduloExamen.validarDatos('guardar');"><i class="fa fa-user-plus" aria-hidden="true"></i><span style="margin-left: 5px;">Registrar servicio</span></button>
-                                    </div>
+                                <div class="table-responsive">
+                                    <table id="table_id" class="records_list table table-striped table-bordered table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Fecha</th>
+                                                <th>Hora</th>
+                                                <th>Cliente</th>
+                                                <th>Graduación</th>
+                                                <th>Acciones</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tblExamen">
+                                            <tr>
+                                                <td>Tiger Nixon</td>
+                                                <td>System Architect</td>
+                                                <td>Edinburgh</td>
+                                                <td>61</td>
+                                                <td>2011-04-25</td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td>Garrett Winters</td>
+                                                <td>Accountant</td>
+                                                <td>Tokyo</td>
+                                                <td>63</td>
+                                                <td>2011-07-25</td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td>Ashton Cox</td>
+                                                <td>Junior Technical Author</td>
+                                                <td>San Francisco</td>
+                                                <td>66</td>
+                                                <td>2009-01-12</td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td>Cedric Kelly</td>
+                                                <td>Senior Javascript Developer</td>
+                                                <td>Edinburgh</td>
+                                                <td>22</td>
+                                                <td>2012-03-29</td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td>Cedric Kelly</td>
+                                                <td>Senior Javascript Developer</td>
+                                                <td>Edinburgh</td>
+                                                <td>22</td>
+                                                <td>2012-03-29</td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td>Cedric Kelly</td>
+                                                <td>Senior Javascript Developer</td>
+                                                <td>Edinburgh</td>
+                                                <td>22</td>
+                                                <td>2012-03-29</td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td>Cedric Kelly</td>
+                                                <td>Senior Javascript Developer</td>
+                                                <td>Edinburgh</td>
+                                                <td>22</td>
+                                                <td>2012-03-29</td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td>Cedric Kelly</td>
+                                                <td>Senior Javascript Developer</td>
+                                                <td>Edinburgh</td>
+                                                <td>22</td>
+                                                <td>2012-03-29</td>                                                
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
-                    </div>                
-                </div>
-            </div> -->
-
-                
-        </div>
-        <footer class="col-12 d-flex justify-content-center p-0 bg-light"
-                    style="border-top: 1px solid black; height: 80px; z-index: 1;">
-                    <div class="row col-lg-12 p-0">
-                        <div class="col-lg-8 d-flex justify-content-start align-items-center">
-                            <h4 class="pl-5">Optica Qualite</h4>
-                        </div>
-                        <div class="col-lg-4 d-flex justify-content-center align-items-center ">
-                            <p>copyright &copy;2022 <a href="#">TechSoft</a> </p>
-                        </div>
                     </div>
-                </footer>
+                    </div>             
+                </div>
+            </div>
+        </div>
+        
+        <footer class="col-12 d-flex justify-content-center p-0 bg-light"
+            style="border-top: 1px solid black; height: 80px; z-index: 1;">
+            <div class="row col-lg-12 p-0">
+                <div class="col-lg-8 d-flex justify-content-start align-items-center">
+                    <h4 class="pl-5">Optica Qualite</h4>
+                </div>
+                <div class="col-lg-4 d-flex justify-content-center align-items-center ">
+                    <p>copyright &copy;2022 <a href="#">TechSoft</a> </p>
+                </div>
+            </div>
+        </footer>
 
-            <!--Porfin ppude alv-->
+        <!--Porfin ppude alv-->
 
-            <script type="text/javascript" charset="utf8" src="js/DataTables/datatables.min.js"></script>
-            <script type="text/javascript" charset="utf8" src="js/DataTables/js/dataTables.bootstrap5.min.js"></script>
+        <script type="text/javascript" charset="utf8" src="js/DataTables/datatables.min.js"></script>
+        <script type="text/javascript" charset="utf8" src="js/DataTables/js/dataTables.bootstrap5.min.js"></script>
 
-            <script src="style/js/bootstrap.bundle.js"></script>
-            <script src="js/Main.js"></script>
-            <script src="js/sweetalert2.min.js"></script>
+        <script src="style/js/bootstrap.bundle.js"></script>
+        <script src="js/Main.js"></script>
+        <script src="js/sweetalert2.min.js"></script>
 
-            <script src="https://kit.fontawesome.com/df18d6cab7.js" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/df18d6cab7.js" crossorigin="anonymous"></script>
 
-            <script>
-                $('#menuMain ul li').not('li#productos').on('click', function () {
-                    $("#menuMain ul li.activo").removeClass('activo');
-                    $(this).addClass('activo');
-                    $('#navMain').removeClass('menuActivo');
-                })
-                $('#navbarNav ul li').on('click', function () {
-                    $("#navbarNav ul li.activos").removeClass('activos');
-                    $(this).addClass('activos');
-                })
+        <script>
+            $('#menuMain ul li').not('li#productos').on('click', function () {
+                $("#menuMain ul li.activo").removeClass('activo');
+                $(this).addClass('activo');
+                $('#navMain').removeClass('menuActivo');
+            })
+            $('#navbarNav ul li').on('click', function () {
+                $("#navbarNav ul li.activos").removeClass('activos');
+                $(this).addClass('activos');
+            })
 
-                $('#menuMain ul li #collapseProduc div a').on('click', function () {
-                    $("#menuMain ul li.activo").removeClass('activo');
-                    $(this).addClass('activo');
-                    $('#navMain').removeClass('menuActivo');
-                })
+            $('#menuMain ul li #collapseProduc div a').on('click', function () {
+                $("#menuMain ul li.activo").removeClass('activo');
+                $(this).addClass('activo');
+                $('#navMain').removeClass('menuActivo');
+            })
 
-                $('#menuMain ul li').not('li#inicio').on('click', function () {
-                    $("#menuSecundario").addClass('d-none');
+            $('#menuMain ul li').not('li#inicio').on('click', function () {
+                $("#menuSecundario").addClass('d-none');
+            });
+
+            $('.menuIconS').on('click', function () {
+                $('#navMain').addClass('menuActivo');
+            })
+
+            $('.menuIcon').on('click', function () {
+                $('#navMain').addClass('menuActivo');
+            })
+
+            $('.cerrar').on('click', function () {
+                $('#navMain').removeClass('menuActivo');
+            })
+
+                $('#table_id').DataTable({
+                    "language": {
+                        "decimal": ",",
+                        "thousands": ".",
+                        "info": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                        "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                        "infoFiltered": "(filtrado de un total de _MAX_ registros)",
+                        "loadingRecords": "Cargando...",
+                        "lengthMenu": "Mostrar _MENU_ registros",
+                        "paginate": {
+                            "next": "Siguiente",
+                            "previous": "Anterior"
+                        },
+                        "processing": "Procesando...",
+                        "search": "Buscar:",
+                        "zeroRecords": "No se encontraron resultados",
+                        "emptyTable": "Ningún dato disponible en esta tabla",
+                        "aria": {
+                            "sortAscending": ": Activar para ordenar la columna de manera ascendente",
+                            "sortDescending": ": Activar para ordenar la columna de manera descendente"
+                        }
+                    },
+                    scrollY: '55vh',
+                    scrollCollapse: true,
+                    "searching": false,
+                    "drawCallback": function (settings) {
+                        $('ul.pagination').addClass("pagination-sm");
+                    }
                 });
-
-                $('.menuIconS').on('click', function () {
-                    $('#navMain').addClass('menuActivo');
-                })
-
-                $('.menuIcon').on('click', function () {
-                    $('#navMain').addClass('menuActivo');
-                })
-
-                $('.cerrar').on('click', function () {
-                    $('#navMain').removeClass('menuActivo');
-                })
-
-                // $('#table_id').DataTable({
-                //     "language": {
-                //         "decimal": ",",
-                //         "thousands": ".",
-                //         "info": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
-                //         "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
-                //         "infoFiltered": "(filtrado de un total de _MAX_ registros)",
-                //         "loadingRecords": "Cargando...",
-                //         "lengthMenu": "Mostrar _MENU_ registros",
-                //         "paginate": {
-                //             "next": "Siguiente",
-                //             "previous": "Anterior"
-                //         },
-                //         "processing": "Procesando...",
-                //         "search": "Buscar:",
-                //         "zeroRecords": "No se encontraron resultados",
-                //         "emptyTable": "Ningún dato disponible en esta tabla",
-                //         "aria": {
-                //             "sortAscending": ": Activar para ordenar la columna de manera ascendente",
-                //             "sortDescending": ": Activar para ordenar la columna de manera descendente"
-                //         }
-                //     },
-                //     scrollY: '55vh',
-                //     scrollCollapse: true,
-                //     "searching": false,
-                //     "drawCallback": function (settings) {
-                //         $('ul.pagination').addClass("pagination-sm");
-                //     }
-                // });
-            </script>
+        </script>
 </body>
 
 </html>

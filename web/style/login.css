@@ -1,5 +1,5 @@
 .fondologin{
-    background: #495c83;
+    background: var(--color3);
 }
 #boxLogin{
     background-image: url(../recursos/fondoLogin.jpg);
@@ -7,11 +7,18 @@
     background-repeat: no-repeat;
 }
 #btnIngresar{
-    background: #495c83;
+    background: var(--color3);
     color: white;
     width: 100%;
 }
 #btnIngresar:hover{
     background: #000;
     color: white;
+}
+:root{
+    --color1: #101c23;
+    --color2: #152e3b;
+    --color3: #12495a;
+    --color4: #1a7179;
+    --color5: #20939e;
 }

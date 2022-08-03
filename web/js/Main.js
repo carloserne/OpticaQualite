@@ -8,7 +8,7 @@ let lentes = [];
 let material = [];
 let examenes = [];
 
-window.onload = menubody();
+//window.onload = menubody();
 
 
 
