@@ -25,17 +25,17 @@ export function cargarEmp() {
         if (empleado.Persona.Estatus !== 0) {
             registroEmp =
                     '<tr>' +
-                    '<td>' + empleado.ClaveUnicaEmp + '</td>' +
+                    '<td hidden>' + empleado.ClaveUnicaEmp + '</td>' +
                     '<td>' + empleado.Persona.Nombre + '</td>' +
                     '<td>' + empleado.Persona.ApellidoPaterno + '</td>' +
                     '<td>' + empleado.Persona.ApellidoMaterno + '</td>' +
                     '<td>' + empleado.Persona.Genero + '</td>' +
-                    '<td>' + empleado.Persona.RFC + '</td>' +
+                    '<td hidden>' + empleado.Persona.RFC + '</td>' +
                     '<td>' + empleado.Persona.TelCasa + '</td>' +
                     '<td>' + empleado.Persona.TelMovil + '</td>' +
-                    '<td>' + empleado.Persona.Correo + '</td>' +
-                    '<td>' + empleado.Usuario.usuario + '</td>' +
-                    '<td>' + empleado.Usuario.contasena + '</td>' +
+                    '<td hidden>' + empleado.Persona.Correo + '</td>' +
+                    '<td hidden>' + empleado.Usuario.usuario + '</td>' +
+                    '<td hidden>' + empleado.Usuario.contasena + '</td>' +
                     '<td>' + empleado.Persona.Estatus + '</td>';
             cuerpotblEmp += registroEmp;
             countIdPersona = parseInt(empleado.Persona.IdPersona);
@@ -54,17 +54,17 @@ export function cargarEmptbl() {
         if (empleado.Persona.Estatus !== 0) {
             registroEmp =
                     '<tr>' +
-                    '<td>' + empleado.ClaveUnicaEmp + '</td>' +
+                    '<td hidden>' + empleado.ClaveUnicaEmp + '</td>' +
                     '<td>' + empleado.Persona.Nombre + '</td>' +
                     '<td>' + empleado.Persona.ApellidoPaterno + '</td>' +
                     '<td>' + empleado.Persona.ApellidoMaterno + '</td>' +
                     '<td>' + empleado.Persona.Genero + '</td>' +
-                    '<td>' + empleado.Persona.RFC + '</td>' +
+                    '<td hidden>' + empleado.Persona.RFC + '</td>' +
                     '<td>' + empleado.Persona.TelCasa + '</td>' +
                     '<td>' + empleado.Persona.TelMovil + '</td>' +
-                    '<td>' + empleado.Persona.Correo + '</td>' +
-                    '<td>' + empleado.Usuario.usuario + '</td>' +
-                    '<td>' + empleado.Usuario.contasena + '</td>' +
+                    '<td hidden>' + empleado.Persona.Correo + '</td>' +
+                    '<td hidden>' + empleado.Usuario.usuario + '</td>' +
+                    '<td hidden>' + empleado.Usuario.contasena + '</td>' +
                     '<td>' + empleado.Persona.Estatus + '</td>';
 
             cuerpotblEmp += registroEmp;
@@ -82,18 +82,18 @@ export function cargarEmptblM() {
     emps.forEach(function (empleado) {
         if (empleado.Persona.Estatus !== 0) {
             registroEmp =
-                    '<tr>' +
-                    '<td>' + empleado.ClaveUnicaEmp + '</td>' +
+                    '<tr onclick="moduloEmp.accionesEmp(' + posEmp + ');">' +
+                    '<td hidden>' + empleado.ClaveUnicaEmp + '</td>' +
                     '<td>' + empleado.Persona.Nombre + '</td>' +
                     '<td>' + empleado.Persona.ApellidoPaterno + '</td>' +
                     '<td>' + empleado.Persona.ApellidoMaterno + '</td>' +
                     '<td>' + empleado.Persona.Genero + '</td>' +
-                    '<td>' + empleado.Persona.RFC + '</td>' +
+                    '<td hidden>' + empleado.Persona.RFC + '</td>' +
                     '<td>' + empleado.Persona.TelCasa + '</td>' +
                     '<td>' + empleado.Persona.TelMovil + '</td>' +
-                    '<td>' + empleado.Persona.Correo + '</td>' +
-                    '<td>' + empleado.Usuario.usuario + '</td>' +
-                    '<td>' + empleado.Usuario.contasena + '</td>' +
+                    '<td hidden>' + empleado.Persona.Correo + '</td>' +
+                    '<td hidden>' + empleado.Usuario.usuario + '</td>' +
+                    '<td hidden>' + empleado.Usuario.contasena + '</td>' +
                     '<td>' + empleado.Persona.Estatus + '</td>' +
                     '<td>' + '<a onclick="moduloEmp.eliminarEmp(' + posEmp + ');"  class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i><a>' +
                     '<a onclick="moduloEmp.modificar(' + posEmp + ');"  class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i><a></td>';
@@ -109,6 +109,23 @@ export function cargarEmptblM() {
 
 }
 
+export function accionesEmp(posEmp){
+       
+            Swal.fire({
+                title: '¿Qué deseas hacer?',
+                showDenyButton: true,
+                confirmButtonText: '<i class="fa fa-pencil" aria-hidden="true"></i>Modificar',
+                denyButtonText: `<i class="fa fa-trash-o" aria-hidden="true"></i>Eliminar`
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    moduloEmp.modificar(posEmp);
+                } else if (result.isDenied) {
+                    moduloEmp.eliminarEmp(posEmp);
+                }
+            });
+
+}
+
 export function cargarEmptblC() {
     let filtro = document.getElementById("filtro").value;
 
@@ -116,17 +133,17 @@ export function cargarEmptblC() {
         if (filtro === "A" && empleado.Persona.Estatus !== 0) {
                 registroEmp =
                         '<tr>' +
-                        '<td>' + empleado.ClaveUnicaEmp + '</td>' +
+                        '<td hidden>' + empleado.ClaveUnicaEmp + '</td>' +
                         '<td>' + empleado.Persona.Nombre + '</td>' +
                         '<td>' + empleado.Persona.ApellidoPaterno + '</td>' +
                         '<td>' + empleado.Persona.ApellidoMaterno + '</td>' +
                         '<td>' + empleado.Persona.Genero + '</td>' +
-                        '<td>' + empleado.Persona.RFC + '</td>' +
+                        '<td hidden>' + empleado.Persona.RFC + '</td>' +
                         '<td>' + empleado.Persona.TelCasa + '</td>' +
                         '<td>' + empleado.Persona.TelMovil + '</td>' +
-                        '<td>' + empleado.Persona.Correo + '</td>' +
-                        '<td>' + empleado.Usuario.usuario + '</td>' +
-                        '<td>' + empleado.Usuario.contasena + '</td>' +
+                        '<td hidden>' + empleado.Persona.Correo + '</td>' +
+                        '<td hidden>' + empleado.Usuario.usuario + '</td>' +
+                        '<td hidden>' + empleado.Usuario.contasena + '</td>' +
                         '<td>' + empleado.Persona.Estatus + '</td>';
 
                 cuerpotblEmp += registroEmp;
@@ -136,17 +153,17 @@ export function cargarEmptblC() {
         }else if(filtro === "I" && empleado.Persona.Estatus === 0){
             registroEmp =
                         '<tr>' +
-                        '<td>' + empleado.ClaveUnicaEmp + '</td>' +
+                        '<td hidden>' + empleado.ClaveUnicaEmp + '</td>' +
                         '<td>' + empleado.Persona.Nombre + '</td>' +
                         '<td>' + empleado.Persona.ApellidoPaterno + '</td>' +
                         '<td>' + empleado.Persona.ApellidoMaterno + '</td>' +
                         '<td>' + empleado.Persona.Genero + '</td>' +
-                        '<td>' + empleado.Persona.RFC + '</td>' +
+                        '<td hidden>' + empleado.Persona.RFC + '</td>' +
                         '<td>' + empleado.Persona.TelCasa + '</td>' +
                         '<td>' + empleado.Persona.TelMovil + '</td>' +
-                        '<td>' + empleado.Persona.Correo + '</td>' +
-                        '<td>' + empleado.Usuario.usuario + '</td>' +
-                        '<td>' + empleado.Usuario.contasena + '</td>' +
+                        '<td hidden>' + empleado.Persona.Correo + '</td>' +
+                        '<td hidden>' + empleado.Usuario.usuario + '</td>' +
+                        '<td hidden>' + empleado.Usuario.contasena + '</td>' +
                         '<td>' + empleado.Persona.Estatus + '</td>';
 
                 cuerpotblEmp += registroEmp;
@@ -155,17 +172,17 @@ export function cargarEmptblC() {
         }else if(filtro === "Am"){
             registroEmp =
                         '<tr>' +
-                        '<td>' + empleado.ClaveUnicaEmp + '</td>' +
+                        '<td hidden>' + empleado.ClaveUnicaEmp + '</td>' +
                         '<td>' + empleado.Persona.Nombre + '</td>' +
                         '<td>' + empleado.Persona.ApellidoPaterno + '</td>' +
                         '<td>' + empleado.Persona.ApellidoMaterno + '</td>' +
                         '<td>' + empleado.Persona.Genero + '</td>' +
-                        '<td>' + empleado.Persona.RFC + '</td>' +
+                        '<td hidden>' + empleado.Persona.RFC + '</td>' +
                         '<td>' + empleado.Persona.TelCasa + '</td>' +
                         '<td>' + empleado.Persona.TelMovil + '</td>' +
-                        '<td>' + empleado.Persona.Correo + '</td>' +
-                        '<td>' + empleado.Usuario.usuario + '</td>' +
-                        '<td>' + empleado.Usuario.contasena + '</td>' +
+                        '<td hidden>' + empleado.Persona.Correo + '</td>' +
+                        '<td hidden>' + empleado.Usuario.usuario + '</td>' +
+                        '<td hidden>' + empleado.Usuario.contasena + '</td>' +
                         '<td>' + empleado.Persona.Estatus + '</td>';
 
                 cuerpotblEmp += registroEmp;
