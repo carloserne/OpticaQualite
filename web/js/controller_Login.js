@@ -7,6 +7,21 @@ fetch("Modulos/moduloEmp/data_Empleados.json")
             usuarios = jsondata;
         }
 );
+
+document.getElementById('usuario').addEventListener('keydown', focusContrasena);
+function focusContrasena(event) {
+  if (event.keyCode == 13) {
+    document.getElementById('contrasena').focus();
+  }
+}
+
+document.getElementById('contrasena').addEventListener('keydown', iniciar);
+function iniciar(event) {
+  if (event.keyCode == 13) {
+    document.getElementById('btnIngresar').focus();
+  }
+}
+
         
 function ingresar() {
     let userLogin = document.getElementById("usuario").value;
@@ -22,6 +37,7 @@ function ingresar() {
         }
 
     }
+
     if (resultado === true) {
         Swal.fire({
             icon: 'success',
