@@ -33,7 +33,7 @@ export function cargarTratamientosTbl() {
 }
 
 export function registrar() {
-    fetch("./Modulos/moduloTratamientos/view_RegistrarTratamientos.html")
+    fetch("./Modulos/moduloTratamientos/view_registrarTratamientos.html")
         .then(function (respuesta) {
             return respuesta.text();
         })
@@ -61,6 +61,38 @@ export function cargarTablaParaEliminarOModificar() {
     cuerpotblTratamientos = "";
 }
 
+function crearTabla(){
+    $('#table_id').DataTable({
+            "language": {
+                    "decimal": ",",
+                    "thousands": ".",
+                    "info": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                    "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",                    
+                    "infoFiltered": "(filtrado de un total de _MAX_ registros)",
+                    "loadingRecords": "Cargando...",
+                    "lengthMenu": "Mostrar _MENU_ registros",
+                    "paginate": {
+                        "next": "Siguiente",
+                        "previous": "Anterior"
+                    },
+                    "processing": "Procesando...",
+                    "search": "Buscar:",
+                    "zeroRecords": "No se encontraron resultados",
+                    "emptyTable": "Ningún dato disponible en esta tabla",
+                    "aria": {
+                        "sortAscending":  ": Activar para ordenar la columna de manera ascendente",
+                        "sortDescending": ": Activar para ordenar la columna de manera descendente"
+                    }
+            },
+            destroy: true,
+            scrollY: '55vh',
+            scrollCollapse: true,
+            "drawCallback": function( settings ) {
+                $('ul.pagination').addClass("pagination-sm");
+            }
+        });
+}
+
 export function eliminar() {
     fetch("./Modulos/moduloTratamientos/view_eliminarTratamientos.html")
         .then(function (respuesta) {
@@ -72,7 +104,7 @@ export function eliminar() {
                 function (controller) {
                     moduloTratamientos = controller;
                     moduloTratamientos.cargarTablaParaEliminarOModificar();
-                    $('#table_id').DataTable();
+                    c
                     document.getElementById("table_id_filter").style.display = "block";
                 }
             );
