@@ -3,7 +3,6 @@ let tabla;
 let moduloEmp;
 let moduloLentes;
 let moduloExamen;
-let moduloCliente;
 let emp = [];
 let lentes = [];
 let material = [];
@@ -50,6 +49,7 @@ function clientes() {
                                         moduloCliente.cargarClient();
                                         $('#table_id').DataTable();
                                         document.getElementById("table_id_filter").style.display = "none";
+                                        menuResponsive();
                                 }
                         );
 
@@ -91,6 +91,7 @@ function mostrarCompras() {
 
                                         $('#table_id').DataTable();
                                         document.getElementById("table_id_filter").style.display = "none";
+                                        menuResponsive();
                                 }
                         );
                 });
@@ -125,6 +126,7 @@ function empleados() {
                                         moduloEmp.cargarEmp();
                                         $('#table_id').DataTable();
                                         document.getElementById("table_id_filter").style.display = "none";
+                                        menuResponsive();
                                 }
                         );
 
@@ -159,6 +161,7 @@ function mostrarAccesorios() {
                                         moduloAccesorios.cargarAccesoriostbl();
                                         $('#table_id').DataTable();
                                         document.getElementById("table_id_filter").style.display = "none";
+                                        menuResponsive();
                                 }
                         );
 
@@ -193,6 +196,7 @@ function pantallaMaterial() {
                                         moduloMateriales.cargarMaterial();
                                         $('#table_id').DataTable();
                                         document.getElementById("table_id_filter").style.display = "none";
+                                        menuResponsive();
                                 }
                         );
 
@@ -258,6 +262,7 @@ function mostrarPagos() {
                                         moduloPagos.cargarPagosTbl();
                                         $('#table_id').DataTable();
                                         document.getElementById("table_id_filter").style.display = "none";
+                                        menuResponsive();
                                 }
                         );
 
@@ -290,6 +295,7 @@ function mostrarVentas() {
                                         moduloVentas.cargarVentastbl();
                                         $('#table_id').DataTable();
                                         document.getElementById("table_id_filter").style.display = "none";
+                                        menuResponsive();
                                 }
                         );
                 });
@@ -320,6 +326,7 @@ function abrirModuloLentes() {
                                         moduloLentes.cargarLentes();
                                         $('#table_id').DataTable();
                                         document.getElementById("table_id_filter").style.display = "none";
+                                        menuResponsive();
                                 }
                         );
 
@@ -351,7 +358,9 @@ function abrirModuloExamen() {
                                 function (controller) {
                                         moduloExamen = controller;
                                         moduloExamen.cargarExamen();
-                                        crearTabla();                                        
+                                        crearTabla();      
+                                        menuResponsive();
+                                                               
                                 }
                         );
 
@@ -388,4 +397,15 @@ function crearTabla(){
                     $('ul.pagination').addClass("pagination-sm");
                 }
             });
+}
+
+function menuResponsive(){
+        $('.menuIconS').on('click', function () {
+                $('#navMain').addClass('menuActivo');
+            })
+            
+            $('.menuIcon').on('click', function () {
+                $('#navMain').addClass('menuActivo');
+            })
+                      
 }
