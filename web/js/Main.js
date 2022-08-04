@@ -3,12 +3,13 @@ let tabla;
 let moduloEmp;
 let moduloLentes;
 let moduloExamen;
+let moduloCliente;
 let emp = [];
 let lentes = [];
 let material = [];
 let examenes = [];
 
-//window.onload = menubody();
+window.onload = menubody();
 
 
 
