@@ -10,37 +10,9 @@ fetch("Modulos/moduloExamenVista/data_ExamenVista.json")
     })
     .then(function (jsondata) {
         examen = jsondata;        
-        cargarExamentbl(); 
-        import("../Modulos/moduloClientes/controller_Clientes.js").then(
-            function (controller) {
-                modulo = controller;            
-                clientes = modulo.mostrarArray();
-                console.log(clientes);
-            }
-        );      
+        cargarExamentbl();       
     }
     );
-    fetch("Modulos/moduloClientes/view_Clientes.html")
-
-    .then(function (respuesta) {
-            return respuesta.text();
-    })
-    .then(function (html) {
-            document.getElementById("contenedorPrincipal").innerHTML = html;
-
-            import("../Modulos/moduloClientes/controller_Clientes.js").then(
-                    function (controller) {
-
-                            moduloCliente = controller;
-                            moduloCliente.cargarClient();
-                            $('#table_id').DataTable();
-                            document.getElementById("table_id_filter").style.display = "none";
-                            menuResponsive();
-                    }
-            );
-
-    });
-
 fetch("Modulos/moduloClientes/data_Clientes.json")
     .then(response => {
         return response.json();
@@ -49,7 +21,6 @@ fetch("Modulos/moduloClientes/data_Clientes.json")
         clientes = jsondata;
     }
 );
-
     
 function obtenerFecha(){
     let date = new Date();
