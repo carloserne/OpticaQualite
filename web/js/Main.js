@@ -369,6 +369,7 @@ function abrirModuloExamen() {
 
 function crearTabla(){
         $('#table_id').DataTable({
+                destroy: true,
                 "language": {
                         "decimal": ",",
                         "thousands": ".",
@@ -389,7 +390,7 @@ function crearTabla(){
                             "sortAscending":  ": Activar para ordenar la columna de manera ascendente",
                             "sortDescending": ": Activar para ordenar la columna de manera descendente"
                         }
-                },
+                },        
                 scrollY: '55vh',
                 scrollCollapse: true,
                 "searching": false,

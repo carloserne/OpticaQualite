@@ -455,3 +455,7 @@ export function eliminarClient(pos) {
         }
     })
 }
+
+export function mostrarArray() {
+    return clients;
+}
