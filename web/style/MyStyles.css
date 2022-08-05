@@ -4,9 +4,18 @@
     border-radius: 10px;
 }
 
-#contenedorPrincipal{
+#tituloBienvenido{
     animation:opac 1s;
 }
+
+#tituloSistema{
+    animation:opac 2s;
+}
+
+#imagenPrincipal{
+    animation:opac 3s;
+}
+
 
 #contentRegistro {
     margin-top: 10%;
@@ -36,7 +45,7 @@
 
 
 #collapseProduc {
-    margin-left: 45px;
+    margin-left: 30px;
 }
 
 #collapseProduc a {
@@ -45,6 +54,22 @@
 
 .nav-link:hover {
     background-color: white;
+    transform: scale(1.1);
+    transition: 0.4s;
+}
+
+.nav-link{
+    transition: 0.4s;
+}
+
+#icono:hover{
+    transform: scale(1.1);
+    transition: 0.4s;
+}
+
+#icono{
+    transition: 0.4s;
+    cursor: pointer;
 }
 
 .nav-link:hover>span {

@@ -48,7 +48,7 @@ function clientes() {
                                         moduloCliente = controller;
                                         moduloCliente.cargarClient();
                                         $('#table_id').DataTable();
-                                        document.getElementById("table_id_filter").style.display = "none";
+                                        crearTabla();      
                                         menuResponsive();
                                 }
                         );
