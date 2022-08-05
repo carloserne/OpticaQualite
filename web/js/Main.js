@@ -124,7 +124,7 @@ function empleados() {
 
                                         moduloEmp = controller;
                                         moduloEmp.cargarEmp();
-                                        $('#table_id').DataTable();
+                                        crearTabla();
                                         document.getElementById("table_id_filter").style.display = "none";
                                         menuResponsive();
                                 }
