@@ -20,9 +20,16 @@ fetch("Modulos/moduloEmp/data_Empleados.json")
         );
 
 export function cargarEmp() {
-
+let estatus;
     emp.forEach(function (empleado) {
         if (empleado.Persona.Estatus !== 0) {
+            if(empleado.Persona.Estatus === 1){
+                estatus = "Activo";
+            }
+
+            if(empleado.Persona.Estatus === 0){
+                estatus = "Inactivo";
+            }
             registroEmp =
                     '<tr>' +
                     '<td hidden>' + empleado.ClaveUnicaEmp + '</td>' +
@@ -36,7 +43,7 @@ export function cargarEmp() {
                     '<td hidden>' + empleado.Persona.Correo + '</td>' +
                     '<td hidden>' + empleado.Usuario.usuario + '</td>' +
                     '<td hidden>' + empleado.Usuario.contasena + '</td>' +
-                    '<td>' + empleado.Persona.Estatus + '</td>';
+                    '<td>' + estatus + '</td>';
             cuerpotblEmp += registroEmp;
             countIdPersona = parseInt(empleado.Persona.IdPersona);
             countIdEmpleado = parseInt(empleado.IdEmpleado);
@@ -49,9 +56,18 @@ export function cargarEmp() {
 }
 
 export function cargarEmptbl() {
+    let estatus;
 
     emps.forEach(function (empleado) {
         if (empleado.Persona.Estatus !== 0) {
+            if(empleado.Persona.Estatus === 1){
+                estatus = "Activo";
+            }
+
+            if(empleado.Persona.Estatus === 0){
+                estatus = "Inactivo";
+            }
+
             registroEmp =
                     '<tr>' +
                     '<td hidden>' + empleado.ClaveUnicaEmp + '</td>' +
@@ -65,7 +81,7 @@ export function cargarEmptbl() {
                     '<td hidden>' + empleado.Persona.Correo + '</td>' +
                     '<td hidden>' + empleado.Usuario.usuario + '</td>' +
                     '<td hidden>' + empleado.Usuario.contasena + '</td>' +
-                    '<td>' + empleado.Persona.Estatus + '</td>';
+                    '<td>' + estatus + '</td>';
 
             cuerpotblEmp += registroEmp;
             countIdPersona = parseInt(empleado.Persona.IdPersona);
@@ -79,8 +95,18 @@ export function cargarEmptbl() {
 
 export function cargarEmptblM() {
     posEmp = 0;
+    let estatus
     emps.forEach(function (empleado) {
         if (empleado.Persona.Estatus !== 0) {
+
+            if(empleado.Persona.Estatus === 1){
+                estatus = "Activo";
+            }
+
+            if(empleado.Persona.Estatus === 0){
+                estatus = "Inactivo";
+            }
+
             registroEmp =
                     '<tr onclick="moduloEmp.accionesEmp(' + posEmp + ');">' +
                     '<td hidden>' + empleado.ClaveUnicaEmp + '</td>' +
@@ -94,9 +120,7 @@ export function cargarEmptblM() {
                     '<td hidden>' + empleado.Persona.Correo + '</td>' +
                     '<td hidden>' + empleado.Usuario.usuario + '</td>' +
                     '<td hidden>' + empleado.Usuario.contasena + '</td>' +
-                    '<td>' + empleado.Persona.Estatus + '</td>' +
-                    '<td>' + '<a onclick="moduloEmp.eliminarEmp(' + posEmp + ');"  class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i><a>' +
-                    '<a onclick="moduloEmp.modificar(' + posEmp + ');"  class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i><a></td>';
+                    '<td>' + estatus + '</td>';
             
             cuerpotblEmp += registroEmp;
             countIdPersona = parseInt(empleado.Persona.IdPersona);
@@ -128,8 +152,17 @@ export function accionesEmp(posEmp){
 
 export function cargarEmptblC() {
     let filtro = document.getElementById("filtro").value;
+    let estatus;
 
     emps.forEach(function (empleado) {
+        if(empleado.Persona.Estatus === 1){
+            estatus = "Activo";
+        }
+
+        if(empleado.Persona.Estatus === 0){
+            estatus = "Inactivo";
+        }
+
         if (filtro === "A" && empleado.Persona.Estatus !== 0) {
                 registroEmp =
                         '<tr>' +
@@ -144,7 +177,7 @@ export function cargarEmptblC() {
                         '<td hidden>' + empleado.Persona.Correo + '</td>' +
                         '<td hidden>' + empleado.Usuario.usuario + '</td>' +
                         '<td hidden>' + empleado.Usuario.contasena + '</td>' +
-                        '<td>' + empleado.Persona.Estatus + '</td>';
+                        '<td>' + estatus + '</td>';
 
                 cuerpotblEmp += registroEmp;
                 countIdPersona = parseInt(empleado.Persona.IdPersona);
@@ -164,7 +197,7 @@ export function cargarEmptblC() {
                         '<td hidden>' + empleado.Persona.Correo + '</td>' +
                         '<td hidden>' + empleado.Usuario.usuario + '</td>' +
                         '<td hidden>' + empleado.Usuario.contasena + '</td>' +
-                        '<td>' + empleado.Persona.Estatus + '</td>';
+                        '<td>' + estatus + '</td>';
 
                 cuerpotblEmp += registroEmp;
                 countIdPersona = parseInt(empleado.Persona.IdPersona);
@@ -183,7 +216,7 @@ export function cargarEmptblC() {
                         '<td hidden>' + empleado.Persona.Correo + '</td>' +
                         '<td hidden>' + empleado.Usuario.usuario + '</td>' +
                         '<td hidden>' + empleado.Usuario.contasena + '</td>' +
-                        '<td>' + empleado.Persona.Estatus + '</td>';
+                        '<td>' + estatus + '</td>';
 
                 cuerpotblEmp += registroEmp;
                 countIdPersona = parseInt(empleado.Persona.IdPersona);

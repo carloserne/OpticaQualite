@@ -1,36 +1,33 @@
-<div class="container-fluid d-flex align-items-center justify-content-center col-12 p-0 m-0">
-    <div class="row col-lg-12 p-0">
-        <h1>Gestionar Examen de la vista</h1>
-        <div class="col-12 m-0 p-0 text-center " style="background: #F5F5F5; border: 2px solid black;">
-            <div class="col-12 row"> 
-                <div class="col-2 m-0 p-3 d-flex align-items-center">
-                    <a onclick="abrirModuloExamen();" class="m-1 bg" style="cursor: pointer;">
-                        <i class="fa fa-angle-left" aria-hidden="true"></i> <span>Regresar</span>
-                    </a>
-                </div>
-                <div class="col-10 m-0 p-0">
-                    <h2 class="mt-1">Eliminar o modificar Examen de la vista</h2>
-                </div>
-            </div>
-            <div id="tabla" class="mt-1">
-                <div class="table-responsive" id="mydatatable-container">
-                    <table id="table_id" class="records_list table table-striped table-bordered table-hover">
-                        <thead>
-                            <tr>
-                                <th>Fecha</th>
-                                <th>Hora</th>   
-                                <th>Cliente</th>
-                                <th>Graduación</th>
-                                <th>Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tblExamen">
 
-                        </tbody>
-                    </table>
+        <div class="container-fluid p-0 row" style="height: 100%;">
+            <div class="p-0" style="height: 100%;">
+                <h1 class="text-uppercase text-center">Gestionar Examen de la vista</h1>
+                <div class="p-4" style="height: 90%; border: 1px solid #000; margin: 0 20px 0 20px;">
+                    <div class="container p-0">
+                        <div class="col-2 m-0 p-3 d-flex align-items-center">
+                            <a onclick="abrirModuloExamen();" class="m-1 bg" style="cursor: pointer;">
+                                <i class="fa fa-angle-left" aria-hidden="true"></i> <span>Regresar</span>
+                            </a>
+                        </div>
+                        <div class="col-10 m-0 p-0">
+                            <h2 class="mt-1">Eliminar o modificar Examen de la vista</h2>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table id="table_id" class="records_list table table-striped table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Fecha</th>
+                                    <th>Hora</th>
+                                    <th>Cliente</th>
+                                    <th>Graduación</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tblExamen">
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-</div>

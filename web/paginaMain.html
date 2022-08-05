@@ -24,12 +24,14 @@
     <div class="container-fluid p-0">
         <div class="p-2 text-white overflow-auto col-2" id="navMain">
             <nav class="navbar d-flex flex-colum" id="menuMain">
+                
                 <div class="d-flex justify-content-between col-12">
                     <div class="cerrar col-2"><i class="fa-solid fa-xmark"></i></div>
                     <a class="d-flex align-items-center mb-3 col-10" onclick="menubody();">
                         <img src="recursos/Optical Qualite/ojoBlanco.png" class="img-fluid" alt="alt">
                     </a>
                 </div>
+
                 <ul class="nav nav-pills flex-column mb-auto col-12">
                     <li class="nav-item" style="cursor: pointer;" id="inicio" onclick="menubody();">
                         <a class="nav-link activo">
@@ -46,16 +48,19 @@
                             <span>Empleados</span>
                         </a>
                     </li>
-                    <li class="nav-item" style="cursor: pointer;" onclick="abrirModuloExamen();">
+
+                    <!-- <li class="nav-item" style="cursor: pointer;" onclick="abrirModuloExamen();">
                         <a class="nav-link ">
                             <span>Examen de la vista</span>
                         </a>
-                    </li>
-                    <li class="nav-item" style="cursor: pointer;">
+                    </li> -->
+
+                    <!-- <li class="nav-item" style="cursor: pointer;">
                         <a class="nav-link ">
                             <span>Presupuesto</span>
                         </a>
-                    </li>
+                    </li> -->
+
                     <li class="nav-item" style="cursor: pointer;" id="productos">
                         <a class="nav-link " data-bs-toggle="collapse" data-bs-target="#collapseProduc"
                             aria-expanded="true" aria-controls="collapseProduc">
@@ -78,37 +83,36 @@
                             </div>
                         </div>
                     </li>
-                    <li class="nav-item" style="cursor: pointer;" onclick="pantallaMaterial();">
+
+                    <!-- <li class="nav-item" style="cursor: pointer;" onclick="pantallaMaterial();">
                         <a class="nav-link">
                             <span>Materiales</span>
                         </a>
-                    </li>
-                    <li class="nav-item" style="cursor: pointer;" onclick="mostrarTratamientos();">
+                    </li> -->
+
+                    <!-- <li class="nav-item" style="cursor: pointer;" onclick="mostrarTratamientos();">
                         <a class="nav-link ">
                             <span>Tratamientos</span>
                         </a>
-                    </li>
-                    <li class="nav-item" style="cursor: pointer;" onclick="mostrarVentas();">
+                    </li> -->
+
+                    <!-- <li class="nav-item" style="cursor: pointer;" onclick="mostrarVentas();">
                         <a class="nav-link">
                             <span>Ventas</span>
                         </a>
-                    </li>
-                    <li class="nav-item" style="cursor: pointer;" onclick="mostrarPagos();">
+                    </li> -->
+
+                    <!-- <li class="nav-item" style="cursor: pointer;" onclick="mostrarPagos();">
                         <a class="nav-link">
                             <span>Pagos</span>
                         </a>
-                    </li>
-                    <li class="nav-item" style="cursor: pointer;" onclick="mostrarCompras();">
+                    </li> -->
+
+                    <!-- <li class="nav-item" style="cursor: pointer;" onclick="mostrarCompras();">
                         <a class="nav-link ">
                             <span>Compras</span>
                         </a>
-                    </li>
-                    
-                    <li class="nav-item" style="cursor: pointer;">
-                        <a class="nav-link ">
-                            <span>Graduaciones</span> 
-                        </a>
-                    </li>  
+                    </li> -->
                 </ul>
             </nav>
         </div>
@@ -121,131 +125,7 @@
         </nav>
 
         <div class="container-fluid p-0 m-0 col-lg-10 float-end" style="height: 100vh;" id="contenedorPrincipal">
-            <div class="col-12 p-0" style="height: 100%;">
-                <div class="col-12 d-flex shadow p-0" style="border-bottom: 1px solid black;">
-                    <nav class="navbar navbar-expand-lg navbar-light bg-light col-lg-10">
-                        <div class="d-flex justify-content-between d-lg-none">
-                            <button class="btn px-1 py-0 menuIcon"><i class="fa-solid fa-bars"></i></button>
-                            <a class="navbar-brand fs-4" onclick="menubody();">Óptica Qualite</a>
-                        </div>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                            aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarNav">
-                            <ul class="navbar-nav">
-                                <li class="nav-item">
-                                    <a class="nav-link" onclick="moduloExamen.mostrarPantallaRegistrar();">Registrar</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" onclick="moduloExamen.mostrarPantallaeliminar();">Eliminar o
-                                        Modificar</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" onclick="moduloExamen.catalogoExamen();">Catálogo de examen de
-                                        la vista</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                    <a class="navbar-brand col-lg-2 d-flex justify-content-center align-items-center">
-                        <span class="p-2">Administrador</span>
-                        <img src="" width="30" height="30" class="d-inline-block align-top" alt="">
-                    </a>
-                </div>
-                <div class="col-12 mt-2 p-0" id="contenedorGestion" style="height: 90.5%;">
-                    <div class="container-fluid p-0" style="height: 100%; background-color: aqua;">
-                        <div class="p-0" style="height: 100%;">
-                            <h1 class="text-uppercase text-center bg-danger">Gestionar Examen de la vista</h1>
-                            <div class="p-4" style="height: 100%; border: 1px solid #000; margin: 0 20px 0 20px;">
-                                <div class="container bg-info p-0"> 
-                                    <div class="col-2 m-0 p-3 d-flex align-items-center">
-                                        <a onclick="abrirModuloExamen();" class="m-1 bg" style="cursor: pointer;">
-                                            <i class="fa fa-angle-left" aria-hidden="true"></i> <span>Regresar</span>
-                                        </a>
-                                    </div>
-                                    <div class="col-10 m-0 p-0">
-                                        <h2 class="mt-1">Eliminar o modificar Examen de la vista</h2>
-                                    </div>
-                                </div>
-                                <div class="table-responsive">
-                                    <table id="table_id" class="records_list table table-striped table-bordered table-hover">
-                                        <thead>
-                                            <tr>
-                                                <th>Fecha</th>
-                                                <th>Hora</th>
-                                                <th>Cliente</th>
-                                                <th>Graduación</th>
-                                                <th>Acciones</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody id="tblExamen">
-                                            <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>System Architect</td>
-                                                <td>Edinburgh</td>
-                                                <td>61</td>
-                                                <td>2011-04-25</td>                                                
-                                            </tr>
-                                            <tr>
-                                                <td>Garrett Winters</td>
-                                                <td>Accountant</td>
-                                                <td>Tokyo</td>
-                                                <td>63</td>
-                                                <td>2011-07-25</td>                                                
-                                            </tr>
-                                            <tr>
-                                                <td>Ashton Cox</td>
-                                                <td>Junior Technical Author</td>
-                                                <td>San Francisco</td>
-                                                <td>66</td>
-                                                <td>2009-01-12</td>                                                
-                                            </tr>
-                                            <tr>
-                                                <td>Cedric Kelly</td>
-                                                <td>Senior Javascript Developer</td>
-                                                <td>Edinburgh</td>
-                                                <td>22</td>
-                                                <td>2012-03-29</td>                                                
-                                            </tr>
-                                            <tr>
-                                                <td>Cedric Kelly</td>
-                                                <td>Senior Javascript Developer</td>
-                                                <td>Edinburgh</td>
-                                                <td>22</td>
-                                                <td>2012-03-29</td>                                                
-                                            </tr>
-                                            <tr>
-                                                <td>Cedric Kelly</td>
-                                                <td>Senior Javascript Developer</td>
-                                                <td>Edinburgh</td>
-                                                <td>22</td>
-                                                <td>2012-03-29</td>                                                
-                                            </tr>
-                                            <tr>
-                                                <td>Cedric Kelly</td>
-                                                <td>Senior Javascript Developer</td>
-                                                <td>Edinburgh</td>
-                                                <td>22</td>
-                                                <td>2012-03-29</td>                                                
-                                            </tr>
-                                            <tr>
-                                                <td>Cedric Kelly</td>
-                                                <td>Senior Javascript Developer</td>
-                                                <td>Edinburgh</td>
-                                                <td>22</td>
-                                                <td>2012-03-29</td>                                                
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </div>             
-                </div>
-            </div>
+
         </div>
         
         <footer class="col-12 d-flex justify-content-center p-0 bg-light"
