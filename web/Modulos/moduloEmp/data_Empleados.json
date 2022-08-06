@@ -1,0 +1,86 @@
+[
+  {
+    "Persona": {
+      "IdPersona": "1",
+      "Nombre": "Carlos",
+      "ApellidoPaterno": "Moreno",
+      "ApellidoMaterno": "Ramirez",
+      "Genero": "Masculino",
+      "RFC": "1EFDAS2E42",
+      "TelCasa": "4721132454",
+      "TelMovil": "4721132454",
+      "Correo": "carebe654@gmail.com",
+      "Estatus": 1
+    },
+    "IdEmpleado": "1",
+    "ClaveUnicaEmp": "MRR321",
+    "Administrador": "Sam",
+    "Usuario": {
+      "usuario": "Carlos",
+      "contasena": "123"
+    }
+  },
+  {
+    "Persona": {
+      "IdPersona": "2",
+      "Nombre": "Marco",
+      "ApellidoPaterno": "Carrillo",
+      "ApellidoMaterno": "Ibarra",
+      "Genero": "Masculino",
+      "RFC": "12SFASD3",
+      "TelCasa": "477123456",
+      "TelMovil": "477123456",
+      "Correo": "marco01@gmail.com",
+      "Estatus": 1
+    },
+    "IdEmpleado": "2",
+    "ClaveUnicaEmp": "CAI321",
+    "Administrador": "Sam",
+    "Usuario": {
+        "usuario": "Marco", 
+        "contasena": "123" 
+    }
+  },
+  {
+    "Persona": {
+      "IdPersona": "3",
+      "Nombre": "Diego",
+      "ApellidoPaterno": "Alonso",
+      "ApellidoMaterno": "Landin",
+      "Genero": "Masculino",
+      "RFC": "2244DFSD",
+      "TelCasa": "477534532",
+      "TelMovil": "47723433",
+      "Correo": "alandin@gmail.com",
+      "Estatus": 1
+    },
+    "IdEmpleado": "3",
+    "ClaveUnicaEmp": "ALL321",
+    "Administrador": "Sam",
+    "Usuario": { 
+        "usuario": "Diego", 
+        "contasena": "123" 
+    }
+  },
+  {
+    "Persona": {
+      "IdPersona": "4",
+      "Nombre": "Jesus",
+      "ApellidoPaterno": "Luvian",
+      "ApellidoMaterno": "Luis",
+      "Genero": "Masculino",
+      "RFC": "42334FSDF",
+      "TelCasa": "477353543",
+      "TelMovil": "477353543",
+      "Correo": "luvijesus@gmail.com",
+      "Estatus": 1
+    },
+    "IdEmpleado": "4",
+    "ClaveUnicaEmp": "LUL422",
+    "Administrador": "Sam",
+    "Usuario": { 
+        "usuario": "Jesus", 
+        "contasena": "123" 
+    }
+  }
+]
